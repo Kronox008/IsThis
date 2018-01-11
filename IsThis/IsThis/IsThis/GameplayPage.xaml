@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IsThis.GameplayPage"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+
+        
+        <Grid BackgroundColor="Black"
+              
+              >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            
+            <Label x:Name="CountingLabel" Grid.RowSpan="2" Grid.ColumnSpan="2"  FontSize="72" TextColor="Gold"
+                   VerticalOptions="Center" HorizontalOptions="Center" ></Label>
+
+            <Image x:Name="QuestionImage" Grid.RowSpan="2" Grid.ColumnSpan="2" Aspect="AspectFill" ></Image>
+
+            <Label x:Name="TimerLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="14" TextColor="Gold"
+                   VerticalOptions="Start" HorizontalOptions="EndAndExpand" Margin="0, 5, 5, 0"  IsVisible="False"></Label>
+            <Label x:Name="QuestionLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="32" TextColor="Gold"
+                   VerticalOptions="Center" HorizontalOptions="Center" ></Label>
+            <Button x:Name="CorrectButton" Grid.Row="1" Grid.Column="0" Text="Correct" Clicked="Correct_Button_Clicked" TextColor="Goldenrod" BackgroundColor="DarkGreen"></Button>
+            <Button x:Name="SkipButton" Grid.Row="1" Grid.Column="1" Text="Skip" Clicked="Skip_Button_Clicked" TextColor="Goldenrod" BackgroundColor="DarkRed"></Button>
+            
+            
+         
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
