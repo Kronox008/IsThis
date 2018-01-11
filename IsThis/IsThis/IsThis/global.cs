@@ -29,14 +29,14 @@ namespace IsThis
         public static int Num10 { get; set; }
 
         //----Question quantity--------------------------------------------------------------------------------------------------
-        public static int QuestionQuantity { get; set; } = 10;
+        public static int QuestionQuantity { get; set; }
 
         //Array to hold questions
-        public static string[ , ] ShuffledQuestion = new string[QuestionQuantity, 2];
+        public static string[ , ] ShuffledQuestion = new string[50, 2];
 
         //Array to hold correct or not
-        public static int[] IsCorrect = new int[QuestionQuantity];
-        public static int[] IsGuessed = new int[QuestionQuantity];
+        public static int[] IsCorrect = new int[50];
+        public static int[] IsGuessed = new int[50];
         public static int IsCorrectCount { get; set; }
 
 

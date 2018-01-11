@@ -56,9 +56,9 @@ namespace IsThis
                 var DefaultNumbers = new Saved_Settings()
                 {
                     StaticId = 1,
-                    Saved_Quantity = 20,
+                    Saved_Quantity = 10,
                     Saved_Time = 90,
-                    IsTimerOn = 0,                                                        
+                    IsTimerOn = 1,                                                        
                 };
                 await _connection.InsertOrReplaceAsync(DefaultNumbers);
                 LoadNumbers = await _connection.GetAsync<Saved_Settings>(1);
