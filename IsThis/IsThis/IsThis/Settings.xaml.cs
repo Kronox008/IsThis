@@ -23,65 +23,11 @@ namespace IsThis
 
         public Settings()
         {
-            
-
-
-
             InitializeComponent();
-            Intractor();
-            EXTRACTSQL();
-
-
-
-
+           
             Setup_setting_numbers();
             
         }
-        protected override async void OnAppearing()
-        {
-            // _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            //   await _connection.CreateTableAsync<Saved_Settings>();
-            // var SavedinDB = new Saved_Settings()
-            // { StaticId = 1,
-            //      Saved_Quantity = 10,
-            //      Saved_Time = 30,
-            //      IsTimerOn = 1,                                                         /////Working
-            //   };
-            //await _connection.InsertOrReplaceAsync(SavedinDB);
-
-            // var testiswork = new Saved_Settings();
-            // testiswork = await _connection.GetAsync<Saved_Settings>(1);
-            base.OnAppearing();
-        }
-
-        public async void Intractor()
-        {
-            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            await _connection.CreateTableAsync<Saved_Settings>();
-            var SavedinDB = new Saved_Settings()
-            {
-                StaticId = 1,
-                Saved_Quantity = 10,
-                Saved_Time = 30,
-                IsTimerOn = 1,
-            };
-            await _connection.InsertOrReplaceAsync(SavedinDB);
-        }
-
-
-
-
-        public async void  EXTRACTSQL()
-        {
-            
-
-            var testiswork = new Saved_Settings();
-            testiswork = await _connection.GetAsync<Saved_Settings>(1);
-
-            testiswork.Saved_Time = Global.CountDownTime;
-
-        }
-
 
 
         private void Setup_setting_numbers()
@@ -125,12 +71,14 @@ namespace IsThis
             Global.CountDownTime = Convert.ToInt32(TimeStepper.Value);
             TimeStepperLabel.Text = String.Format("{0} sec", Global.CountDownTime);
 
-            //var Changed_Time = new Saved_Settings
-            //{
-            //    StaticId = 1,
-            //    Saved_Time = Global.CountDownTime,
-            //};
-            //await _connection.InsertOrReplaceAsync(Changed_Time.Saved_Time);
+            var TimeStepper_Change = new Saved_Settings()
+            {
+                StaticId = 1,
+                Saved_Time = Global.CountDownTime,
+                
+            };
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            await _connection.InsertOrReplaceAsync(TimeStepper_Change);
         }
 
         private void Questiontepper_ValueChanged(object sender, ValueChangedEventArgs e)
