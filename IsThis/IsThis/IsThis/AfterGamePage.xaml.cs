@@ -16,8 +16,8 @@ namespace IsThis
         public AfterGamePage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, true);
-            NavigationPage.SetHasBackButton(this, false);
+            NavigationPage.SetHasNavigationBar(this, false);
+
             SelectedDeckPoster.Source = Global.DeckPoster;
             MenuButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
             MenuButton.TextColor = Color.FromHex(Global.ButtonTextColor);

@@ -18,16 +18,16 @@
                 </Grid.RowDefinitions>
 
                 <Image  Grid.Row="0" Grid.Column="0" Source="GOT.jpg" Aspect="AspectFill"></Image>
-                <Button x:Name="myGOT" Grid.Row="0" Grid.Column="0" Opacity="0" Clicked="myGOT_Clicked"></Button>
+                <Button x:Name="myGOT" Grid.Row="0" Grid.Column="0" Opacity="0" Clicked="myGOT_Clicked" ></Button>
                 
                 
                 <Image  Grid.Row="0" Grid.Column="1" Source="lord.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
                 <Button x:Name="myLOTR" Grid.Row="0" Grid.Column="1" Opacity="0" Clicked="myLOTR_Clicked"></Button>
-                <!--<Label Text="Coming soon!" HorizontalOptions="Center" TextColor="Gold" VerticalOptions="Center" Font="25" Grid.Row="0" Grid.Column="1"></Label>-->
+                <Label Text="Coming soon!" HorizontalOptions="Center" TextColor="Gold" VerticalOptions="Center" Font="25" Grid.Row="0" Grid.Column="1"></Label>
                 
                 <Image Grid.Row="1" Grid.Column="0" Source="Harry.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
                 <Button x:Name="myHP" Grid.Row="1" Grid.Column="0" Opacity="0" Clicked="myHP_Clicked"></Button>
-                <!--<Label Text="Coming soon!" HorizontalOptions="Center" TextColor="Gold" VerticalOptions="Center" Font="25" Grid.Row="1" Grid.Column="0"></Label>-->
+                <Label Text="Coming soon!" HorizontalOptions="Center" TextColor="Gold" VerticalOptions="Center" Font="25" Grid.Row="1" Grid.Column="0"></Label>
 
                 <Image  Grid.Row="1" Grid.Column="1" Source="friends.jpg" Aspect="AspectFill"></Image>
                 <Button x:Name="myFriend" Grid.Row="1" Grid.Column="1" Opacity="0" Clicked="myFriend_Clicked"></Button>

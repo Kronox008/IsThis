@@ -38,7 +38,7 @@ namespace IsThis.Droid
         {
             if (keyCode == Keycode.VolumeDown)
             {
-                Toast.MakeText(this, "Volume Down pressed", ToastLength.Long).Show();
+               // Toast.MakeText(this, "Volume Down pressed", ToastLength.Long).Show();
                 MessagingCenter.Send<object>(this, "Down");
                 
                 return true;
