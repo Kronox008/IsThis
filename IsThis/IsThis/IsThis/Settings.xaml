@@ -9,7 +9,7 @@
                 <TableSection>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Margin="10, 0, 5, 0">
-                            <Label x:Name="QuestionStepperLabel" Text="sss" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                            <Label x:Name="QuestionStepperLabel" VerticalOptions="Center" HorizontalOptions="Start"></Label>
                             <Stepper x:Name="Questiontepper" Increment="10" Maximum="50" Minimum="10"
                                      VerticalOptions="Center" HorizontalOptions="EndAndExpand" ValueChanged="Questiontepper_ValueChanged" >
                             </Stepper>
@@ -19,9 +19,9 @@
                 <TableSection>
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Margin="10, 0, 5, 0">
-                            <Switch x:Name="TimeSwitch" IsToggled="True" Toggled="SwitchCell_OnChanged" VerticalOptions="Center"></Switch>
-                            <Label x:Name="TimeStepperLabel" VerticalOptions="Center" HorizontalOptions="EndAndExpand"></Label>
-                            <Stepper x:Name="TimeStepper" Increment="30" Maximum="180" Minimum="30" Value="60"
+                            <!--<Switch x:Name="TimeSwitch" Toggled="SwitchCell_OnChanged" VerticalOptions="Center"></Switch>-->
+                            <Label x:Name="TimeStepperLabel" VerticalOptions="Center" HorizontalOptions="Start"></Label>
+                            <Stepper x:Name="TimeStepper" Increment="30" Maximum="210" Minimum="30"
                                      VerticalOptions="Center" HorizontalOptions="EndAndExpand" ValueChanged="TimeStepper_ValueChanged" >
                             </Stepper>
                         </StackLayout>

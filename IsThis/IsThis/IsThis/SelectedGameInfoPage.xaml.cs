@@ -29,7 +29,7 @@ namespace IsThis
 
 
 
-        public void Selecteddeckinfo()
+        public async void Selecteddeckinfo()
         {
             switch (Global.DeckNumber)
             {
@@ -44,20 +44,20 @@ namespace IsThis
                     SelectedDeckPoster.Source = Global.DeckPoster;
                     break;
                 default:
-                    Navigation.PushAsync(new GameSelectionPage());
+                  await  Navigation.PushAsync(new GameSelectionPage());
                     break;
             }
         }
 
-        private void PlayselecteddeckButton_Clicked(object sender, EventArgs e)
+        private async void PlayselecteddeckButton_Clicked(object sender, EventArgs e)
         {
-          Navigation.PushAsync(new GameplayPage());
+         await Navigation.PushAsync(new GameplayPage());
             
         }
 
-        private void SettingsButton_Clicked(object sender, EventArgs e)
+        private async void SettingsButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Settings());
+           await Navigation.PushAsync(new Settings());
         }
     }
 }

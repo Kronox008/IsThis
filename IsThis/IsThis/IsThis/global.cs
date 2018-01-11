@@ -41,7 +41,7 @@ namespace IsThis
 
 
         //Timer------------------------------------------------------------------------------------------
-        public static int CountDownTimeIsOn { get; set; }
+       
         public static int CountDownTime { get; set; }
 
         

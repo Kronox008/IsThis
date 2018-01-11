@@ -21,13 +21,13 @@ namespace IsThis
             public int StaticId { get; set; }
             public int Saved_Quantity { get; set; }
             public int Saved_Time { get; set; }
-            public int IsTimerOn { get; set; }
         }
         
 
         public GameSelectionPage()
         {
             InitializeComponent();
+           
             NavigationPage.SetHasNavigationBar(this, false);
            
             
@@ -40,6 +40,17 @@ namespace IsThis
             });
             */
         }
+        protected override bool OnBackButtonPressed()
+        {
+            BackToRoot();
+            return true;
+        }
+        private async void BackToRoot()
+        {
+            await Navigation.PushAsync(new GameSelectionPage());
+        }
+
+
         protected override async void OnAppearing()
         {
             _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
@@ -57,15 +68,14 @@ namespace IsThis
                 {
                     StaticId = 1,
                     Saved_Quantity = 10,
-                    Saved_Time = 90,
-                    IsTimerOn = 1,                                                        
+                    Saved_Time = 90,                                                     
                 };
                 await _connection.InsertOrReplaceAsync(DefaultNumbers);
-                LoadNumbers = await _connection.GetAsync<Saved_Settings>(1);
+               
             }
+            LoadNumbers = await _connection.GetAsync<Saved_Settings>(1);
                 Global.QuestionQuantity = LoadNumbers.Saved_Quantity;
                 Global.CountDownTime = LoadNumbers.Saved_Time;
-                Global.CountDownTimeIsOn = LoadNumbers.IsTimerOn;
 
 
 
@@ -99,11 +109,11 @@ namespace IsThis
           await  Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
-        private void myGOT_Clicked(object sender, EventArgs e)
+        private async void myGOT_Clicked(object sender, EventArgs e)
         {
             Global.DeckNumber = 1;
             Global.DeckPoster = "GOT.jpg";
-            Navigation.PushAsync(new SelectedGameInfoPage());
+            await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
         private void myLOTR_Clicked(object sender, EventArgs e)
@@ -111,9 +121,9 @@ namespace IsThis
            
         }
 
-        private void myHP_Clicked(object sender, EventArgs e)
+        private async void myHP_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Settings());
+           await Navigation.PushAsync(new Settings());
         }
 
         private void myAnimal_Clicked(object sender, EventArgs e)

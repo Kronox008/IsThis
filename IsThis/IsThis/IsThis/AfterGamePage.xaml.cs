@@ -17,6 +17,7 @@ namespace IsThis
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            
 
             SelectedDeckPoster.Source = Global.DeckPoster;
             MenuButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
@@ -43,18 +44,29 @@ namespace IsThis
            
 
         }
-
-        private void MenuButton_Clicked(object sender, EventArgs e)
+        
+        protected override bool OnBackButtonPressed()
         {
-            Navigation.PushAsync(new GameSelectionPage());
+            BackToRoot();
+            return true;
+        }
+        private async void BackToRoot()
+        {
+            await Navigation.PushAsync(new GameSelectionPage());
         }
 
-        private void AgainButton_Clicked(object sender, EventArgs e)
+        private async void MenuButton_Clicked(object sender, EventArgs e)
+        {
+           await Navigation.PushAsync(new GameSelectionPage());
+        }
+
+        private async void AgainButton_Clicked(object sender, EventArgs e)
         {
             
             SelectedGameInfoPage Randomize_again = new SelectedGameInfoPage();
             Randomize_again.Selecteddeckinfo();
-            Navigation.PushAsync(new GameplayPage());
+           await Navigation.PushAsync(new GameplayPage());
         }
+
     }
 }

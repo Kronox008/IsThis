@@ -31,6 +31,18 @@ namespace IsThis
             TimerLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
             Animation();
         }
+        protected override bool OnBackButtonPressed()
+        {
+            BackToRoot();
+            return true;
+        }
+        private async void BackToRoot()
+        {
+            await Navigation.PushAsync(new GameSelectionPage());
+        }
+
+
+
         private async void Animation()
         {
             Make_some_Tick_sounds.TickSoundStream();
@@ -165,8 +177,9 @@ namespace IsThis
         }
         private async void Timer ()
         {
-            if (Global.CountDownTimeIsOn == 1)
-            {
+
+            if (Global.CountDownTime <= 180)
+            { 
                 TimerLabel.IsVisible = true;
             for (int _second = Global.CountDownTime; _second >= 0; _second--)
             {
@@ -175,7 +188,10 @@ namespace IsThis
             }
             GameOver();
             }
+
         }
-            
-        }
+
+
+
+    }
     }
