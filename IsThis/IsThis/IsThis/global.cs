@@ -17,17 +17,8 @@ namespace IsThis
 
 
         //Numbers for Questions to be selected
-        public static int Num1  { get; set; }
-        public static int Num2  { get; set; }
-        public static int Num3  { get; set; }
-        public static int Num4  { get; set; }
-        public static int Num5  { get; set; }
-        public static int Num6  { get; set; }
-        public static int Num7  { get; set; }
-        public static int Num8  { get; set; }
-        public static int Num9  { get; set; }
-        public static int Num10 { get; set; }
-
+        public static int[] Numbers = new int [50];
+       
         //----Question quantity--------------------------------------------------------------------------------------------------
         public static int QuestionQuantity { get; set; }
 

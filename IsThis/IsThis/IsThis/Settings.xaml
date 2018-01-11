@@ -2,9 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsThis.Settings"
-             Title="Nustatymai">
+             Title="Nustatymai"
+             BackgroundColor="Black">
     <ContentPage.Content>
-        <TableView Margin="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Opacity="0.2" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" Source="GOT.jpg"></Image>
+            <TableView Margin="20" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent">
             <TableRoot Title="table title">
                 <TableSection>
                     <ViewCell>
@@ -29,5 +35,6 @@
                 </TableSection>
             </TableRoot>
         </TableView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

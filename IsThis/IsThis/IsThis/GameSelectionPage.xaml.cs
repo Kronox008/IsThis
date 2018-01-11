@@ -29,16 +29,7 @@ namespace IsThis
             InitializeComponent();
            
             NavigationPage.SetHasNavigationBar(this, false);
-           
-            
-            //   NavigationPage.SetHasBackButton(this, false);
-            //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
-            //  ((NavigationPage)Application.Current.MainPage).BarTextColor =       Color.Gold;
-            /*myGOT.GestureRecognizers.Add(new TapGestureRecognizer //myGOT - picture x:name
-            {
-                Command = new Command(() => DisplayAlert("GOT", "GOT clicked", "close alert"))
-            });
-            */
+          
         }
         protected override bool OnBackButtonPressed()
         {
@@ -77,15 +68,7 @@ namespace IsThis
                 Global.QuestionQuantity = LoadNumbers.Saved_Quantity;
                 Global.CountDownTime = LoadNumbers.Saved_Time;
 
-
-
-
-
-
-
-
-
-
+            
             // var SavedinDB = new Saved_Settings()
             // { StaticId = 1,
             //      Saved_Quantity = 10,

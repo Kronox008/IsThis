@@ -111,7 +111,7 @@ namespace IsThis
                 Global.IsGuessed[i] = 1;
                 Global.IsCorrectCount += 1;
                 i++;
-                if (i < 10)
+                if (i < Global.QuestionQuantity)
                 {
                     QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
                     CorrectButton.IsEnabled = false;
@@ -125,6 +125,20 @@ namespace IsThis
                     VolumeButtonsActive();
 
                 }
+                //if (i < 10)
+                //{
+                //    QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
+                //    CorrectButton.IsEnabled = false;
+                //    SkipButton.IsEnabled = false;
+                //    VolumeButtonsDisabled();
+                //    await QuestionImage.FadeTo(0, 1000);
+                //    QuestionImage.Source = Global.ShuffledQuestion[i, 1];
+                //    QuestionImage.FadeTo(0.2, 1000);
+                //    CorrectButton.IsEnabled = true;
+                //    SkipButton.IsEnabled = true;
+                //    VolumeButtonsActive();
+
+                //}
                 else
                 {
                     GameOver();
