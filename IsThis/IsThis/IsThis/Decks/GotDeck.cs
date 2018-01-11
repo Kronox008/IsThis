@@ -19,7 +19,7 @@ namespace IsThis.Decks
 
 
             Global.Deckcounter = count;
-            Global.DeckName = "Sostų karų kaladė";
+            Global.DeckName = "Sostų karai";
             Global.DeckInfo = "Game Of Thrones characters, questes, cities, places.";
             Randomizing.Randomize();
             //Name
