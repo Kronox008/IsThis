@@ -51,6 +51,9 @@
       <DependentUpon>GameSelectionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="global.cs" />
+    <Compile Include="InfoPage.xaml.cs">
+      <DependentUpon>InfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Persistence\ISQLiteDb.cs" />
     <Compile Include="SelectedGameInfoPage.xaml.cs">
       <DependentUpon>SelectedGameInfoPage.xaml</DependentUpon>
@@ -149,6 +152,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Sounds\Skip.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

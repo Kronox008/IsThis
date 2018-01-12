@@ -19,9 +19,10 @@ namespace IsThis
             Selecteddeckinfo();
             Title = Global.DeckName;
 
-            NavigationPage.SetHasBackButton(this, true);
-           playselecteddeckButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
+            NavigationPage.SetHasNavigationBar(this, false);
+            playselecteddeckButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
            playselecteddeckButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
+            deckinfoLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
 
 
         }
@@ -57,7 +58,7 @@ namespace IsThis
 
         private async void SettingsButton_Clicked(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new Settings());
+           await Navigation.PushModalAsync(new Settings());
         }
     }
 }

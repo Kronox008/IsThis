@@ -10,12 +10,12 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Image Opacity="0.2" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" Source="Net.jpg"></Image>
-            <TableView Margin="20" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent">
-            <TableRoot Title="table title">
+            <TableView Margin="20" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center">
+            <TableRoot>
                 <TableSection>
                     <ViewCell>
                             <!--                                                    Alpha on your RGB background color-->
-                            <StackLayout Orientation="Horizontal" Margin="10, 0, 5, 0" BackgroundColor=" #772F4F4F " >
+                            <StackLayout Orientation="Horizontal" Margin="10, 0, 5, 0" BackgroundColor=" #772F4F4F "  >
                                 <Label x:Name="QuestionStepperLabel" VerticalOptions="Center" HorizontalOptions="Start" Margin="5, 0, 0, 0" FontSize="Medium"></Label>
                             <Stepper x:Name="Questiontepper" Increment="10" Maximum="50" Minimum="10"
                                      VerticalOptions="Center" HorizontalOptions="EndAndExpand" ValueChanged="Questiontepper_ValueChanged" >

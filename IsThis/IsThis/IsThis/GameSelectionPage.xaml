@@ -12,33 +12,36 @@
               ColumnSpacing="10"
               >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="300" />
-                    <RowDefinition Height="300" />
-                    <RowDefinition Height="300" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="280" />
+                    <RowDefinition Height="280" />
+                    <RowDefinition Height="280" />
                 </Grid.RowDefinitions>
 
-                <Image  Grid.Row="0" Grid.Column="0" Source="GOT.jpg" Aspect="AspectFill"></Image>
-                <Button x:Name="myGOT" Grid.Row="0" Grid.Column="0" Opacity="0" Clicked="myGOT_Clicked" ></Button>
+                <Button Text="Kaip žaisti?" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor=" #772F4F4F " TextColor="#ececec" Clicked="Button_Clicked"></Button>
+                
+                <Image  Grid.Row="1" Grid.Column="0" Source="GOT.jpg" Aspect="AspectFill"></Image>
+                <Button x:Name="myGOT" Grid.Row="1" Grid.Column="0" Opacity="0" Clicked="myGOT_Clicked" ></Button>
                 
                 
-                <Image  Grid.Row="0" Grid.Column="1" Source="lord.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
-                <Button x:Name="myLOTR" Grid.Row="0" Grid.Column="1" Opacity="0" Clicked="myLOTR_Clicked"></Button>
-                <Label Text="Coming soon!" HorizontalOptions="Center" TextColor="Gold" VerticalOptions="Center" Font="25" Grid.Row="0" Grid.Column="1"></Label>
+                <Image  Grid.Row="1" Grid.Column="1" Source="lord.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
+                <Button x:Name="myLOTR" Grid.Row="1" Grid.Column="1" Opacity="0" Clicked="myLOTR_Clicked"></Button>
+  
                 
-                <Image Grid.Row="1" Grid.Column="0" Source="Harry.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
-                <Button x:Name="myHP" Grid.Row="1" Grid.Column="0" Opacity="0" Clicked="myHP_Clicked"></Button>
-                <Label Text="Coming soon!" HorizontalOptions="Center" TextColor="Gold" VerticalOptions="Center" Font="25" Grid.Row="1" Grid.Column="0"></Label>
+                <Image Grid.Row="2" Grid.Column="0" Source="Harry.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
+                <Button x:Name="myHP" Grid.Row="2" Grid.Column="0" Opacity="0" Clicked="myHP_Clicked"></Button>
+                
 
-                <Image  Grid.Row="1" Grid.Column="1" Source="friends.jpg" Aspect="AspectFill"></Image>
-                <Button x:Name="myFriend" Grid.Row="1" Grid.Column="1" Opacity="0" Clicked="myFriend_Clicked"></Button>
+                <Image  Grid.Row="2" Grid.Column="1" Source="friends.jpg" Aspect="AspectFill"></Image>
+                <Button x:Name="myFriend" Grid.Row="2" Grid.Column="1" Opacity="0" Clicked="myFriend_Clicked"></Button>
                 
-                <Image Grid.Row="2" Grid.Column="0" Source="animals.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
-                <Button x:Name="myAnimal" Grid.Row="2" Grid.Column="0" Opacity="0" Clicked="myAnimal_Clicked"></Button>
-                <Label Text="Coming soon!" HorizontalOptions="Center" TextColor="Gold" VerticalOptions="Center" Font="25" Grid.Row="2" Grid.Column="0"></Label>
+                <Image Grid.Row="3" Grid.Column="0" Source="animals.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
+                <Button x:Name="myAnimal" Grid.Row="3" Grid.Column="0" Opacity="0" Clicked="myAnimal_Clicked"></Button>
                 
-                <Image Grid.Row="2" Grid.Column="1" Source="AOM.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
-                <Button x:Name="myAOM" Grid.Row="2" Grid.Column="1" Opacity="0" Clicked="myAOM_Clicked"></Button>
-                <Label Text="Coming soon!" HorizontalOptions="Center" TextColor="Gold" VerticalOptions="Center" Font="25" Grid.Row="2" Grid.Column="1"></Label>
+                
+                <Image Grid.Row="3" Grid.Column="1" Source="AOM.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
+                <Button x:Name="myAOM" Grid.Row="3" Grid.Column="1" Opacity="0" Clicked="myAOM_Clicked"></Button>
+               
             </Grid>
         </ScrollView>
     </ContentPage.Content>

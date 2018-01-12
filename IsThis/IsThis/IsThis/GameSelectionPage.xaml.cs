@@ -115,5 +115,10 @@ namespace IsThis
         {
        //     DisplayAlert("Age of Mythology", "AOM clicked", "close alert");
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new InfoPage());
+        }
     }
 }

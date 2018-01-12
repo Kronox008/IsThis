@@ -16,7 +16,7 @@
             </Grid.RowDefinitions>
 
             <Image x:Name="SelectedDeckPoster" Opacity="0.2" Aspect="AspectFill" Grid.RowSpan="3" Grid.ColumnSpan="5"></Image>
-            <Label x:Name="deckinfoLabel" Grid.Row="0" Grid.ColumnSpan="5" TextColor="Gold" Margin="10"></Label>
+            <Label x:Name="deckinfoLabel" Grid.Row="0" Grid.ColumnSpan="5" Margin="10" FontSize="Medium"></Label>
             <Button x:Name="playselecteddeckButton" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="Pradėti" Clicked="PlayselecteddeckButton_Clicked"></Button>
             <Button Image="settings24.png" x:Name="SettingsButton" Grid.Row="1" Grid.Column="4" BackgroundColor="Transparent" Clicked="SettingsButton_Clicked"></Button>
         </Grid>

@@ -20,7 +20,7 @@
 
             <Image x:Name="QuestionImage" Grid.RowSpan="2" Grid.ColumnSpan="2" Aspect="AspectFill" ></Image>
 
-            <Label x:Name="TimerLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="14" TextColor="Gold"
+            <Label x:Name="TimerLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="Small" TextColor="Gold"
                    VerticalOptions="Start" HorizontalOptions="EndAndExpand" Margin="0, 5, 5, 0"  IsVisible="False"></Label>
             <Label x:Name="QuestionLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="32" TextColor="Gold"
                    VerticalOptions="Center" HorizontalOptions="Center" ></Label>
