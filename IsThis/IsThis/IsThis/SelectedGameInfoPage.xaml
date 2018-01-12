@@ -14,11 +14,15 @@
                 <RowDefinition Height="50" />
                 <RowDefinition Height="50" />
             </Grid.RowDefinitions>
-
+            
             <Image x:Name="SelectedDeckPoster" Opacity="0.2" Aspect="AspectFill" Grid.RowSpan="3" Grid.ColumnSpan="5"></Image>
-            <Label x:Name="deckinfoLabel" Grid.Row="0" Grid.ColumnSpan="5" Margin="10" FontSize="Medium"></Label>
+            <Label x:Name="deckinfoLabel" Grid.Row="0" Grid.ColumnSpan="5" Margin="10" FontSize="Large" FontFamily="Oswald-Regular.ttf#Oswald-Regular : null" ></Label>
             <Button x:Name="playselecteddeckButton" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Text="Pradėti" Clicked="PlayselecteddeckButton_Clicked"></Button>
-            <Button Image="settings24.png" x:Name="SettingsButton" Grid.Row="1" Grid.Column="4" BackgroundColor="Transparent" Clicked="SettingsButton_Clicked"></Button>
+            <AbsoluteLayout Grid.RowSpan="2" Grid.ColumnSpan="5">
+                <Button Image="settings24.png" x:Name="SettingsButton" Clicked="SettingsButton_Clicked"
+                        BackgroundColor="Transparent" AbsoluteLayout.LayoutBounds="0.97, 0.03, 0.07, 0.05"  AbsoluteLayout.LayoutFlags="All" ></Button>
+            </AbsoluteLayout>
+            <!--<Button Image="settings24.png" x:Name="SettingsButton" Grid.Row="1" Grid.Column="4" BackgroundColor="Transparent" Clicked="SettingsButton_Clicked"></Button>-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

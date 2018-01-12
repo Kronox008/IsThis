@@ -33,9 +33,19 @@ namespace IsThis
 
         protected override void OnAppearing()
         {
-            TimeStepper.Value = Global.CountDownTime;
-            TimeStepperLabel.Text = String.Format("{0} sec", Global.CountDownTime);
+
             TimeStepperLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
+
+            if (Global.CountDownTime <= 180)
+            {
+                TimeStepperLabel.Text = String.Format("{0} sec", Global.CountDownTime);
+            }
+            else
+            {
+                TimeStepperLabel.Text = "∞ sec";
+            }
+         
+            
 
             Questiontepper.Value = Global.QuestionQuantity;
             QuestionStepperLabel.Text = String.Format("{0} klausimų", Global.QuestionQuantity);
