@@ -36,7 +36,7 @@ namespace IsThis
         }
         private void setLanguage()
         {
-            Global.EN(Global.LanguageSelectedID);
+            Global.CheckLanguage();
             SettingsButton.Text = Global.SettingsButtonText;
             InfoButton.Text = Global.InfoButtonText;
         }

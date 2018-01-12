@@ -25,6 +25,7 @@ namespace IsThis
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            LanguagePicker.SelectedIndex = Global.LanguagePickerIndex;
             SetFields();
         }
 
@@ -33,17 +34,12 @@ namespace IsThis
         private void SetFields()
         {
             LanguagePickerLabel.Text = Global.LanguagePickerLabel;
-            LanguagePicker.TextColor = Color.FromHex((Global.ButtonBackColor));
+            LanguagePickerLabel.TextColor = Color.FromHex((Global.ButtonBackColor));
             LanguagePicker.Title = Global.LanguagePickerTitle;
             LanguagePicker.TextColor = Color.FromHex((Global.ButtonBackColor));
-        }
+            
+            LanguagePicker.SelectedItem = Global.LanguagePickerItem;
 
-
-
-
-
-        protected override void OnAppearing()
-        {
 
             TimeStepperLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
             TimeStepper.Value = Global.CountDownTime;
@@ -56,14 +52,11 @@ namespace IsThis
             {
                 TimeStepperLabel.Text = "∞ sec";
             }
-         
-            
+
 
             Questiontepper.Value = Global.QuestionQuantity;
             QuestionStepperLabel.Text = String.Format("{0} {1}", Global.QuestionQuantity, Global.QuestionslabelText);
             QuestionStepperLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
-
-            base.OnAppearing();
         }
 
 
@@ -113,11 +106,38 @@ namespace IsThis
             await _connection.InsertOrReplaceAsync(Save_TO_DB);
         }
 
-        private void LanguagePicker_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private async void LanguagePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedLanguage = LanguagePicker.Items[LanguagePicker.SelectedIndex];
-            DisplayAlert("test", selectedLanguage, LanguagePicker.SelectedIndex.ToString());
+            Global.LanguagePickerIndex = LanguagePicker.SelectedIndex;
+            if (LanguagePicker.SelectedIndex == 0)
+            {
+                Global.LanguageSelectedID = 0;
+                Global.CheckLanguage();
+                SetFields();
+            }
+            else
+            {
+                Global.LanguageSelectedID = 1;
+                Global.CheckLanguage();
+                SetFields();
+            }
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////Saving to DB
+            var Save_TO_DB = new GameSelectionPage.Saved_Settings()
+            {
+                StaticId = 1,
+                Saved_Quantity = Global.QuestionQuantity,
+                Saved_Time = Global.CountDownTime,
+                LanguageId = Global.LanguageSelectedID,
+
+            };
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            await _connection.InsertOrReplaceAsync(Save_TO_DB);
+
         }
+       
     }
        
 }

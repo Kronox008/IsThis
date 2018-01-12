@@ -60,11 +60,13 @@ namespace IsThis
         public static string ScoreLabeltext { get; set; }
         public static string LanguagePickerLabel { get; set; }
         public static string LanguagePickerTitle { get; set; }
+        public static int LanguagePickerIndex { get; set; }
+        public static string LanguagePickerItem { get; set; }
 
 
 
-        public static void EN(int langID)
-        { if(langID == 0)
+        public static void CheckLanguage()
+        { if(LanguageSelectedID == 0)
             {
 
                 SettingsButtonText = "Settings";
@@ -75,7 +77,9 @@ namespace IsThis
                 HowToLabeltext = "English explanation";
                 ScoreLabeltext = "Score: ";
                 LanguagePickerLabel = "Language: ";
-                LanguagePickerTitle = "Language selection";
+                LanguagePickerTitle = "Language";
+                LanguagePickerIndex = 0;
+                LanguagePickerItem = "English";
 
             }
             else
@@ -88,7 +92,9 @@ namespace IsThis
                 HowToLabeltext = "Telefona laikyk prieš save. Aiškinantis žaidėjas/komanda bandys tau padėti atspėti, koks gi žmogus/personažas/įvykis/vieta/citata šįkart įsitaisius tavo telefone! (Klausimai keičiami spaudžiant garsinimo / tildymo mygtukus ar mygtukus ekrane.";
                 ScoreLabeltext = "Taškai: ";
                 LanguagePickerLabel = "Kalba: ";
-                LanguagePickerTitle = "Kalbos pasirinkimas";
+                LanguagePickerTitle = " Kalba  ";
+                LanguagePickerIndex = 1;
+                LanguagePickerItem = "Lietuvių";
             }
 
         }
