@@ -3,10 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsThis.InfoPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid Margin="10"
+              RowSpacing="10">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                
+            </Grid.RowDefinitions>
+            <Label x:Name="TitleLabel_1" Grid.Row="0" Grid.Column="0" FontSize="Large"></Label>
+            <Label x:Name="GameLabel_1" Grid.Row="1" Grid.Column="0" FontSize="Medium"></Label>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

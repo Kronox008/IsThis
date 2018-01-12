@@ -15,6 +15,9 @@ namespace IsThis
         public InfoPage()
         {
             InitializeComponent();
+            TitleLabel_1.Text = "1 variantas";
+            GameLabel_1.Text = "Telefona laikyk prieš save. Aiškinantis žaidėjas/komanda bandys tau padėti atspėti, koks gi žmogus/personažas/įvykis/vieta/citata šįkart įsitaisius tavo telefone!";
+
         }
     }
 }

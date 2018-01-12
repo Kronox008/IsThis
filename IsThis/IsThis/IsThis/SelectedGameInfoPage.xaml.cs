@@ -18,6 +18,7 @@ namespace IsThis
 			InitializeComponent ();
             Selecteddeckinfo();
             Title = Global.DeckName;
+            playselecteddeckButton.Text = Global.Deckcounter.ToString();
 
             NavigationPage.SetHasNavigationBar(this, false);
             playselecteddeckButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);

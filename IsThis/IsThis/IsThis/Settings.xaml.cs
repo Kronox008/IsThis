@@ -35,6 +35,7 @@ namespace IsThis
         {
 
             TimeStepperLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
+            TimeStepper.Value = Global.CountDownTime;
 
             if (Global.CountDownTime <= 180)
             {

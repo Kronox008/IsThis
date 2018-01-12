@@ -33,13 +33,14 @@ namespace IsThis
         }
         protected override bool OnBackButtonPressed()
         {
-            BackToRoot();
+            //BackToRoot();
+            GameOver();
             return true;
         }
-        private async void BackToRoot()
-        {
-            await Navigation.PushAsync(new GameSelectionPage());
-        }
+        //private async void BackToRoot()
+        //{
+        //    await Navigation.PushAsync(new GameSelectionPage());
+        //}
 
 
 
@@ -150,7 +151,7 @@ namespace IsThis
                 Global.IsCorrect[i] = 0;
                 Global.IsGuessed[i] = 1;
                 i++;
-                if (i < 10)
+                if (i < Global.QuestionQuantity)
                 {
 
                     QuestionLabel.Text = Global.ShuffledQuestion[i, 0];

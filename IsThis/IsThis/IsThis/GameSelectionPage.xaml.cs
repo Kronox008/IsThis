@@ -103,7 +103,7 @@ namespace IsThis
 
         private async void myHP_Clicked(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new Settings());
+           
         }
 
         private void myAnimal_Clicked(object sender, EventArgs e)
@@ -116,9 +116,14 @@ namespace IsThis
        //     DisplayAlert("Age of Mythology", "AOM clicked", "close alert");
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void InfoButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new InfoPage());
+        }
+
+        private void TeamButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new TeamGamePage());
         }
     }
 }
