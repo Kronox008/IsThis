@@ -58,6 +58,8 @@ namespace IsThis
         public static string HowToLabeltitle { get; set; }
         public static string HowToLabeltext { get; set; }
         public static string ScoreLabeltext { get; set; }
+        public static string LanguagePickerLabel { get; set; }
+        public static string LanguagePickerTitle { get; set; }
 
 
 
@@ -72,6 +74,8 @@ namespace IsThis
                 HowToLabeltitle = " Game 1:";
                 HowToLabeltext = "English explanation";
                 ScoreLabeltext = "Score: ";
+                LanguagePickerLabel = "Language: ";
+                LanguagePickerTitle = "Language selection";
 
             }
             else
@@ -83,6 +87,8 @@ namespace IsThis
                 HowToLabeltitle = " 1 variantas:";
                 HowToLabeltext = "Telefona laikyk prieš save. Aiškinantis žaidėjas/komanda bandys tau padėti atspėti, koks gi žmogus/personažas/įvykis/vieta/citata šįkart įsitaisius tavo telefone! (Klausimai keičiami spaudžiant garsinimo / tildymo mygtukus ar mygtukus ekrane.";
                 ScoreLabeltext = "Taškai: ";
+                LanguagePickerLabel = "Kalba: ";
+                LanguagePickerTitle = "Kalbos pasirinkimas";
             }
 
         }

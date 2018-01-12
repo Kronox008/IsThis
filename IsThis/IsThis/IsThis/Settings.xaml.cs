@@ -25,7 +25,17 @@ namespace IsThis
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            SetFields();
+        }
 
+
+
+        private void SetFields()
+        {
+            LanguagePickerLabel.Text = Global.LanguagePickerLabel;
+            LanguagePicker.TextColor = Color.FromHex((Global.ButtonBackColor));
+            LanguagePicker.Title = Global.LanguagePickerTitle;
+            LanguagePicker.TextColor = Color.FromHex((Global.ButtonBackColor));
         }
 
 
@@ -53,59 +63,8 @@ namespace IsThis
             QuestionStepperLabel.Text = String.Format("{0} {1}", Global.QuestionQuantity, Global.QuestionslabelText);
             QuestionStepperLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
 
-
-            //if (Global.CountDownTimeIsOn == 1)
-            //{
-            //    TimeSwitch.IsToggled = true;
-            //    TimeStepper.IsEnabled = true;
-            //}
-            //else
-            //{
-            //    TimeSwitch.IsToggled = false;
-            //    TimeStepper.IsEnabled = false;
-            //    TimeStepperLabel.Text = "∞ sec";
-            //}
-
-
             base.OnAppearing();
         }
-
-        
-
-
-        //Time Switch---------------------------------------------------------------------------
-        //private async void SwitchCell_OnChanged(object sender, ToggledEventArgs e)
-        //{
-        //    if(Global.CountDownTimeIsOn == 1)
-        //    {
-        //        Global.CountDownTimeIsOn = 0;
-        //        TimeStepper.IsEnabled = false;
-                
-        //        TimeStepperLabel.Text = "∞ sec";
-        //    }
-        //    else
-        //    {
-        //        Global.CountDownTimeIsOn = 1;
-               
-        //        TimeStepper.IsEnabled = true;
-        //        TimeStepperLabel.Text = TimeStepperLabel.Text = String.Format("{0} sec", Global.CountDownTime);
-        //    }
-            ///////////////////////////////////////////////////////////////////////////////////////////////Saving to DB
-        //    var Save_TO_DB = new Saved_Settings()
-        //    {
-        //        StaticId = 1,
-        //        Saved_Quantity = Global.QuestionQuantity,
-        //        Saved_Time = Global.CountDownTime,
-        //        IsTimerOn = Global.CountDownTimeIsOn,
-
-
-
-        //    };
-        //    _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-        //    await _connection.UpdateAsync(Save_TO_DB);
-        //}
-
-
 
 
         //Time stepper---------------------------------------------------------------------------
@@ -152,6 +111,12 @@ namespace IsThis
             };
             _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             await _connection.InsertOrReplaceAsync(Save_TO_DB);
+        }
+
+        private void LanguagePicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedLanguage = LanguagePicker.Items[LanguagePicker.SelectedIndex];
+            DisplayAlert("test", selectedLanguage, LanguagePicker.SelectedIndex.ToString());
         }
     }
        
