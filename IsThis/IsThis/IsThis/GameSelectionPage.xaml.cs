@@ -33,13 +33,10 @@ namespace IsThis
         }
         protected override bool OnBackButtonPressed()
         {
-            BackToRoot();
+           
             return true;
         }
-        private async void BackToRoot()
-        {
-            await Navigation.PushAsync(new GameSelectionPage());
-        }
+
 
 
         protected override async void OnAppearing()
