@@ -21,6 +21,8 @@ namespace IsThis
             public int StaticId { get; set; }
             public int Saved_Quantity { get; set; }
             public int Saved_Time { get; set; }
+            public int LanguageId { get; set; }
+
         }
         
 
@@ -29,7 +31,14 @@ namespace IsThis
             InitializeComponent();
            
             NavigationPage.SetHasNavigationBar(this, false);
-          
+
+            
+        }
+        private void setLanguage()
+        {
+            Global.EN(Global.LanguageSelectedID);
+            SettingsButton.Text = Global.SettingsButtonText;
+            InfoButton.Text = Global.InfoButtonText;
         }
         protected override bool OnBackButtonPressed()
         {
@@ -56,28 +65,19 @@ namespace IsThis
                 {
                     StaticId = 1,
                     Saved_Quantity = 10,
-                    Saved_Time = 90,                                                     
+                    Saved_Time = 90, 
+                    LanguageId = 1,
                 };
                 await _connection.InsertOrReplaceAsync(DefaultNumbers);
                
             }
             LoadNumbers = await _connection.GetAsync<Saved_Settings>(1);
-                Global.QuestionQuantity = LoadNumbers.Saved_Quantity;
-                Global.CountDownTime = LoadNumbers.Saved_Time;
 
-            
-            // var SavedinDB = new Saved_Settings()
-            // { StaticId = 1,
-            //      Saved_Quantity = 10,
-            //      Saved_Time = 30,
-            //      IsTimerOn = 1,                                                         /////Working
-            //   };
-            //await _connection.InsertOrReplaceAsync(SavedinDB);
+            Global.QuestionQuantity = LoadNumbers.Saved_Quantity;
+            Global.CountDownTime = LoadNumbers.Saved_Time;
+            Global.LanguageSelectedID = LoadNumbers.LanguageId;
 
-            // var testiswork = new Saved_Settings();
-            // testiswork = await _connection.GetAsync<Saved_Settings>(1);
-
-
+            setLanguage();
 
             base.OnAppearing();
         }
@@ -113,7 +113,7 @@ namespace IsThis
 
         private void myAOM_Clicked(object sender, EventArgs e)
         {
-       //     DisplayAlert("Age of Mythology", "AOM clicked", "close alert");
+      
         }
 
         private void InfoButton_Clicked(object sender, EventArgs e)
@@ -121,9 +121,9 @@ namespace IsThis
             Navigation.PushModalAsync(new InfoPage());
         }
 
-        private void TeamButton_Clicked(object sender, EventArgs e)
+        private void SettingsButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new TeamGamePage());
+            Navigation.PushAsync(new Settings());
         }
     }
 }

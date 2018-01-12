@@ -51,7 +51,7 @@ namespace IsThis.Decks
             //{
             //    Num1 = random_number.Next(0, Global.Deckcounter);
             //}
-            //while (Shuffle(Num2, Num1, Num3, Num4, Num5, Num6, Num7, Num8, Num9, Num10))
+            // while (Shuffle(Num2, Num1, Num3, Num4, Num5, Num6, Num7, Num8, Num9, Num10))
             //{
             //    Num2 = random_number.Next(0, Global.Deckcounter);
             //}

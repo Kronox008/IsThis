@@ -12,18 +12,19 @@ namespace IsThis
     {
         private SQLiteAsyncConnection _connection;
 
-        public class Saved_Settings
-        {
-            [SQLite.PrimaryKey, SQLite.AutoIncrement]
-            public int StaticId { get; set; }
-            public int Saved_Quantity { get; set; }
-            public int Saved_Time { get; set; }
-        }
+        //public class Saved_Settings
+        //{
+        //    [SQLite.PrimaryKey, SQLite.AutoIncrement]
+        //    public int StaticId { get; set; }
+        //    public int Saved_Quantity { get; set; }
+        //    public int Saved_Time { get; set; }
+        //}
+
 
         public Settings()
         {
             InitializeComponent();
-           
+            NavigationPage.SetHasNavigationBar(this, false);
 
         }
 
@@ -49,7 +50,7 @@ namespace IsThis
             
 
             Questiontepper.Value = Global.QuestionQuantity;
-            QuestionStepperLabel.Text = String.Format("{0} klausimų", Global.QuestionQuantity);
+            QuestionStepperLabel.Text = String.Format("{0} {1}", Global.QuestionQuantity, Global.QuestionslabelText);
             QuestionStepperLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
 
 
@@ -69,7 +70,7 @@ namespace IsThis
             base.OnAppearing();
         }
 
-
+        
 
 
         //Time Switch---------------------------------------------------------------------------
@@ -120,14 +121,16 @@ namespace IsThis
                 TimeStepperLabel.Text = "∞ sec";
             }
             ///////////////////////////////////////////////////////////////////////////////////////////////Saving to DB
-            var Save_TO_DB = new Saved_Settings()
+            var Save_TO_DB = new GameSelectionPage.Saved_Settings()
             {
                 StaticId = 1,
                 Saved_Quantity = Global.QuestionQuantity,
                 Saved_Time = Global.CountDownTime,
+                LanguageId = Global.LanguageSelectedID,
                 
 
             };
+
             _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
             await _connection.InsertOrReplaceAsync(Save_TO_DB);
             
@@ -136,14 +139,15 @@ namespace IsThis
         private async void Questiontepper_ValueChanged(object sender, ValueChangedEventArgs e)
         {
             Global.QuestionQuantity = Convert.ToInt32(Questiontepper.Value);
-            QuestionStepperLabel.Text = String.Format("{0} klausimų", Global.QuestionQuantity);
-       ///////////////////////////////////////////////////////////////////////////////////////////////Saving to DB
-            var Save_TO_DB = new Saved_Settings()
+            QuestionStepperLabel.Text = String.Format("{0} {1}", Global.QuestionQuantity, Global.QuestionslabelText);
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////Saving to DB
+            var Save_TO_DB = new GameSelectionPage.Saved_Settings()
             {
                 StaticId = 1,
                 Saved_Quantity = Global.QuestionQuantity,
                 Saved_Time = Global.CountDownTime,
-                
+                LanguageId = Global.LanguageSelectedID,
 
             };
             _connection = DependencyService.Get<ISQLiteDb>().GetConnection();

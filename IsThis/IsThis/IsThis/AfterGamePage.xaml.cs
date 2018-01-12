@@ -26,7 +26,7 @@ namespace IsThis
             AgainButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
             ScoreLabel.TextColor = Color.FromHex(Global.CorrectColorHex);
 
-            ScoreLabel.Text = (String.Format("Score: {0}", Global.IsCorrectCount));
+            ScoreLabel.Text = (String.Format("{1}{0}", Global.IsCorrectCount, Global.ScoreLabeltext));
             int TotalQuestion = (Global.ShuffledQuestion.Length) / 2;
             Label[] arrayListing = new Label[TotalQuestion]; // declare the label object
             for (int i = 0; i < TotalQuestion; i++)
