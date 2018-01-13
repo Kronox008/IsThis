@@ -43,6 +43,7 @@
     </Compile>
     <Compile Include="Decks\FriendsDeck.cs" />
     <Compile Include="Decks\GotDeck.cs" />
+    <Compile Include="Decks\HarryDeck.cs" />
     <Compile Include="Decks\Randomizing.cs" />
     <Compile Include="GameplayPage.xaml.cs">
       <DependentUpon>GameplayPage.xaml</DependentUpon>

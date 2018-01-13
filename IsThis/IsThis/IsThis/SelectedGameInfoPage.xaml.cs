@@ -53,6 +53,9 @@ namespace IsThis
                 case 1:
                     GotDeck.SetDeckInfo();
                     break;
+                case 3:
+                    HarryDeck.SetDeckInfo();
+                    break;
                 case 4:
                     FriendsDeck.SetDeckInfo();
                     break;

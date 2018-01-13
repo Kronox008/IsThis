@@ -103,7 +103,9 @@ namespace IsThis
 
         private async void myHP_Clicked(object sender, EventArgs e)
         {
-           
+            Global.DeckNumber = 3;
+            Global.DeckPoster = "Harry.jpg";
+            await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
         private void myAnimal_Clicked(object sender, EventArgs e)

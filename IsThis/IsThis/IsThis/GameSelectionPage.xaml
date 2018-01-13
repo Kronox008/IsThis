@@ -13,9 +13,9 @@
               >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40" />
-                    <RowDefinition Height="260" />
-                    <RowDefinition Height="260" />
-                    <RowDefinition Height="260" />
+                    <RowDefinition Height="250" />
+                    <RowDefinition Height="250" />
+                    <RowDefinition Height="250" />
                 </Grid.RowDefinitions>
 
                 <Button x:Name="SettingsButton" Grid.Row="0" Grid.Column="0" BackgroundColor=" #77d35400 " TextColor="#ececec" Clicked="SettingsButton_Clicked" ></Button>
@@ -29,7 +29,7 @@
                 <Button x:Name="myLOTR" Grid.Row="1" Grid.Column="1" Opacity="0" Clicked="myLOTR_Clicked"></Button>
   
                 
-                <Image Grid.Row="2" Grid.Column="0" Source="Harry.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
+                <Image Grid.Row="2" Grid.Column="0" Source="Harry.jpg" Aspect="AspectFill"></Image>
                 <Button x:Name="myHP" Grid.Row="2" Grid.Column="0" Opacity="0" Clicked="myHP_Clicked"></Button>
                 
 

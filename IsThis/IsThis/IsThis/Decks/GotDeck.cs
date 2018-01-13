@@ -10,46 +10,54 @@ namespace IsThis.Decks
     {
         public static void SetDeckInfo()
         {
-            string[,] allQuestions_in_order = { { "Eddard (Ned) Stark", "Ned_Stark.jpg" }, { "Jaime Lannister", "Jaime_Lannister.jpeg"}, {"Sansa Stark", "Sansa_Stark.jpg"},
-            { "Khal Drogo","Khal_Drogo.jpg" }, {"Bronn", "Bronn.jpg"}, {"Shae", "Shae.jpg"},
-            {"Gilly","Gilly.jpg" }, {"Missandei","Missandei.jpg" }, {"Roose Bolton","Roose_Bolton.jpg" }, {"The High Sparrow", "The_High_Sparrow.jpg" },{"	Margaery Tyrell","Margaery_Tyrell.jpg	"} };
+            if (Global.LanguageSelectedID == 0)
+            { 
+                string[,] allQuestions_in_orderEN = { { "Eddard (Ned) Stark", "Ned_Stark.jpg" }, { "Jaime Lannister", "Jaime_Lannister.jpg"}, {"Sansa Stark", "Sansa_Stark.jpg"},
+                 { "Khal Drogo","Khal_Drogo.jpg" }, {"Bronn", "Bronn.jpg"}, {"Shae", "Shae.jpg"},
+                 {"Gilly","Gilly.jpg" }, {"Missandei","Missandei.jpg" }, {"Roose Bolton","Roose_Bolton.jpg" }, {"The High Sparrow", "The_High_Sparrow.jpg" },{"	Margaery Tyrell","Margaery_Tyrell.jpg	"} };
 
-            int count = (allQuestions_in_order.Length) / 2;
+                int countEN = (allQuestions_in_orderEN.Length) / 2;
 
 
 
-            Global.Deckcounter = count;
-            Global.DeckName = "Sostų karai";
-            Global.DeckInfo = "Game Of Thrones characters, quotes, cities, places.";
-            Randomizing.Randomize();
-            //Name
-            for (int i = 0; i < Global.QuestionQuantity; i++)
-            {
-                Global.ShuffledQuestion[i, 0] = allQuestions_in_order[Global.Numbers[i] , 0];
-                Global.ShuffledQuestion[i, 1] = allQuestions_in_order[Global.Numbers[i] , 1];
+                Global.Deckcounter = countEN;
+                Global.DeckName = "Game of Thrones";
+                Global.DeckInfo = "Game Of Thrones characters, quotes, cities, places.";
+                Randomizing.Randomize();
+                //Name
+                for (int i = 0; i < Global.QuestionQuantity; i++)
+                {
+                    Global.ShuffledQuestion[i, 0] = allQuestions_in_orderEN[Global.Numbers[i] , 0];
+                    Global.ShuffledQuestion[i, 1] = allQuestions_in_orderEN[Global.Numbers[i] , 1];
+                }
+
             }
+            else
+            {
+                string[,] allQuestions_in_orderLT = {
 
-            //Global.ShuffledQuestion[0, 0] = allQuestions_in_order[Global.Num1, 0];
-            //Global.ShuffledQuestion[1, 0] = allQuestions_in_order[Global.Num2, 0];
-            //Global.ShuffledQuestion[2, 0] = allQuestions_in_order[Global.Num3, 0];
-            //Global.ShuffledQuestion[3, 0] = allQuestions_in_order[Global.Num4, 0];
-            //Global.ShuffledQuestion[4, 0] = allQuestions_in_order[Global.Num5, 0];
-            //Global.ShuffledQuestion[5, 0] = allQuestions_in_order[Global.Num6, 0];
-            //Global.ShuffledQuestion[6, 0] = allQuestions_in_order[Global.Num7, 0];
-            //Global.ShuffledQuestion[7, 0] = allQuestions_in_order[Global.Num8, 0];
-            //Global.ShuffledQuestion[8, 0] = allQuestions_in_order[Global.Num9, 0];
-            //Global.ShuffledQuestion[9, 0] = allQuestions_in_order[Global.Num10, 0];
-            //Picture
-            //Global.ShuffledQuestion[0, 1] = allQuestions_in_order[Global.Num1, 1];
-            //Global.ShuffledQuestion[1, 1] = allQuestions_in_order[Global.Num2, 1];
-            //Global.ShuffledQuestion[2, 1] = allQuestions_in_order[Global.Num3, 1];
-            //Global.ShuffledQuestion[3, 1] = allQuestions_in_order[Global.Num4, 1];
-            //Global.ShuffledQuestion[4, 1] = allQuestions_in_order[Global.Num5, 1];
-            //Global.ShuffledQuestion[5, 1] = allQuestions_in_order[Global.Num6, 1];
-            //Global.ShuffledQuestion[6, 1] = allQuestions_in_order[Global.Num7, 1];
-            //Global.ShuffledQuestion[7, 1] = allQuestions_in_order[Global.Num8, 1];
-            //Global.ShuffledQuestion[8, 1] = allQuestions_in_order[Global.Num9, 1];
-            //Global.ShuffledQuestion[9, 1] = allQuestions_in_order[Global.Num10, 1];
+                   { "Edardas (Nedas) Starkas", "Ned_Stark.jpg" }, { "Džeimis Lanisteris", "Jaime_Lannister.jpg" }  , { "Sansa Stark", "Sansa_Stark.jpg" }  , { "Khalas Drogo", "Khal_Drogo.jpg" } 
+                    , { "Bronas", "Bronn.jpg" } , { "Šėja", "Shae.jpg" }    , { "Gilė", "Gilly.jpg" }   , { "Misandėja", "Missandei.jpg" }  , { "Rusas Boltonas", "Roose_Bolton.jpg" }  
+                    , { "Vyriausiasis žvirblis", "The_High_Sparrow.jpg" }   , { "Mardžeri Tairel", "Margaery_Tyrell.jpg" }
+
+                };
+
+                int countLT = (allQuestions_in_orderLT.Length) / 2;
+
+
+
+                Global.Deckcounter = countLT;
+                Global.DeckName = "Sostų karai";
+                Global.DeckInfo = "Kaladės informacija";
+                Randomizing.Randomize();
+
+
+                for (int i = 0; i < Global.QuestionQuantity; i++)
+                {
+                    Global.ShuffledQuestion[i, 0] = allQuestions_in_orderLT[Global.Numbers[i], 0];
+                    Global.ShuffledQuestion[i, 1] = allQuestions_in_orderLT[Global.Numbers[i], 1];
+                }
+            }
         }
     }
 }
