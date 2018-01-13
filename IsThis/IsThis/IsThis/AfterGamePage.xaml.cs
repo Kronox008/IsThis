@@ -24,6 +24,7 @@ namespace IsThis
             MenuButton.TextColor = Color.FromHex(Global.ButtonTextColor);
             AgainButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
             AgainButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
+            AgainButton.Text = Global.AgainButtonText;
             ScoreLabel.TextColor = Color.FromHex(Global.CorrectColorHex);
 
             ScoreLabel.Text = (String.Format("{1}{0}", Global.IsCorrectCount, Global.ScoreLabeltext));

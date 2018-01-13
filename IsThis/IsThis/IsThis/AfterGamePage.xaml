@@ -2,9 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsThis.AfterGamePage"
-             Title="Rezultatai"
              BackgroundColor="Black"
-             x:Name="namedpage"
              >
 
     <ContentPage.Content>
@@ -16,13 +14,13 @@
                     <RowDefinition Height="50" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="40" />
-                    <RowDefinition Height="10" />
+                    <RowDefinition Height="20" />
                 </Grid.RowDefinitions>
                 <Label x:Name="ScoreLabel" FontSize="26" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="0, 5, 0, 0"></Label>
                 <StackLayout x:Name="XAMLSTACK" Grid.Row="1" Grid.ColumnSpan="2"></StackLayout>
                 <Image x:Name="SelectedDeckPoster" Opacity="0.1" Aspect="AspectFill" Grid.RowSpan="4" Grid.ColumnSpan="2"></Image>
-                <Button x:Name="MenuButton" Text="Menu" BackgroundColor="DarkRed" TextColor="Gold" Grid.Row="2" Grid.Column="0" Clicked="MenuButton_Clicked" ></Button>
-                <Button x:Name="AgainButton" Text="Play Again" BackgroundColor="DarkRed" TextColor="Gold" Grid.Row="2" Grid.Column="1" Clicked="AgainButton_Clicked"></Button>
+                <Button x:Name="MenuButton"  Text="Menu" Grid.Row="2" Grid.Column="0" Clicked="MenuButton_Clicked" ></Button>
+                <Button x:Name="AgainButton" Grid.Row="2" Grid.Column="1" Clicked="AgainButton_Clicked"></Button>
 
         </Grid>
         </ScrollView>

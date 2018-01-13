@@ -137,6 +137,12 @@ namespace IsThis
             await _connection.InsertOrReplaceAsync(Save_TO_DB);
 
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            LanguagePicker.Focus();
+        }
+
        
     }
        

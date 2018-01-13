@@ -18,6 +18,9 @@
                         <ViewCell>
                             <!--                                                    Alpha on RGB background color-->
                             <StackLayout Orientation="Horizontal" Margin="10, 0, 5, 0" BackgroundColor=" #772F4F4F " >
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
                                 <Label x:Name="LanguagePickerLabel" Text="Kalba" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="5, 0, 0, 0" FontSize="Medium"></Label>
                                 <Picker x:Name="LanguagePicker" SelectedIndexChanged="LanguagePicker_SelectedIndexChanged" 
                                        VerticalOptions="Center" HorizontalOptions="Center">
@@ -42,7 +45,7 @@
                     </TableSection>
                     <TableSection>
                         <ViewCell>
-                            <!--                                                    Alpha on your RGB background color-->
+                            <!--                                                    Alpha on RGB background color-->
                             <StackLayout Orientation="Horizontal" Margin="10, 0, 5, 0" BackgroundColor=" #772F4F4F " >
                                 <!--<Switch x:Name="TimeSwitch" Toggled="SwitchCell_OnChanged" VerticalOptions="Center"></Switch>-->
                                 <Label x:Name="TimeStepperLabel" VerticalOptions="Center" HorizontalOptions="Start" Margin="5, 0, 0, 0" FontSize="Medium"></Label>

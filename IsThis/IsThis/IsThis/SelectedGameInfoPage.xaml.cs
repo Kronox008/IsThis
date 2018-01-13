@@ -16,19 +16,33 @@ namespace IsThis
 		public SelectedGameInfoPage ()
 		{
 			InitializeComponent ();
-            Selecteddeckinfo();
-            Title = Global.DeckName;
-
-            playselecteddeckButton.Text = Global.PlayButtonText;
 
             NavigationPage.SetHasNavigationBar(this, false);
+
+         
+
+            
             playselecteddeckButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
-           playselecteddeckButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
+            playselecteddeckButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
             deckinfoLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
 
 
-        }
 
+
+
+
+
+        }
+        protected override void OnAppearing()
+        {
+            Global.CheckLanguage();
+            Selecteddeckinfo();
+            deckinfoLabel.Text = Global.DeckInfo;
+            SelectedDeckPoster.Source = Global.DeckPoster;
+            playselecteddeckButton.Text = Global.PlayButtonText;
+
+            base.OnAppearing();
+        }
 
 
 
@@ -38,13 +52,9 @@ namespace IsThis
             {
                 case 1:
                     GotDeck.SetDeckInfo();
-                    deckinfoLabel.Text = Global.DeckInfo;
-                    SelectedDeckPoster.Source = Global.DeckPoster;
                     break;
                 case 4:
                     FriendsDeck.SetDeckInfo();
-                    deckinfoLabel.Text = Global.DeckInfo;
-                    SelectedDeckPoster.Source = Global.DeckPoster;
                     break;
                 default:
                   await  Navigation.PushAsync(new GameSelectionPage());
@@ -60,7 +70,7 @@ namespace IsThis
 
         private async void SettingsButton_Clicked(object sender, EventArgs e)
         {
-           await Navigation.PushModalAsync(new Settings());
+           await Navigation.PushAsync(new Settings());
         }
     }
 }

@@ -45,7 +45,8 @@ namespace IsThis
         public static string CorrectColorHex = "#50c878";
         public static string ButtonTextColor = "#090f0f";
         public static string ButtonTextWhiteColor = "#ececec";
-        public static string ButtonBackColor = "#d35400";
+        public static string ButtonBackColor = "#d35400";     // timer, question label, buttons, deck info....
+        
 
 
         //--------------Languages?-----------------------------------------------------------------------------
@@ -62,6 +63,9 @@ namespace IsThis
         public static string LanguagePickerTitle { get; set; }
         public static int LanguagePickerIndex { get; set; }
         public static string LanguagePickerItem { get; set; }
+        public static string CorrectButtonText { get; set; }
+        public static string SkipButtonText { get; set; }
+        public static string AgainButtonText { get; set; }
 
 
 
@@ -80,6 +84,9 @@ namespace IsThis
                 LanguagePickerTitle = "Language";
                 LanguagePickerIndex = 0;
                 LanguagePickerItem = "English";
+                CorrectButtonText = "Correct";
+                SkipButtonText = "Skip";
+                AgainButtonText = "Play again";
 
             }
             else
@@ -89,12 +96,17 @@ namespace IsThis
                 PlayButtonText = "Pradėti";
                 QuestionslabelText = "klausimų";
                 HowToLabeltitle = " 1 variantas:";
-                HowToLabeltext = "Telefona laikyk prieš save. Aiškinantis žaidėjas/komanda bandys tau padėti atspėti, koks gi žmogus/personažas/įvykis/vieta/citata šįkart įsitaisius tavo telefone! (Klausimai keičiami spaudžiant garsinimo / tildymo mygtukus ar mygtukus ekrane.";
+                HowToLabeltext = "Telefona laikyk prieš save. Aiškinantis žaidėjas/komanda bandys tau padėti atspėti," +
+                                  " koks gi žmogus/personažas/įvykis/vieta/citata šįkart įsitaisius tavo telefone! " +
+                                  "(Klausimai keičiami spaudžiant garsinimo / tildymo mygtukus ar mygtukus ekrane.";
                 ScoreLabeltext = "Taškai: ";
                 LanguagePickerLabel = "Kalba: ";
                 LanguagePickerTitle = " Kalba  ";
                 LanguagePickerIndex = 1;
                 LanguagePickerItem = "Lietuvių";
+                CorrectButtonText = "Teisingai";
+                SkipButtonText = "Praleisti";
+                AgainButtonText = "Dar kartą";
             }
 
         }
