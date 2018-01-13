@@ -30,6 +30,19 @@ namespace IsThis
         }
 
 
+        protected override void OnAppearing()
+        {
+            Sound make_settings_sound = new Sound();
+            make_settings_sound.SettingsSoundStream();
+            make_settings_sound.SettingsSoundPlay();
+
+
+
+
+            base.OnAppearing();
+        }
+
+
 
         private void SetFields()
         {

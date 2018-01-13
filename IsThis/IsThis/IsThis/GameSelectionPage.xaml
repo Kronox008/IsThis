@@ -13,9 +13,9 @@
               >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40" />
-                    <RowDefinition Height="280" />
-                    <RowDefinition Height="280" />
-                    <RowDefinition Height="280" />
+                    <RowDefinition Height="260" />
+                    <RowDefinition Height="260" />
+                    <RowDefinition Height="260" />
                 </Grid.RowDefinitions>
 
                 <Button x:Name="SettingsButton" Grid.Row="0" Grid.Column="0" BackgroundColor=" #77d35400 " TextColor="#ececec" Clicked="SettingsButton_Clicked" ></Button>

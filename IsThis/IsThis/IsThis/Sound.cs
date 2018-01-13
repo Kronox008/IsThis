@@ -15,9 +15,12 @@ namespace IsThis
         ISimpleAudioPlayer CorrectSoundPlayer;
         ISimpleAudioPlayer SkipSoundPlayer;
         ISimpleAudioPlayer TickSoundPlayer;
+        ISimpleAudioPlayer ScoreSoundPlayer;
+        ISimpleAudioPlayer SettingsSoundPlayer;
+        private static double MasterVolume = Global.SoundVolume;
         public void CorrectSoundStream()
         {
-            var stream = GetStreamFromCorrectFile("Correct.mp3");
+            var stream = GetStreamFromCorrectFile("conjure_item.mp3");
             CorrectSoundPlayer = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
             CorrectSoundPlayer.Load(stream);
             
@@ -25,6 +28,7 @@ namespace IsThis
         }
        public void CorrectSoundPlay()
         {
+            CorrectSoundPlayer.Volume = MasterVolume;
             CorrectSoundPlayer.Play();
         }
         
@@ -41,7 +45,7 @@ namespace IsThis
 
         public void SkipSoundStream()
         {
-            var stream = GetStreamFromSkipFile("Skip.mp3");
+            var stream = GetStreamFromSkipFile("conjure_food.mp3");
             SkipSoundPlayer = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
             SkipSoundPlayer.Load(stream);
 
@@ -49,6 +53,7 @@ namespace IsThis
         }
         public void SkipSoundPlay()
         {
+            SkipSoundPlayer.Volume = MasterVolume;
             SkipSoundPlayer.Play();
         }
 
@@ -64,7 +69,7 @@ namespace IsThis
 //-------------------------------------------------------------------------------------------------------------------------
         public void TickSoundStream()
         {
-            var stream = GetStreamFromTickFile("Button.mp3");
+            var stream = GetStreamFromTickFile("dot.mp3");
             TickSoundPlayer = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
             TickSoundPlayer.Load(stream);
 
@@ -72,11 +77,67 @@ namespace IsThis
         }
         public void TickSoundPlay()
         {
+            TickSoundPlayer.Volume = MasterVolume;
             TickSoundPlayer.Play();
+            
         }
 
 
+
         Stream GetStreamFromTickFile(string filename)
+        {
+            var assembly = typeof(App).GetTypeInfo().Assembly;
+
+            var stream = assembly.GetManifestResourceStream("IsThis.Sounds." + filename);
+
+            return stream;
+        }
+        //-------------------------------------------------------------------------------------------------------------------------
+      
+        public void ScoreSoundStream()
+        {
+            var stream = GetStreamFromScoreFile("lvlUP.mp3");
+            ScoreSoundPlayer = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+            ScoreSoundPlayer.Load(stream);
+
+
+        }
+        public void ScoreSoundPlay()
+        {
+            ScoreSoundPlayer.Volume = MasterVolume;
+            ScoreSoundPlayer.Play();
+
+        }
+
+
+
+        Stream GetStreamFromScoreFile(string filename)
+        {
+            var assembly = typeof(App).GetTypeInfo().Assembly;
+
+            var stream = assembly.GetManifestResourceStream("IsThis.Sounds." + filename);
+
+            return stream;
+        }
+        //-------------------------------------------------------------------------------------------------------------------------
+        public void SettingsSoundStream()
+        {
+            var stream = GetStreamFromSettingsFile("chestOPEN.mp3");
+            SettingsSoundPlayer = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+            SettingsSoundPlayer.Load(stream);
+
+
+        }
+        public void SettingsSoundPlay()
+        {
+            SettingsSoundPlayer.Volume = MasterVolume;
+            SettingsSoundPlayer.Play();
+
+        }
+
+
+
+        Stream GetStreamFromSettingsFile(string filename)
         {
             var assembly = typeof(App).GetTypeInfo().Assembly;
 

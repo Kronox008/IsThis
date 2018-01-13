@@ -50,8 +50,11 @@ namespace IsThis
         public static string ButtonTextColor = "#090f0f";
         public static string ButtonTextWhiteColor = "#ececec";
         public static string ButtonBackColor = "#d35400";     // timer, question label, buttons, deck info....
-        
 
+
+        //------------------SoundVOlume-------------------------------------------------------------------------
+
+        public static double SoundVolume { get; set; } = 0.9;
 
         //--------------Languages?-----------------------------------------------------------------------------
         public static int LanguageSelectedID { get; set; }

@@ -52,25 +52,49 @@ namespace IsThis
 
 
             Make_some_Tick_sounds.TickSoundStream();
-            uint duration = 1 * 1000;
+            
+            uint duration = 1000;
             QuestionImage.IsVisible = false;
             QuestionLabel.IsVisible = false;
             CorrectButton.IsVisible = false;
             SkipButton.IsVisible = false;
-            CountingLabel.Text = "3";
-            
-            await Task.WhenAll(
-            CountingLabel.RotateTo(361, duration));
+
+           
+             CountingLabel.Text = "3";
+            await CountingLabel.RotateTo(361, duration);
+
            
             CountingLabel.Text = "2";
-            await Task.WhenAll(
-            CountingLabel.RotateTo(722, duration));
+            await CountingLabel.RotateTo(722, duration);
 
-
+            
             CountingLabel.Text = "1";
-            await Task.WhenAll(
-            CountingLabel.RotateTo(1083, duration));
-            Make_some_Tick_sounds.TickSoundPlay();
+            await CountingLabel.RotateTo(1083, duration);
+
+            Make_some_Tick_sounds.TickSoundPlay();     /////////////////////// Sound
+
+
+
+
+
+
+
+            //CountingLabel.Text = "3";
+            //await Task.WhenAll(
+            //CountingLabel.RotateTo(361, duration));
+
+            //CountingLabel.Text = "2";
+            //await Task.WhenAll(
+            //CountingLabel.RotateTo(722, duration));
+
+
+            //CountingLabel.Text = "1";
+            //await Task.WhenAll(
+            //CountingLabel.RotateTo(1083, duration));
+
+
+
+
 
             PlayTimeNow();
         }
@@ -82,7 +106,7 @@ namespace IsThis
             QuestionLabel.IsVisible = true;
             CountingLabel.IsVisible = false;
             QuestionImage.Opacity = 0;
-            QuestionImage.FadeTo(0.2, 1000);
+            QuestionImage.FadeTo(0.3, 700);
             QuestionImage.Source = Global.ShuffledQuestion[i, 1];
             QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
             CorrectButton.IsVisible = true;
@@ -124,11 +148,11 @@ namespace IsThis
                     VolumeButtonsDisabled();
                     await CorrectFlash.FadeTo(0.2, 500);
                     QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
-                    CorrectFlash.FadeTo(0, 1000);
+                    CorrectFlash.FadeTo(0, 500);
                     
-                    await QuestionImage.FadeTo(0, 1000);
+                    await QuestionImage.FadeTo(0, 500);
                     QuestionImage.Source = Global.ShuffledQuestion[i, 1];
-                    QuestionImage.FadeTo(0.2, 1000);
+                    QuestionImage.FadeTo(0.3, 700);
                     CorrectButton.IsEnabled = true;
                     SkipButton.IsEnabled = true;
                     VolumeButtonsActive();
@@ -167,12 +191,12 @@ namespace IsThis
                     VolumeButtonsDisabled();
                     await SkipFlash.FadeTo(0.2,500);
                     QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
-                    SkipFlash.FadeTo(0, 1000);
+                    SkipFlash.FadeTo(0, 500);
                     
                    
-                    await QuestionImage.FadeTo(0, 1000);
+                    await QuestionImage.FadeTo(0, 500);
                     QuestionImage.Source = Global.ShuffledQuestion[i, 1];
-                    QuestionImage.FadeTo(0.2, 1000);
+                    QuestionImage.FadeTo(0.3, 700);
                     CorrectButton.IsEnabled = true;
                     SkipButton.IsEnabled = true;
                     VolumeButtonsActive();

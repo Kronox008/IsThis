@@ -45,7 +45,16 @@ namespace IsThis
            
 
         }
-        
+        protected override void OnAppearing()
+        {
+            Sound make_score_sound = new Sound();
+            make_score_sound.ScoreSoundStream();
+            make_score_sound.ScoreSoundPlay();
+
+
+            base.OnAppearing();
+        }
+
         protected override bool OnBackButtonPressed()
         {
             BackToRoot();
