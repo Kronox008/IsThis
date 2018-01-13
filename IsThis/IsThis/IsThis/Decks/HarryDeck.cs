@@ -42,7 +42,12 @@ namespace IsThis.Decks
             {
                 string[,] allQuestions_in_orderLT = {
 
-                    { "Džiudi Geler", "Judy_Geller.jpg" } 
+                 { "Minerva Makonagal", "Minerva_McGonagall.jpg" } , { "Dolores Umbridž", "Dolores_Umbridge.jpg" } , { "Liucijus Smirdžius", "Lucius_Malfoy.jpg" } 
+                    , { "Remas Lupinas", "Remus_Lupin.jpg" }    , { "Rubijus Hagridas", "Rubeus_Hagrid.jpg" }   , { "Luna Geranorė", "Luna_Lovegood.jpg" }  ,
+                 { "Belatriks Lestreindž", "Bellatrix_Lestrange.jpg" } , { "Drakas Smirdžius", "Draco_Malfoy.jpg" }    , { "Sirijus Blackas", "Sirius_Black.jpg" }
+                    , { "Voldemortas", "Voldemort.jpg" }    , { "Nevilis Nevėkšla", "Neville_Longbottom.jpg" }  , { "Albas Dumbldoras", "Albus_Dumbledore.jpg" }  
+                    , { "Severas Sneipas", "Severus_Snape.jpg" }    , { "Ronas Vizlis", "Ron_Weasley.jpg" } , { "Hermiona Įkyrelė", "Hermione_Granger.jpg" }    
+                    , { "Haris Poteris", "Harry_Potter.jpg" }
 
                 };
 
