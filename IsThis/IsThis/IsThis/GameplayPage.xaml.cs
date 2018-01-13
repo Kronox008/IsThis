@@ -41,10 +41,10 @@ namespace IsThis
         private async void Animation()
         {
             CorrectButton.BackgroundColor = Color.FromHex(Global.CorrectColorHex);
-            CorrectButton.TextColor = Color.FromHex(Global.ButtonTextColor);
+            CorrectButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
             CorrectButton.Text = Global.CorrectButtonText;
             SkipButton.BackgroundColor = Color.FromHex(Global.SkipColorHex);
-            SkipButton.TextColor = Color.FromHex(Global.ButtonTextColor);
+            SkipButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
             SkipButton.Text = Global.SkipButtonText;
             CountingLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
             QuestionLabel.TextColor = Color.FromHex(Global.ButtonBackColor);

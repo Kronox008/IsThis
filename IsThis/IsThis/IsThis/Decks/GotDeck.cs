@@ -23,13 +23,13 @@ namespace IsThis.Decks
                 Global.Deckcounter = countEN;
                 Global.DeckName = "Game of Thrones";
                 Global.DeckInfo = "Game Of Thrones characters, quotes, cities, places.";
-                Randomizing.Randomize();
-                //Name
-                for (int i = 0; i < Global.QuestionQuantity; i++)
-                {
-                    Global.ShuffledQuestion[i, 0] = allQuestions_in_orderEN[Global.Numbers[i] , 0];
-                    Global.ShuffledQuestion[i, 1] = allQuestions_in_orderEN[Global.Numbers[i] , 1];
-                }
+                Randomizing.Randomize(allQuestions_in_orderEN);
+                
+                //for (int i = 0; i < Global.QuestionQuantity; i++)
+                //{
+                //    Global.ShuffledQuestion[i, 0] = allQuestions_in_orderEN[Global.Numbers[i] , 0];
+                //    Global.ShuffledQuestion[i, 1] = allQuestions_in_orderEN[Global.Numbers[i] , 1];
+                //}
 
             }
             else
@@ -49,14 +49,8 @@ namespace IsThis.Decks
                 Global.Deckcounter = countLT;
                 Global.DeckName = "Sostų karai";
                 Global.DeckInfo = "Kaladės informacija";
-                Randomizing.Randomize();
-
-
-                for (int i = 0; i < Global.QuestionQuantity; i++)
-                {
-                    Global.ShuffledQuestion[i, 0] = allQuestions_in_orderLT[Global.Numbers[i], 0];
-                    Global.ShuffledQuestion[i, 1] = allQuestions_in_orderLT[Global.Numbers[i], 1];
-                }
+                Randomizing.Randomize(allQuestions_in_orderLT);
+                
             }
         }
     }

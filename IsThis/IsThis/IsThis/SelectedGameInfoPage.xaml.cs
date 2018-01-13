@@ -24,7 +24,9 @@ namespace IsThis
             
             playselecteddeckButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
             playselecteddeckButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
-            deckinfoLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
+            SettingsButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
+            SettingsButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
+            deckinfoLabel.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
 
 
 
@@ -40,6 +42,7 @@ namespace IsThis
             deckinfoLabel.Text = Global.DeckInfo;
             SelectedDeckPoster.Source = Global.DeckPoster;
             playselecteddeckButton.Text = Global.PlayButtonText;
+            SettingsButton.Text = Global.SettingsButtonText;
 
             base.OnAppearing();
         }
@@ -52,6 +55,9 @@ namespace IsThis
             {
                 case 1:
                     GotDeck.SetDeckInfo();
+                    break;
+                case 2:
+                    LordDeck.SetDeckInfo();
                     break;
                 case 3:
                     HarryDeck.SetDeckInfo();

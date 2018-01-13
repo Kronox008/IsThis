@@ -32,7 +32,12 @@ namespace IsThis
            
             NavigationPage.SetHasNavigationBar(this, false);
 
-            
+            SettingsButton.BackgroundColor =Color.FromHex(Global.ButtonBackColor);
+            SettingsButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
+            InfoButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
+            InfoButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
+
+
         }
         private void setLanguage()
         {
@@ -96,9 +101,11 @@ namespace IsThis
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
-        private void myLOTR_Clicked(object sender, EventArgs e)
+        private async void myLOTR_Clicked(object sender, EventArgs e)
         {
-           
+            Global.DeckNumber = 2;
+            Global.DeckPoster = "lord.jpg";
+            await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
         private async void myHP_Clicked(object sender, EventArgs e)

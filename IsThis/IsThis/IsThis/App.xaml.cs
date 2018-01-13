@@ -20,7 +20,7 @@ namespace IsThis
             MainPage = new NavigationPage(new GameSelectionPage())
             {
                 BarBackgroundColor = Color.FromHex(Global.ButtonBackColor),
-                BarTextColor = Color.FromHex(Global.ButtonTextColor),
+                BarTextColor = Color.FromHex(Global.ButtonTextWhiteColor),
                 
             };
            

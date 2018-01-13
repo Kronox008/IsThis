@@ -8,7 +8,7 @@ namespace IsThis.Decks
 {
     class Randomizing
     {
-        public static void Randomize()
+        public static void Randomize( string [ , ] allQuestions_in_order)
         {
             Global.IsCorrectCount = 0; //reseting score
             for (int i = 0; i < 50; i++)
@@ -32,6 +32,11 @@ namespace IsThis.Decks
 
             Global.Numbers = shuffledlistas.ToArray();
 
+            for (int i = 0; i < Global.QuestionQuantity; i++)
+            {
+                Global.ShuffledQuestion[i, 0] = allQuestions_in_order[Global.Numbers[i], 0];
+                Global.ShuffledQuestion[i, 1] = allQuestions_in_order[Global.Numbers[i], 1];
+            }
 
         }
     }

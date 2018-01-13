@@ -21,7 +21,7 @@ namespace IsThis
 
             SelectedDeckPoster.Source = Global.DeckPoster;
             MenuButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
-            MenuButton.TextColor = Color.FromHex(Global.ButtonTextColor);
+            MenuButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
             AgainButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
             AgainButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
             AgainButton.Text = Global.AgainButtonText;

@@ -47,9 +47,8 @@ namespace IsThis
 
         public static string SkipColorHex = "#ff0033";
         public static string CorrectColorHex = "#50c878";
-        public static string ButtonTextColor = "#090f0f";
         public static string ButtonTextWhiteColor = "#ececec";
-        public static string ButtonBackColor = "#d35400";     // timer, question label, buttons, deck info....
+        public static string ButtonBackColor = "#77d35400";     // timer, question label, buttons, deck info....
 
 
         //------------------SoundVOlume-------------------------------------------------------------------------
