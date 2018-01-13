@@ -29,14 +29,18 @@ namespace IsThis
         public static string[,] ShuffledQuestion = new string[50, 2];
 
         //Array to hold correct or not
+        
         public static int[] IsCorrect = new int[50];
         public static int[] IsGuessed = new int[50];
         public static int IsCorrectCount { get; set; }
 
 
+
+
         //Timer------------------------------------------------------------------------------------------
 
         public static int CountDownTime { get; set; }
+        public static bool CountDownTimeIsRunning { get; set; }
 
 
         //-------colors-----------------------------------------------------------------------------------------
@@ -72,7 +76,7 @@ namespace IsThis
         public static void CheckLanguage()
         { if(LanguageSelectedID == 0)
             {
-
+                
                 SettingsButtonText = "Settings";
                 InfoButtonText = "How to Play";
                 PlayButtonText = "Play";

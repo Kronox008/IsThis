@@ -22,15 +22,7 @@ namespace IsThis
             InitializeComponent();
             
            NavigationPage.SetHasNavigationBar(this, false);
-            CorrectButton.BackgroundColor = Color.FromHex(Global.CorrectColorHex);
-            CorrectButton.TextColor = Color.FromHex(Global.ButtonTextColor);
-            CorrectButton.Text = Global.CorrectButtonText;
-            SkipButton.BackgroundColor = Color.FromHex(Global.SkipColorHex);
-            SkipButton.TextColor = Color.FromHex(Global.ButtonTextColor);
-            SkipButton.Text = Global.SkipButtonText;
-            CountingLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
-            QuestionLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
-            TimerLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
+
             Animation();
         }
         protected override bool OnBackButtonPressed()
@@ -48,6 +40,17 @@ namespace IsThis
 
         private async void Animation()
         {
+            CorrectButton.BackgroundColor = Color.FromHex(Global.CorrectColorHex);
+            CorrectButton.TextColor = Color.FromHex(Global.ButtonTextColor);
+            CorrectButton.Text = Global.CorrectButtonText;
+            SkipButton.BackgroundColor = Color.FromHex(Global.SkipColorHex);
+            SkipButton.TextColor = Color.FromHex(Global.ButtonTextColor);
+            SkipButton.Text = Global.SkipButtonText;
+            CountingLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
+            QuestionLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
+            TimerLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
+
+
             Make_some_Tick_sounds.TickSoundStream();
             uint duration = 1 * 1000;
             QuestionImage.IsVisible = false;
@@ -73,7 +76,6 @@ namespace IsThis
         }
         private void PlayTimeNow()
         {
-            Global.IsCorrectCount = 0;
             Make_some_Correct_sounds.CorrectSoundStream();
             Make_some_Skip_sounds.SkipSoundStream();
             QuestionImage.IsVisible = true;                      
@@ -92,6 +94,7 @@ namespace IsThis
 
         private async void GameOver()
         {
+            Global.CountDownTimeIsRunning = false;
             CorrectButton.IsVisible = false;
             SkipButton.IsVisible = false;
             VolumeButtonsDisabled();
@@ -116,12 +119,13 @@ namespace IsThis
                 i++;
                 if (i < Global.QuestionQuantity)
                 {
-                    await CorrectFlash.FadeTo(0.2, 1000);
-                    QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
-                    CorrectFlash.FadeTo(0, 1000);
                     CorrectButton.IsEnabled = false;
                     SkipButton.IsEnabled = false;
                     VolumeButtonsDisabled();
+                    await CorrectFlash.FadeTo(0.2, 500);
+                    QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
+                    CorrectFlash.FadeTo(0, 1000);
+                    
                     await QuestionImage.FadeTo(0, 1000);
                     QuestionImage.Source = Global.ShuffledQuestion[i, 1];
                     QuestionImage.FadeTo(0.2, 1000);
@@ -130,6 +134,7 @@ namespace IsThis
                     VolumeButtonsActive();
 
                 }
+                
                 //if (i < 10)
                 //{
                 //    QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
@@ -157,12 +162,13 @@ namespace IsThis
                 i++;
                 if (i < Global.QuestionQuantity)
                 {
-                    await SkipFlash.FadeTo(0.2,1000);
-                    QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
-                    SkipFlash.FadeTo(0, 1000);
                     CorrectButton.IsEnabled = false;
                     SkipButton.IsEnabled = false;
                     VolumeButtonsDisabled();
+                    await SkipFlash.FadeTo(0.2,500);
+                    QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
+                    SkipFlash.FadeTo(0, 1000);
+                    
                    
                     await QuestionImage.FadeTo(0, 1000);
                     QuestionImage.Source = Global.ShuffledQuestion[i, 1];
@@ -198,16 +204,32 @@ namespace IsThis
         }
         private async void Timer ()
         {
-
+            Global.CountDownTimeIsRunning = true;
             if (Global.CountDownTime <= 180)
             { 
                 TimerLabel.IsVisible = true;
-            for (int _second = Global.CountDownTime; _second >= 0; _second--)
-            {
-                TimerLabel.Text = Convert.ToString(_second);
-                await Task.Delay(1000);
-            }
-            GameOver();
+                for (int _second = Global.CountDownTime; _second >= 0; _second--)
+                 {
+                    if (Global.CountDownTimeIsRunning)
+                    {
+
+                   
+                        TimerLabel.Text = Convert.ToString(_second);
+                        await Task.Delay(1000);
+
+                         if(_second == 0)
+                         {
+                                GameOver();
+                         }
+
+                    }
+                    else
+                    {
+                        break;
+                    }
+                   
+                }
+                 
             }
 
         }
