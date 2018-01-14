@@ -46,9 +46,11 @@ namespace IsThis
             SkipButton.BackgroundColor = Color.FromHex(Global.SkipColorHex);
             SkipButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
             SkipButton.Text = Global.SkipButtonText;
-            CountingLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
-            QuestionLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
-            TimerLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
+            QuestionLabelBox.BackgroundColor = Color.FromHex(Global.QuestionBoxColor);
+            QuestionLabel.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
+            CountingLabel.TextColor = Color.FromHex(Global.TimersColors);
+            TimerLabel.TextColor = Color.FromHex(Global.TimersColors);
+            
 
 
             Make_some_Tick_sounds.TickSoundStream();
@@ -58,18 +60,19 @@ namespace IsThis
             QuestionLabel.IsVisible = false;
             CorrectButton.IsVisible = false;
             SkipButton.IsVisible = false;
+            QuestionLabelBox.IsVisible = false;
 
            
              CountingLabel.Text = "3";
-            await CountingLabel.RotateTo(361, duration);
+            await CountingLabel.RotateTo(361, duration, Easing.SinInOut);
 
            
             CountingLabel.Text = "2";
-            await CountingLabel.RotateTo(722, duration);
+            await CountingLabel.RotateTo(722, duration, Easing.SinInOut);
 
             
             CountingLabel.Text = "1";
-            await CountingLabel.RotateTo(1083, duration);
+            await CountingLabel.RotateTo(1083, duration, Easing.SinInOut);
 
             Make_some_Tick_sounds.TickSoundPlay();     /////////////////////// Sound
 
@@ -102,13 +105,23 @@ namespace IsThis
         {
             Make_some_Correct_sounds.CorrectSoundStream();
             Make_some_Skip_sounds.SkipSoundStream();
-            QuestionImage.IsVisible = true;                      
+            QuestionImage.IsVisible = true;
+            QuestionLabelBox.IsVisible = true;
             QuestionLabel.IsVisible = true;
             CountingLabel.IsVisible = false;
             QuestionImage.Opacity = 0;
+
+
+            QuestionLabelBox.Opacity = 0;
+            QuestionLabelBox.FadeTo(0.3, 1000);
+            var animateExpand = new Animation(d => QuestionLabelBox.HeightRequest = d, 0, 50, Easing.CubicIn);
+            animateExpand.Commit(QuestionLabelBox, "box", 16, 800);
+
             QuestionImage.FadeTo(0.3, 700);
             QuestionImage.Source = Global.ShuffledQuestion[i, 1];
             QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
+
+            
             CorrectButton.IsVisible = true;
             SkipButton.IsVisible = true;
             VolumeButtonsActive();
@@ -135,8 +148,8 @@ namespace IsThis
         private async void On_CorrectandSkip_button_clicked (bool CorS)
         {
             if(CorS)
-            {
-                Make_some_Correct_sounds.CorrectSoundPlay();
+            {//correct
+               Make_some_Correct_sounds.CorrectSoundPlay();
                 Global.IsCorrect[i] = 1;
                 Global.IsGuessed[i] = 1;
                 Global.IsCorrectCount += 1;
@@ -146,10 +159,37 @@ namespace IsThis
                     CorrectButton.IsEnabled = false;
                     SkipButton.IsEnabled = false;
                     VolumeButtonsDisabled();
-                    await CorrectFlash.FadeTo(0.2, 500);
-                    QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
-                    CorrectFlash.FadeTo(0, 500);
+                    //extension color in
                     
+                                QuestionLabelBox.ShiftColorTo
+                                   (
+                                   sourceColor: QuestionLabelBox.BackgroundColor,
+                                   targetColor: Color.FromRgb(80, 200, 120),
+                                   setter: color =>
+                                   {
+                                       QuestionLabelBox.BackgroundColor = color;
+
+                                   },
+                                   length: 500,
+                                   easing: Easing.CubicOut);
+                    //
+                    await CorrectFlash.FadeTo(0.2, 500, Easing.CubicOut);
+                    QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
+                    CorrectFlash.FadeTo(0, 500, Easing.CubicOut);
+                    //extension color out
+
+                    QuestionLabelBox.ShiftColorTo
+                       (
+                       sourceColor: QuestionLabelBox.BackgroundColor,
+                       targetColor: Color.FromRgb(47, 79, 79),
+                       setter: color =>
+                       {
+                           QuestionLabelBox.BackgroundColor = color;
+
+                       },
+                       length: 500,
+                       easing: Easing.CubicOut);
+                    //
                     await QuestionImage.FadeTo(0, 500);
                     QuestionImage.Source = Global.ShuffledQuestion[i, 1];
                     QuestionImage.FadeTo(0.3, 700);
@@ -179,7 +219,7 @@ namespace IsThis
                 }
             }
             else
-            {
+            {//Skipping
                 Make_some_Skip_sounds.SkipSoundPlay();
                 Global.IsCorrect[i] = 0;
                 Global.IsGuessed[i] = 1;
@@ -189,11 +229,39 @@ namespace IsThis
                     CorrectButton.IsEnabled = false;
                     SkipButton.IsEnabled = false;
                     VolumeButtonsDisabled();
-                    await SkipFlash.FadeTo(0.2,500);
+                    //extension color in
+
+                    QuestionLabelBox.ShiftColorTo
+                       (
+                       sourceColor: QuestionLabelBox.BackgroundColor,
+                       targetColor: Color.FromRgb(255, 0, 51),
+                       setter: color =>
+                       {
+                           QuestionLabelBox.BackgroundColor = color;
+
+                       },
+                       length: 500,
+                       easing: Easing.CubicOut);
+                    //
+                    await SkipFlash.FadeTo(0.2,500, Easing.CubicOut);
                     QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
-                    SkipFlash.FadeTo(0, 500);
-                    
-                   
+                    SkipFlash.FadeTo(0, 500, Easing.CubicOut);
+                    //extension color out
+
+                    QuestionLabelBox.ShiftColorTo
+                       (
+                       sourceColor: QuestionLabelBox.BackgroundColor,
+                       targetColor: Color.FromRgb(47, 79, 79),
+                       setter: color =>
+                       {
+                           QuestionLabelBox.BackgroundColor = color;
+
+                       },
+                       length: 500,
+                       easing: Easing.CubicOut);
+                    //
+
+
                     await QuestionImage.FadeTo(0, 500);
                     QuestionImage.Source = Global.ShuffledQuestion[i, 1];
                     QuestionImage.FadeTo(0.3, 700);
@@ -262,3 +330,26 @@ namespace IsThis
 
     }
     }
+
+
+//var animateExpand = new Animation(d => QuestionLabelBox.HeightRequest = d, 50, 80, Easing.SpringIn);              //working animation
+//animateExpand.Commit(QuestionLabelBox, "BarGraph", 16, 3500);
+
+
+
+                                                    //Working extension
+//            QuestionImage.FadeTo(0.3, 700);
+//            QuestionImage.Source = Global.ShuffledQuestion[i, 1];
+//            QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
+
+//            QuestionLabel.ShiftColorTo
+//               (
+//               sourceColor: QuestionLabel.TextColor,
+//               targetColor: Color.FromRgb(80, 200, 120),
+//               setter: color =>
+//               {
+//                   QuestionLabel.TextColor = color;
+
+//               },
+//               length: 2750,
+//               easing: Easing.CubicOut);

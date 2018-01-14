@@ -24,8 +24,6 @@ namespace IsThis
             
             playselecteddeckButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
             playselecteddeckButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
-            SettingsButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
-            SettingsButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
             deckinfoLabel.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
 
 
@@ -42,7 +40,7 @@ namespace IsThis
             deckinfoLabel.Text = Global.DeckInfo;
             SelectedDeckPoster.Source = Global.DeckPoster;
             playselecteddeckButton.Text = Global.PlayButtonText;
-            SettingsButton.Text = Global.SettingsButtonText;
+            //SettingsButton.Text = Global.SettingsButtonText;
 
             base.OnAppearing();
         }
@@ -54,6 +52,9 @@ namespace IsThis
             switch (Global.DeckNumber)
             {
                 case 1:
+                    Sound make_some_Theme_sounds = new Sound();
+                    //make_some_Theme_sounds.ThemeSoundStream(Global.DeckNumber);
+                    make_some_Theme_sounds.ThemeSoundPlay(Global.DeckNumber);
                     GotDeck.SetDeckInfo();
                     break;
                 case 2:
@@ -77,9 +78,9 @@ namespace IsThis
             
         }
 
-        private async void SettingsButton_Clicked(object sender, EventArgs e)
-        {
-           await Navigation.PushAsync(new Settings());
-        }
+        //private async void SettingsButton_Clicked(object sender, EventArgs e)
+        //{
+        //   await Navigation.PushAsync(new Settings());
+        //}
     }
 }

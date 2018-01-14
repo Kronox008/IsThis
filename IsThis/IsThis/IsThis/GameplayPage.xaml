@@ -18,17 +18,23 @@
 
             <BoxView x:Name="CorrectFlash" Grid.RowSpan="3" Grid.ColumnSpan="2" Color="#50c878" Opacity="0" ></BoxView>
             <BoxView x:Name="SkipFlash" Grid.RowSpan="3" Grid.ColumnSpan="2" Color="#ff0033" Opacity="0" ></BoxView>
+            
+            
             <Label x:Name="CountingLabel" Grid.RowSpan="3" Grid.ColumnSpan="2"  FontSize="72" TextColor="Gold"
                    VerticalOptions="Center" HorizontalOptions="Center" ></Label>
 
             <Image x:Name="QuestionImage" Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill" ></Image>
 
-            <Label x:Name="TimerLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="Small" TextColor="Gold"
-                   VerticalOptions="Start" HorizontalOptions="EndAndExpand" Margin="0, 5, 5, 0"  IsVisible="False"></Label>
-            <Label x:Name="QuestionLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="32" TextColor="Gold"
-                   VerticalOptions="Center" HorizontalOptions="Center" ></Label>
-            <Button x:Name="CorrectButton" Grid.Row="1" Grid.Column="0" Clicked="Correct_Button_Clicked"></Button>
-            <Button x:Name="SkipButton" Grid.Row="1" Grid.Column="1" Clicked="Skip_Button_Clicked"></Button>
+            <Label x:Name="TimerLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="Medium"
+                   VerticalOptions="Start" HorizontalOptions="EndAndExpand" Margin="0, 10, 10, 0"  IsVisible="False"></Label>
+
+            <BoxView x:Name="QuestionLabelBox" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" ></BoxView>
+            <Label x:Name="QuestionLabel" Grid.RowSpan="3" Grid.ColumnSpan="2"  FontSize="32"
+                   VerticalOptions="Center" HorizontalOptions="Center" Margin="0, 0, 0, 5" ></Label>
+            
+            
+            <Button x:Name="CorrectButton" Grid.Row="1" Grid.Column="0" Clicked="Correct_Button_Clicked" Margin="5"></Button>
+            <Button x:Name="SkipButton" Grid.Row="1" Grid.Column="1" Clicked="Skip_Button_Clicked" Margin="5"></Button>
             
             
          

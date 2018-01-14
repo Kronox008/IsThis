@@ -46,16 +46,18 @@ namespace IsThis
 
         private void SetFields()
         {
+            //colors
+            TimeStepperLabel.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
+            LanguagePickerLabel.TextColor = Color.FromHex((Global.ButtonTextWhiteColor));
+            LanguagePicker.TextColor = Color.FromHex((Global.ButtonTextWhiteColor));
+            QuestionStepperLabel.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
+
             LanguagePickerLabel.Text = Global.LanguagePickerLabel;
-            LanguagePickerLabel.TextColor = Color.FromHex((Global.ButtonBackColor));
             LanguagePicker.Title = Global.LanguagePickerTitle;
-            LanguagePicker.TextColor = Color.FromHex((Global.ButtonBackColor));
-            
             LanguagePicker.SelectedItem = Global.LanguagePickerItem;
-
-
-            TimeStepperLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
             TimeStepper.Value = Global.CountDownTime;
+            Questiontepper.Value = Global.QuestionQuantity;
+            QuestionStepperLabel.Text = String.Format("{0} {1}", Global.QuestionQuantity, Global.QuestionslabelText);
 
             if (Global.CountDownTime <= 180)
             {
@@ -66,10 +68,6 @@ namespace IsThis
                 TimeStepperLabel.Text = "∞ sec";
             }
 
-
-            Questiontepper.Value = Global.QuestionQuantity;
-            QuestionStepperLabel.Text = String.Format("{0} {1}", Global.QuestionQuantity, Global.QuestionslabelText);
-            QuestionStepperLabel.TextColor = Color.FromHex(Global.ButtonBackColor);
         }
 
 

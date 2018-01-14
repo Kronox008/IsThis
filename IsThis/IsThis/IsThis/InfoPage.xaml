@@ -1,18 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IsThis.InfoPage">
+             x:Class="IsThis.InfoPage"
+             >
     <ContentPage.Content>
-        <Grid Margin="10"
-              RowSpacing="10">
+        <Grid RowSpacing="10"
+              BackgroundColor="Black">
             
             <Grid.RowDefinitions>
-                <RowDefinition Height="40"></RowDefinition>
+                <RowDefinition Height="250"></RowDefinition>
+                <RowDefinition Height="250"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
                 
+                
             </Grid.RowDefinitions>
-            <Label x:Name="TitleLabel_1" Grid.Row="0" Grid.Column="0" FontSize="Large"></Label>
-            <Label x:Name="GameLabel_1" Grid.Row="1" Grid.Column="0" FontSize="Medium"></Label>
+            <Image Opacity="0.2" Aspect="AspectFill" Grid.RowSpan="3" Grid.ColumnSpan="1" Source="Net.jpg"></Image>
+            <StackLayout Grid.Row="0" Grid.Column="0" Margin="10" >
+            <Label x:Name="TitleLabel_1" FontSize="Large"></Label>
+            <Label x:Name="GameLabel_1"  FontSize="Medium"></Label>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0" Margin="10">
+                <Label x:Name="TitleLabel_2" FontSize="Large"></Label>
+                <Label x:Name="GameLabel_2"  FontSize="Medium"></Label>
+            </StackLayout>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

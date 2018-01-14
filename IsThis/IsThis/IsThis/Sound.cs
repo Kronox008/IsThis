@@ -17,6 +17,8 @@ namespace IsThis
         ISimpleAudioPlayer TickSoundPlayer;
         ISimpleAudioPlayer ScoreSoundPlayer;
         ISimpleAudioPlayer SettingsSoundPlayer;
+        ISimpleAudioPlayer GOT_Theme1;
+        ISimpleAudioPlayer GOT_Theme2;
         private static double MasterVolume = Global.SoundVolume;
         public void CorrectSoundStream()
         {
@@ -146,6 +148,66 @@ namespace IsThis
             return stream;
         }
         //-------------------------------------------------------------------------------------------------------------------------
+        //-------------------------------GOT_THEME------------------------------------------------------------------------------------------
+
+        public void ThemeSoundPlay( int SelectedDeckNumber)
+        {
+            switch (SelectedDeckNumber)  
+            {
+                case 1:
+                    var stream1 = GetStreamFromGOT_Theme1File("got_s1e5_pays_his_debts.wav");
+                    GOT_Theme1 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();        //Load selected deck theme sounds
+                    GOT_Theme1.Load(stream1);
+
+                    var stream2 = GetStreamFromGOT_Theme2File("got_s1e7_win_or_die.wav");
+                    GOT_Theme2 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                    GOT_Theme2.Load(stream2);
+
+                        Stream GetStreamFromGOT_Theme1File(string filename)
+                        {
+                            var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                            var stream = assembly.GetManifestResourceStream("IsThis.Sounds.GOT." + filename);
+
+                            return stream;
+                        }
+                        Stream GetStreamFromGOT_Theme2File(string filename)
+                        {
+                            var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                            var stream = assembly.GetManifestResourceStream("IsThis.Sounds.GOT." + filename);
+
+                            return stream;
+                        }
+
+                    System.Random RandomNumber = new System.Random();  //Generating random number for selected deck (to choose specific 
+                    int playthisNow = RandomNumber.Next(0, 2);         // 2-1 = total streams
+
+                    switch (playthisNow)                              //Playing random theme sound form selected deck
+                    {
+                        case 0:
+                            GOT_Theme1.Volume = Global.ThemeSoundVolume;       
+                            GOT_Theme1.Play();
+                            break;
+                        case 1:
+                            GOT_Theme2.Volume = Global.ThemeSoundVolume;
+                            GOT_Theme2.Play();
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        //-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 
 
 

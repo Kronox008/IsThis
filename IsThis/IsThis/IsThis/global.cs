@@ -49,11 +49,14 @@ namespace IsThis
         public static string CorrectColorHex = "#50c878";
         public static string ButtonTextWhiteColor = "#ececec";
         public static string ButtonBackColor = "#77d35400";     // timer, question label, buttons, deck info....
+        public static string TimersColors = "#d6d632";
+        public static string QuestionBoxColor = "#2F4F4F";
 
 
         //------------------SoundVOlume-------------------------------------------------------------------------
 
         public static double SoundVolume { get; set; } = 0.9;
+        public static double ThemeSoundVolume { get; set; } = 0.7;
 
         //--------------Languages?-----------------------------------------------------------------------------
         public static int LanguageSelectedID { get; set; }
@@ -62,8 +65,10 @@ namespace IsThis
         public static string InfoButtonText { get; set; }
         public static string PlayButtonText { get; set; }
         public static string QuestionslabelText { get; set; }
-        public static string HowToLabeltitle { get; set; }
-        public static string HowToLabeltext { get; set; }
+        public static string HowToLabeltitle1 { get; set; }
+        public static string HowToLabeltext1 { get; set; }
+        public static string HowToLabeltitle2 { get; set; }
+        public static string HowToLabeltext2 { get; set; }
         public static string ScoreLabeltext { get; set; }
         public static string LanguagePickerLabel { get; set; }
         public static string LanguagePickerTitle { get; set; }
@@ -83,8 +88,10 @@ namespace IsThis
                 InfoButtonText = "How to Play";
                 PlayButtonText = "Play";
                 QuestionslabelText = "questions";
-                HowToLabeltitle = " Game 1:";
-                HowToLabeltext = "English explanation";
+                HowToLabeltitle1 = " Game 1:";
+                HowToLabeltext1 = "English explanation";
+                HowToLabeltitle2 = " Game 2:";
+                HowToLabeltext2 = "English explanation English explanation English explanation English explanation";
                 ScoreLabeltext = "Score: ";
                 LanguagePickerLabel = "Language: ";
                 LanguagePickerTitle = "Language";
@@ -101,8 +108,12 @@ namespace IsThis
                 InfoButtonText = "Kaip žaisti?";
                 PlayButtonText = "Pradėti";
                 QuestionslabelText = "klausimų";
-                HowToLabeltitle = " 1 variantas:";
-                HowToLabeltext = "Telefona laikyk prieš save. Aiškinantis žaidėjas/komanda bandys tau padėti atspėti," +
+                HowToLabeltitle1 = " 1 variantas:";
+                HowToLabeltext1 = "Telefona laikyk prieš save. Aiškinantis žaidėjas/komanda bandys tau padėti atspėti," +
+                                  " koks gi žmogus/personažas/įvykis/vieta/citata šįkart įsitaisius tavo telefone! " +
+                                  "(Klausimai keičiami spaudžiant garsinimo / tildymo mygtukus ar mygtukus ekrane.";
+                HowToLabeltitle2 = " 2 variantas:";
+                HowToLabeltext2 = "Telefona laikyk prieš save. Aiškinantis žaidėjas/komanda bandys tau padėti atspėti," +
                                   " koks gi žmogus/personažas/įvykis/vieta/citata šįkart įsitaisius tavo telefone! " +
                                   "(Klausimai keičiami spaudžiant garsinimo / tildymo mygtukus ar mygtukus ekrane.";
                 ScoreLabeltext = "Taškai: ";

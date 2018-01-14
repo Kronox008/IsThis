@@ -86,14 +86,7 @@ namespace IsThis
 
             base.OnAppearing();
         }
-
-        private async void myFriend_Clicked(object sender, EventArgs e)
-        {
-            Global.DeckNumber = 4;
-            Global.DeckPoster = "friends.jpg";
-          await  Navigation.PushAsync(new SelectedGameInfoPage());
-        }
-
+        
         private async void myGOT_Clicked(object sender, EventArgs e)
         {
             Global.DeckNumber = 1;
@@ -115,6 +108,13 @@ namespace IsThis
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
+        private async void myFriend_Clicked(object sender, EventArgs e)
+        {
+            Global.DeckNumber = 4;
+            Global.DeckPoster = "friends.jpg";
+            await Navigation.PushAsync(new SelectedGameInfoPage());
+        }
+
         private void myAnimal_Clicked(object sender, EventArgs e)
         {
        //     DisplayAlert("Animals", "Animals clicked", "close alert");
@@ -132,7 +132,7 @@ namespace IsThis
 
         private void SettingsButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Settings());
+            Navigation.PushModalAsync(new Settings());
         }
     }
 }
