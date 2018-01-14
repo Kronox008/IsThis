@@ -15,6 +15,11 @@ namespace IsThis
         
         ISimpleAudioPlayer GOT_Theme_00;
         ISimpleAudioPlayer GOT_Theme_01;
+        ISimpleAudioPlayer LORD_Theme_00;
+        ISimpleAudioPlayer LORD_Theme_01;
+        ISimpleAudioPlayer LORD_Theme_02;
+        ISimpleAudioPlayer LORD_Theme_03;
+        ISimpleAudioPlayer LORD_Theme_04;
 
 
         public SelectedGameInfoPage ()
@@ -36,18 +41,19 @@ namespace IsThis
 
         public void ThemeSoundPlay()
         {
+            System.Random RandomNumber = new System.Random();
 
             switch (Global.DeckNumber)
             {
 
                 case 1:
-                    var stream0 = GetStreamFromGOT_Theme0File("got_s1e5_pays_his_debts.wav");
+                    var GOTstream0 = GetStreamFromGOT_Theme0File("got_s1e5_pays_his_debts.wav");
                     GOT_Theme_00 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();        //Load selected deck theme sounds
-                    GOT_Theme_00.Load(stream0);
+                    GOT_Theme_00.Load(GOTstream0);
 
-                    var stream1 = GetStreamFromGOT_Theme1File("got_s1e7_win_or_die.wav");
+                    var GOTstream1 = GetStreamFromGOT_Theme1File("got_s1e7_win_or_die.wav");
                     GOT_Theme_01 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
-                    GOT_Theme_01.Load(stream1);
+                    GOT_Theme_01.Load(GOTstream1);
 
                     Stream GetStreamFromGOT_Theme0File(string filename)
                     {
@@ -68,13 +74,13 @@ namespace IsThis
 
 
 
-                    System.Random RandomNumber = new System.Random();  //Generating random number for selected deck (to choose specific 
-                    int playthisNow = RandomNumber.Next(0, 2);         // 2-1 = total streams
+                     //Generating random number for selected deck (to choose specific 
+                    int playthisNowGOT = RandomNumber.Next(0, 2);         // 2-1 = total streams
 
 
 
 
-                    switch (playthisNow)                              //Playing random theme sound form selected deck
+                    switch (playthisNowGOT)                              //Playing random theme sound form selected deck
                     {
                         case 0:
                             GOT_Theme_00.Volume = Global.ThemeSoundVolume;
@@ -84,6 +90,103 @@ namespace IsThis
                             GOT_Theme_01.Volume = Global.ThemeSoundVolume;
                             GOT_Theme_01.Play();
                             break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 2:
+                    var LORDstream0 = GetStreamFromLord_Theme0File("claim.wav");
+                    LORD_Theme_00 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();        //Load selected deck theme sounds
+                    LORD_Theme_00.Load(LORDstream0);
+
+                    var LORDstream1 = GetStreamFromLord_Theme1File("death.wav");
+                    LORD_Theme_01 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                    LORD_Theme_01.Load(LORDstream1);
+
+                    var LORDstream2 = GetStreamFromLord_Theme2File("reddawn.wav");
+                    LORD_Theme_02 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                    LORD_Theme_02.Load(LORDstream2);
+
+                    var LORDstream3 = GetStreamFromLord_Theme3File("shallnotpass.wav");
+                    LORD_Theme_03 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                    LORD_Theme_03.Load(LORDstream3);
+
+                    var LORDstream4 = GetStreamFromLord_Theme4File("task.wav");
+                    LORD_Theme_04 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                    LORD_Theme_04.Load(LORDstream4);
+
+                    Stream GetStreamFromLord_Theme0File(string filename)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                        var stream = assembly.GetManifestResourceStream("IsThis.Sounds.LoTR." + filename);
+
+                        return stream;
+                    }
+                    Stream GetStreamFromLord_Theme1File(string filename)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                        var stream = assembly.GetManifestResourceStream("IsThis.Sounds.LoTR." + filename);
+
+                        return stream;
+                    }
+                    Stream GetStreamFromLord_Theme2File(string filename)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                        var stream = assembly.GetManifestResourceStream("IsThis.Sounds.LoTR." + filename);
+
+                        return stream;
+                    }
+                    Stream GetStreamFromLord_Theme3File(string filename)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                        var stream = assembly.GetManifestResourceStream("IsThis.Sounds.LoTR." + filename);
+
+                        return stream;
+                    }
+                    Stream GetStreamFromLord_Theme4File(string filename)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                        var stream = assembly.GetManifestResourceStream("IsThis.Sounds.LoTR." + filename);
+
+                        return stream;
+                    }
+
+
+
+                    //Generating random number for selected deck (to choose specific 
+                    int playthisNowLord = RandomNumber.Next(0, 6);         
+
+
+
+
+                    switch (playthisNowLord)                              //Playing random theme sound form selected deck
+                    {
+                        case 0:
+                            LORD_Theme_00.Volume = Global.ThemeSoundVolume;
+                            LORD_Theme_00.Play();
+                            break;
+                        case 1:
+                            LORD_Theme_01.Volume = Global.ThemeSoundVolume;
+                            LORD_Theme_01.Play();
+                            break;
+                        case 2:
+                            LORD_Theme_02.Volume = Global.ThemeSoundVolume;
+                            LORD_Theme_02.Play();
+                            break;
+                        case 3:
+                            LORD_Theme_03.Volume = Global.ThemeSoundVolume;
+                            LORD_Theme_03.Play();
+                            break;
+                        case 4:
+                            LORD_Theme_04.Volume = Global.ThemeSoundVolume;
+                            LORD_Theme_04.Play();
+                            break;
+
                         default:
                             break;
                     }
@@ -104,6 +207,28 @@ namespace IsThis
                     else if (GOT_Theme_01.IsPlaying)
                     {
                         GOT_Theme_01.Stop();
+                    }
+                    break;
+                case 2:
+                    if (LORD_Theme_00.IsPlaying)
+                    {
+                        LORD_Theme_00.Stop();
+                    }
+                    else if (LORD_Theme_01.IsPlaying)
+                    {
+                        LORD_Theme_01.Stop();
+                    }
+                    else if (LORD_Theme_02.IsPlaying)
+                    {
+                        LORD_Theme_02.Stop();
+                    }
+                    else if (LORD_Theme_03.IsPlaying)
+                    {
+                        LORD_Theme_03.Stop();
+                    }
+                    else if (LORD_Theme_04.IsPlaying)
+                    {
+                        LORD_Theme_04.Stop();
                     }
                     break;
                 default:
@@ -141,7 +266,7 @@ namespace IsThis
             switch (Global.DeckNumber)
             {
                 case 1:
-                    //make_some_Theme_sounds.ThemeSoundPlay(Global.DeckNumber);
+                    
                    
                     GotDeck.SetDeckInfo();
                     break;

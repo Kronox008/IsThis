@@ -167,6 +167,13 @@
     <EmbeddedResource Include="Sounds\GOT\got_s1e5_pays_his_debts.wav" />
     <EmbeddedResource Include="Sounds\GOT\got_s1e7_win_or_die.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sounds\LoTR\claim.wav" />
+    <EmbeddedResource Include="Sounds\LoTR\death.wav" />
+    <EmbeddedResource Include="Sounds\LoTR\reddawn.wav" />
+    <EmbeddedResource Include="Sounds\LoTR\shallnotpass.wav" />
+    <EmbeddedResource Include="Sounds\LoTR\task.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.5.0.121934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
