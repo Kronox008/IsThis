@@ -31,6 +31,7 @@ namespace IsThis
             GameOver();
             return true;
         }
+       
         //private async void BackToRoot()
         //{
         //    await Navigation.PushAsync(new GameSelectionPage());

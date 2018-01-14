@@ -62,17 +62,19 @@ namespace IsThis
         }
         private async void BackToRoot()
         {
-            await Navigation.PushAsync(new GameSelectionPage());
+            await Navigation.PopToRootAsync();
+            //await Navigation.PushAsync(new GameSelectionPage());
         }
 
         private async void MenuButton_Clicked(object sender, EventArgs e)
         {
+            MenuButton.IsEnabled = false;
            await Navigation.PushAsync(new GameSelectionPage());
         }
 
         private async void AgainButton_Clicked(object sender, EventArgs e)
         {
-            
+            AgainButton.IsEnabled = false;
             SelectedGameInfoPage Randomize_again = new SelectedGameInfoPage();
             Randomize_again.Selecteddeckinfo();
            await Navigation.PushAsync(new GameplayPage());

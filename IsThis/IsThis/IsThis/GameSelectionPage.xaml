@@ -18,7 +18,7 @@
                     <RowDefinition Height="250" />
                 </Grid.RowDefinitions>
 
-                <Button x:Name="SettingsButton" Grid.Row="0" Grid.Column="0" Clicked="SettingsButton_Clicked" ></Button>
+                <Button x:Name="SettingsButton" Grid.Row="0" Grid.Column="0" Clicked="SettingsButton_Clicked" BorderRadius="80" ></Button>
                 <Button x:Name="InfoButton" Text="Kaip žaisti?" Grid.Row="0" Grid.Column="1" Clicked="InfoButton_Clicked"></Button>
 
                 <Image  Grid.Row="1" Grid.Column="0" Source="GOT.jpg" Aspect="AspectFill"></Image>

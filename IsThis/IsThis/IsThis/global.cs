@@ -48,7 +48,7 @@ namespace IsThis
         public static string SkipColorHex = "#ff0033";
         public static string CorrectColorHex = "#50c878";
         public static string ButtonTextWhiteColor = "#ececec";
-        public static string ButtonBackColor = "#77d35400";     // timer, question label, buttons, deck info....
+        public static string ButtonBackColor = "#E64f1406";    // "#77d35400"; timer, question label, buttons, deck info....
         public static string TimersColors = "#d6d632";
         public static string QuestionBoxColor = "#2F4F4F";
 
@@ -57,6 +57,8 @@ namespace IsThis
 
         public static double SoundVolume { get; set; } = 0.9;
         public static double ThemeSoundVolume { get; set; } = 0.7;
+
+        
 
         //--------------Languages?-----------------------------------------------------------------------------
         public static int LanguageSelectedID { get; set; }
