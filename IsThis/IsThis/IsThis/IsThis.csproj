@@ -41,6 +41,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Decks\Animals.cs" />
     <Compile Include="Decks\FriendsDeck.cs" />
     <Compile Include="Decks\GotDeck.cs" />
     <Compile Include="Decks\HarryDeck.cs" />
@@ -197,6 +198,9 @@
     <EmbeddedResource Include="Sounds\Myth\godpower.wav" />
     <EmbeddedResource Include="Sounds\Myth\xsentinelbirth.wav" />
     <EmbeddedResource Include="Sounds\Myth\xwin.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Sounds\Animals\Narwhals.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.5.0.122203\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.5.0.122203\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

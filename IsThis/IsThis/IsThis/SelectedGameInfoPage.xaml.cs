@@ -13,25 +13,18 @@ namespace IsThis
 	public partial class SelectedGameInfoPage : ContentPage
 	{
         
-        ISimpleAudioPlayer GOT_Theme_00;
-        ISimpleAudioPlayer GOT_Theme_01;
-        ISimpleAudioPlayer LORD_Theme_00;
-        ISimpleAudioPlayer LORD_Theme_01;
-        ISimpleAudioPlayer LORD_Theme_02;
-        ISimpleAudioPlayer LORD_Theme_03;
-        ISimpleAudioPlayer LORD_Theme_04; 
-        ISimpleAudioPlayer HP_Theme_00;
-        ISimpleAudioPlayer HP_Theme_01;
-        ISimpleAudioPlayer HP_Theme_02;
-        ISimpleAudioPlayer Friends_Theme_00;
-        ISimpleAudioPlayer Friends_Theme_01;
-        ISimpleAudioPlayer Friends_Theme_02;
-        ISimpleAudioPlayer Friends_Theme_03;
-        ISimpleAudioPlayer Friends_Theme_04;
-        ISimpleAudioPlayer Myth_Theme_00;
-        ISimpleAudioPlayer Myth_Theme_01;
-        ISimpleAudioPlayer Myth_Theme_02;
-        ISimpleAudioPlayer Myth_Theme_03;
+        ISimpleAudioPlayer GOT_Theme_00; ISimpleAudioPlayer GOT_Theme_01;
+
+        ISimpleAudioPlayer LORD_Theme_00; ISimpleAudioPlayer LORD_Theme_01; ISimpleAudioPlayer LORD_Theme_02;ISimpleAudioPlayer LORD_Theme_03;ISimpleAudioPlayer LORD_Theme_04;
+
+        ISimpleAudioPlayer HP_Theme_00;ISimpleAudioPlayer HP_Theme_01;ISimpleAudioPlayer HP_Theme_02;
+
+        ISimpleAudioPlayer Friends_Theme_00;ISimpleAudioPlayer Friends_Theme_01;ISimpleAudioPlayer Friends_Theme_02;ISimpleAudioPlayer Friends_Theme_03;ISimpleAudioPlayer Friends_Theme_04;
+
+        ISimpleAudioPlayer Animal_Theme_00;
+
+        ISimpleAudioPlayer Myth_Theme_00;ISimpleAudioPlayer Myth_Theme_01;ISimpleAudioPlayer Myth_Theme_02;ISimpleAudioPlayer Myth_Theme_03;
+
 
         public SelectedGameInfoPage ()
 		{
@@ -384,6 +377,35 @@ namespace IsThis
                     }
                     break;
                 case 5:
+                    var Animalstream0 = GetStreamFromAnimal_Theme0File("Narwhals.mp3");
+                    Animal_Theme_00 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();        //Load selected deck theme sounds
+                    Animal_Theme_00.Load(Animalstream0);
+                    
+
+                    Stream GetStreamFromAnimal_Theme0File(string filename)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                        var stream = assembly.GetManifestResourceStream("IsThis.Sounds.Animals." + filename);
+
+                        return stream;
+                    }
+                  
+                    //Generating random number for selected deck (to choose specific 
+                    int playthisNowAnimal = RandomNumber.Next(0, 2);         // 2-1 = total streams
+
+
+
+
+                    switch (0)                              //Playing random theme sound form selected deck
+                    {
+                        case 0:
+                            Animal_Theme_00.Volume = Global.ThemeSoundVolume;
+                            Animal_Theme_00.Play();
+                            break;
+                        default:
+                            break;
+                    }
                     break;
                 case 6:
                     var Mythstream0 = GetStreamFromMyth_Theme0File("arkantosarrive.wav");
@@ -590,6 +612,10 @@ namespace IsThis
                 case 4:
                    
                     FriendsDeck.SetDeckInfo();
+                    break;
+                case 5:
+
+                    Animals.SetDeckInfo();
                     break;
                 case 6:
 

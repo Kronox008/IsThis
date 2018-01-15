@@ -121,9 +121,12 @@ namespace IsThis
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
-        private void myAnimal_Clicked(object sender, EventArgs e)
+        private async void myAnimal_Clicked(object sender, EventArgs e)
         {
-       //     DisplayAlert("Animals", "Animals clicked", "close alert");
+            myAnimal.IsEnabled = false;
+            Global.DeckNumber = 5;
+            Global.DeckPoster = "animals.jpg";
+            await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
         private async void myAOM_Clicked(object sender, EventArgs e)
@@ -154,6 +157,7 @@ namespace IsThis
             myLOTR.IsEnabled = true;
             myGOT.IsEnabled = true;
             myAOM.IsEnabled = true;
+            myAnimal.IsEnabled = true;
             
         }
     }

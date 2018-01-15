@@ -36,7 +36,7 @@
                 <Image  Grid.Row="2" Grid.Column="1" Source="friends.jpg" Aspect="AspectFill"></Image>
                 <Button x:Name="myFriend" Grid.Row="2" Grid.Column="1" Opacity="0" Clicked="myFriend_Clicked"></Button>
                 
-                <Image Grid.Row="3" Grid.Column="0" Source="animals.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
+                <Image Grid.Row="3" Grid.Column="0" Source="animals.jpg" Aspect="AspectFill"></Image>
                 <Button x:Name="myAnimal" Grid.Row="3" Grid.Column="0" Opacity="0" Clicked="myAnimal_Clicked"></Button>
                 
                 
