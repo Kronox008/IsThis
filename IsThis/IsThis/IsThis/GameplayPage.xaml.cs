@@ -31,7 +31,18 @@ namespace IsThis
             GameOver();
             return true;
         }
-       
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            MessagingCenter.Send(this, "forceLandScapePortrait");
+      
+        }
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            MessagingCenter.Send(this, "freeorientation");
+        }
+
         //private async void BackToRoot()
         //{
         //    await Navigation.PushAsync(new GameSelectionPage());

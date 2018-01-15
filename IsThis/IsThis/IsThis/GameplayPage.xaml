@@ -24,7 +24,7 @@
                    VerticalOptions="Center" HorizontalOptions="Center" ></Label>
 
            
-            <Image x:Name="QuestionImage" Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFit" ></Image>
+            <Image x:Name="QuestionImage" Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill" ></Image>
 
             <Label x:Name="TimerLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="Medium"
                    VerticalOptions="Start" HorizontalOptions="EndAndExpand" Margin="0, 10, 10, 0"  IsVisible="False"></Label>

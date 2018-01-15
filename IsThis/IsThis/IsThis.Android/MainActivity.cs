@@ -15,9 +15,20 @@ namespace IsThis.Droid
     [Activity(Label = "IsThis", Icon = "@drawable/TentIcon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+
+
+
+
         protected override void OnCreate(Bundle bundle)
 
         {
+            //allowing the device to change the screen orientation based on the rotation
+            MessagingCenter.Subscribe<GameplayPage>(this, "forceLandScapePortrait", sender =>
+            { RequestedOrientation = ScreenOrientation.SensorLandscape;});
+
+            //during page close setting back to portrait
+            MessagingCenter.Subscribe<GameplayPage>(this, "freeorientation", sender =>
+            {RequestedOrientation = ScreenOrientation.Unspecified;});
 
             this.Window.AddFlags(WindowManagerFlags.Fullscreen);
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -41,6 +52,8 @@ namespace IsThis.Droid
                // Toast.MakeText(this, "Volume Down pressed", ToastLength.Long).Show();
                 MessagingCenter.Send<object>(this, "Down");
                 
+
+
                 return true;
             }
 
