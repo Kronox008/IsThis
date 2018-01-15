@@ -153,6 +153,7 @@ namespace IsThis
             myHP.IsEnabled = true;
             myLOTR.IsEnabled = true;
             myGOT.IsEnabled = true;
+            myAOM.IsEnabled = true;
             
         }
     }

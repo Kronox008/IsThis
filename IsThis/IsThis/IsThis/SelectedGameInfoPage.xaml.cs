@@ -28,6 +28,10 @@ namespace IsThis
         ISimpleAudioPlayer Friends_Theme_02;
         ISimpleAudioPlayer Friends_Theme_03;
         ISimpleAudioPlayer Friends_Theme_04;
+        ISimpleAudioPlayer Myth_Theme_00;
+        ISimpleAudioPlayer Myth_Theme_01;
+        ISimpleAudioPlayer Myth_Theme_02;
+        ISimpleAudioPlayer Myth_Theme_03;
 
         public SelectedGameInfoPage ()
 		{
@@ -379,6 +383,87 @@ namespace IsThis
                             break;
                     }
                     break;
+                case 5:
+                    break;
+                case 6:
+                    var Mythstream0 = GetStreamFromMyth_Theme0File("arkantosarrive.wav");
+                    Myth_Theme_00 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();        //Load selected deck theme sounds
+                    Myth_Theme_00.Load(Mythstream0);
+
+                    var Mythstream1 = GetStreamFromMyth_Theme1File("godpower.wav");
+                    Myth_Theme_01 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                    Myth_Theme_01.Load(Mythstream1);
+
+                    var Mythstream2 = GetStreamFromMyth_Theme2File("xsentinelbirth.wav");
+                    Myth_Theme_02 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                    Myth_Theme_02.Load(Mythstream2);
+                    var Mythstream3 = GetStreamFromMyth_Theme3File("xwin.wav");
+                    Myth_Theme_03 = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+                    Myth_Theme_03.Load(Mythstream3);
+
+                    Stream GetStreamFromMyth_Theme0File(string filename)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                        var stream = assembly.GetManifestResourceStream("IsThis.Sounds.Myth." + filename);
+
+                        return stream;
+                    }
+                    Stream GetStreamFromMyth_Theme1File(string filename)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                        var stream = assembly.GetManifestResourceStream("IsThis.Sounds.Myth." + filename);
+
+                        return stream;
+                    }
+                    Stream GetStreamFromMyth_Theme2File(string filename)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                        var stream = assembly.GetManifestResourceStream("IsThis.Sounds.Myth." + filename);
+
+                        return stream;
+                    }
+                    Stream GetStreamFromMyth_Theme3File(string filename)
+                    {
+                        var assembly = typeof(App).GetTypeInfo().Assembly;
+
+                        var stream = assembly.GetManifestResourceStream("IsThis.Sounds.Myth." + filename);
+
+                        return stream;
+                    }
+
+
+
+                    //Generating random number for selected deck (to choose specific 
+                    int playthisNowMyth = RandomNumber.Next(0, 4);         // 2-1 = total streams
+
+
+
+
+                    switch (playthisNowMyth)                              //Playing random theme sound form selected deck
+                    {
+                        case 0:
+                            Myth_Theme_00.Volume = Global.ThemeSoundVolume;
+                            Myth_Theme_00.Play();
+                            break;
+                        case 1:
+                            Myth_Theme_01.Volume = Global.ThemeSoundVolume;
+                            Myth_Theme_01.Play();
+                            break;
+                        case 2:
+                            Myth_Theme_02.Volume = Global.ThemeSoundVolume;
+                            Myth_Theme_02.Play();
+                            break;
+                        case 3:
+                            Myth_Theme_03.Volume = Global.ThemeSoundVolume;
+                            Myth_Theme_03.Play();
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
                 default:
                     break;
             }
@@ -453,6 +538,26 @@ namespace IsThis
                     else if (Friends_Theme_04.IsPlaying)
                     {
                         Friends_Theme_04.Stop();
+                    }
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    if (Myth_Theme_00.IsPlaying)
+                    {
+                        Myth_Theme_00.Stop();
+                    }
+                    else if (Myth_Theme_01.IsPlaying)
+                    {
+                        Myth_Theme_01.Stop();
+                    }
+                    else if (Myth_Theme_02.IsPlaying)
+                    {
+                        Myth_Theme_02.Stop();
+                    }
+                    else if (Myth_Theme_03.IsPlaying)
+                    {
+                        Myth_Theme_03.Stop();
                     }
                     break;
 
