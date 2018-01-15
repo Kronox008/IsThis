@@ -50,13 +50,13 @@ namespace IsThis
             SelectedDeckPoster.Source = Global.DeckPoster;
             playselecteddeckButton.Text = Global.PlayButtonText;
             //SettingsButton.Text = Global.SettingsButtonText;
-            //ThemeSoundPlay(); //crashing emulator, works in real divice
+            ThemeSoundPlay(); //crashing emulator, works in real divice
 
             base.OnAppearing();
         }
         protected override void OnDisappearing()
         {
-            //ThemeSoundsStop(); //crashing emulator, works in real divice
+            ThemeSoundsStop(); //crashing emulator, works in real divice
             base.OnDisappearing();
         }
 
