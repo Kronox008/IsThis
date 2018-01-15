@@ -40,7 +40,7 @@
                 <Button x:Name="myAnimal" Grid.Row="3" Grid.Column="0" Opacity="0" Clicked="myAnimal_Clicked"></Button>
                 
                 
-                <Image Grid.Row="3" Grid.Column="1" Source="AOM.jpg" Aspect="AspectFill" Opacity="0.4"></Image>
+                <Image Grid.Row="3" Grid.Column="1" Source="AOM.jpg" Aspect="AspectFill"></Image>
                 <Button x:Name="myAOM" Grid.Row="3" Grid.Column="1" Opacity="0" Clicked="myAOM_Clicked"></Button>
                
             </Grid>

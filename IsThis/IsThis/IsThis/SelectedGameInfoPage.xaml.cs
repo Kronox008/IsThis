@@ -471,7 +471,6 @@ namespace IsThis
             switch (Global.DeckNumber)
             {
                 case 1:
-
                     
                     GotDeck.SetDeckInfo();
                     break;
@@ -486,6 +485,10 @@ namespace IsThis
                 case 4:
                    
                     FriendsDeck.SetDeckInfo();
+                    break;
+                case 6:
+
+                    Myth.SetDeckInfo();
                     break;
                 default:
                   await  Navigation.PushAsync(new GameSelectionPage());

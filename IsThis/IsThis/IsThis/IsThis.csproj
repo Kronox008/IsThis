@@ -45,6 +45,7 @@
     <Compile Include="Decks\GotDeck.cs" />
     <Compile Include="Decks\HarryDeck.cs" />
     <Compile Include="Decks\LordDeck.cs" />
+    <Compile Include="Decks\Myth.cs" />
     <Compile Include="Decks\Randomizing.cs" />
     <Compile Include="GameplayPage.xaml.cs">
       <DependentUpon>GameplayPage.xaml</DependentUpon>

@@ -126,9 +126,12 @@ namespace IsThis
        //     DisplayAlert("Animals", "Animals clicked", "close alert");
         }
 
-        private void myAOM_Clicked(object sender, EventArgs e)
+        private async void myAOM_Clicked(object sender, EventArgs e)
         {
-      
+            myAOM.IsEnabled = false;
+            Global.DeckNumber = 6;
+            Global.DeckPoster = "AOM.jpg";
+            await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
         private void InfoButton_Clicked(object sender, EventArgs e)

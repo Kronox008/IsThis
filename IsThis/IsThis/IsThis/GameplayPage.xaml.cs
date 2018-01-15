@@ -57,6 +57,7 @@ namespace IsThis
             Make_some_Tick_sounds.TickSoundStream();
             
             uint duration = 1000;
+            QuestionImageback.IsVisible = false;                                                 //test
             QuestionImage.IsVisible = false;
             QuestionLabel.IsVisible = false;
             CorrectButton.IsVisible = false;
@@ -106,11 +107,13 @@ namespace IsThis
         {
             Make_some_Correct_sounds.CorrectSoundStream();
             Make_some_Skip_sounds.SkipSoundStream();
+            QuestionImageback.IsVisible = true;                                                 //test
             QuestionImage.IsVisible = true;
             QuestionLabelBox.IsVisible = true;
             QuestionLabel.IsVisible = true;
             CountingLabel.IsVisible = false;
             QuestionImage.Opacity = 0;
+            QuestionImageback.Opacity = 0;                                                  //test
 
 
             QuestionLabelBox.Opacity = 0;
@@ -119,6 +122,8 @@ namespace IsThis
             animateExpand.Commit(QuestionLabelBox, "box", 16, 800);
 
             QuestionImage.FadeTo(0.3, 700);
+            QuestionImageback.FadeTo(0.2, 700);                                                 //test
+            QuestionImageback.Source = Global.ShuffledQuestion[i, 1];                      //test
             QuestionImage.Source = Global.ShuffledQuestion[i, 1];
             QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
 
@@ -191,9 +196,12 @@ namespace IsThis
                        length: 500,
                        easing: Easing.CubicOut);
                     //
+                    QuestionImageback.FadeTo(0, 500);                     //test
                     await QuestionImage.FadeTo(0, 500);
+                    QuestionImageback.Source = Global.ShuffledQuestion[i, 1];                     //test
                     QuestionImage.Source = Global.ShuffledQuestion[i, 1];
-                    QuestionImage.FadeTo(0.3, 700);
+                    QuestionImageback.FadeTo(0.05, 700);                     //test
+                    QuestionImage.FadeTo(0.5, 700);
                     CorrectButton.IsEnabled = true;
                     SkipButton.IsEnabled = true;
                     VolumeButtonsActive();
