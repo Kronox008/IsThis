@@ -35,13 +35,14 @@ namespace IsThis
         {
             base.OnAppearing();
             MessagingCenter.Send(this, "forceLandScapePortrait"); //set sensor-landscape orientation
-           // MessagingCenter.Send(this, "changeVolumeButtonEvent");
+            MessagingCenter.Send(this, "VolumeButtonOFF");
 
         }
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             MessagingCenter.Send(this, "freeorientation");
+            MessagingCenter.Send(this, "VolumeButtonON");
         }
 
         //private async void BackToRoot()

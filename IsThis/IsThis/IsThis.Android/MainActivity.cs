@@ -12,16 +12,19 @@ using System.Threading;
 
 namespace IsThis.Droid
 {
+
     [Activity(Label = "IsThis", Icon = "@drawable/TentIcon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity 
     {
 
 
 
-
+        public static bool Volumeoff { get; set; }
         protected override void OnCreate(Bundle bundle)
 
         {
+           
+
             //allowing the device to change the screen orientation based on the rotation
             MessagingCenter.Subscribe<GameplayPage>(this, "forceLandScapePortrait", sender =>
             { RequestedOrientation = ScreenOrientation.SensorLandscape;});
@@ -29,6 +32,14 @@ namespace IsThis.Droid
             //during page close setting back to portrait
             MessagingCenter.Subscribe<GameplayPage>(this, "freeorientation", sender =>
             {RequestedOrientation = ScreenOrientation.Unspecified;});
+
+
+
+            MessagingCenter.Subscribe<GameplayPage>(this, "VolumeButtonOFF", sender =>
+            {  Volumeoff = true; });
+
+            MessagingCenter.Subscribe<GameplayPage>(this, "VolumeButtonON", sender =>
+            { Volumeoff = false; });
 
             this.Window.AddFlags(WindowManagerFlags.Fullscreen);
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -45,25 +56,33 @@ namespace IsThis.Droid
             LoadApplication(new App());
 
         }
+        
         public override bool OnKeyUp(Keycode keyCode, KeyEvent e)
         {
             if (keyCode == Keycode.VolumeDown)
             {
-               // Toast.MakeText(this, "Volume Down pressed", ToastLength.Long).Show();
-                MessagingCenter.Send<object>(this, "Down");
-                
-
-
-                return true;
+                if (Volumeoff)
+                {
+                    MessagingCenter.Send<object>(this, "Down");
+                    return true;
+                }
+                else
+                {
+                    return base.OnKeyUp(keyCode, e);
+                }
             }
 
             if (keyCode == Keycode.VolumeUp)
             {
-               // Toast.MakeText(this, "Volume up pressed", ToastLength.Long).Show();
-                MessagingCenter.Send<object>(this, "Up");
-
-                
-                return true;
+                if (Volumeoff)
+                {                                                     
+                    MessagingCenter.Send<object>(this, "Up");
+                    return true;
+                }
+                else
+                {
+                    return base.OnKeyUp(keyCode, e);
+                }
             }
             return base.OnKeyUp(keyCode, e);
         }
@@ -72,14 +91,20 @@ namespace IsThis.Droid
         {
             if (keyCode == Keycode.VolumeDown)
             {
-                
-                return true;
+                if (Volumeoff)
+                {
+                    return true;
+                }
+                return base.OnKeyDown(keyCode, e);
             }
 
             if (keyCode == Keycode.VolumeUp)
             {
-                
-                return true;
+                if(Volumeoff)
+                {
+                    return true;
+                }
+                return base.OnKeyDown(keyCode, e);
             }
             return base.OnKeyDown(keyCode, e);
         }
