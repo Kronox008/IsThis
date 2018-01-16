@@ -59,7 +59,7 @@ namespace IsThis.Decks
 
                   { "Achilas", "Achilles.jpg" }  , { "Aktaeonas", "Actaeon.jpg" }    , { "Aegis", "Aegis.jpg" }  , { "Etonas", "Aetos_Dios.jpg" }    , { "Aloadai", "Aloadae.jpg" }  
                     , { "Amazonės", "Amazons.jpg" } , { "Ambrosija", "Ambrosia.jpg" }   , { "Amfionas", "Amphion.jpg" } , { "Amfisbaena ", "Amphisbaena.jpg" }  , { "Afroditė", "Aphrodite.jpg" } 
-                    , { "Apolonas", "Apollo.jpg" }  , { "Arėjas", "Ares.jpg" }  , { "Argas", "Argus_Panoptes.jpg" } , { "Arionas", "Arion.jpg" }    , { "Artemisas", "Artemis.jpg" }    
+                    , { "Apolonas", "Apollo.jpg" }  , { "Arėjas", "Ares.jpg" }  , { "Argas", "Argus_Panoptes.jpg" } , { "Arionas", "Arion.jpg" }    , { "Artemidė", "Artemis.jpg" }    
                     , { "Atėnė", "Athena.jpg" } , { "Atlanta", "Atlanta.jpg" }  , { "Kalidono šernas", "Calydonian_Boar.jpg" }  , { "Kampė", "Campe.jpg" }  , { "Kentauras", "Centaur.jpg" } 
                     , { "Cerberis", "Cerberus.jpg" }    , { "Kerinėjos stirna", "Ceryneian_Hind.jpg" }  , { "Charibdė", "Charybdis.jpg" }   , { "Chimera", "Chimaera.jpg" } 
                     , { "Chironas", "Chiron.jpg" }  , { "Chrisaoras", "Chrysaor.jpg" }  , { "Ciklopas", "Cyclopes.jpg" }    , { "Kretos bulius", "Cretan_Bull.jpg" }    , 

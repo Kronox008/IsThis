@@ -130,7 +130,7 @@ namespace IsThis
             var animateExpand = new Animation(d => QuestionLabelBox.HeightRequest = d, 0, 50, Easing.CubicIn);
             animateExpand.Commit(QuestionLabelBox, "box", 16, 800);
 
-            QuestionImage.FadeTo(0.3, 700);
+            QuestionImage.FadeTo(Global.Questionopacity, 700);
           
             QuestionImage.Source = Global.ShuffledQuestion[i, 1];
             QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
@@ -209,7 +209,7 @@ namespace IsThis
 
                     QuestionImage.Source = Global.ShuffledQuestion[i, 1];
                     
-                    QuestionImage.FadeTo(0.5, 700);
+                    QuestionImage.FadeTo(Global.Questionopacity, 700);
                     CorrectButton.IsEnabled = true;
                     SkipButton.IsEnabled = true;
                     VolumeButtonsActive();
@@ -281,7 +281,7 @@ namespace IsThis
 
                     await QuestionImage.FadeTo(0, 500);
                     QuestionImage.Source = Global.ShuffledQuestion[i, 1];
-                    QuestionImage.FadeTo(0.3, 700);
+                    QuestionImage.FadeTo(Global.Questionopacity, 700);
                     CorrectButton.IsEnabled = true;
                     SkipButton.IsEnabled = true;
                     VolumeButtonsActive();

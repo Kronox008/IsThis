@@ -12,9 +12,9 @@ namespace IsThis.Decks
         {
             if (Global.LanguageSelectedID == 0)
             {
-                string[,] allQuestions_in_orderEN = { { "Fox", "Fox.jpg" }    , { "Seal", "Seal.jpg" }    , { "Welter", "Welter.jpg" } 
+                string[,] allQuestions_in_orderEN = { { "Fox", "Fox.jpg" }    , { "Seal", "Seal.jpg" }    , { "Walrus", "Walrus.jpg" } 
                     , { "Jellyfish", "Jellyfish.jpg" }  , { "Zebra", "Zebra.jpg" }  , { "Gorilla", "Gorilla.jpg" }  , { "Chimpanzee", "Chimpanzee.jpg" } 
-                    , { "Armadillo", "Armadillo.jpg" }  , { "Whale", "Whale.jpg" }  , { "Cow", "Cow.jpg" }  , { "Horse", "Horse.jpg" }  , { "Goat", "Goat.jpg" }  
+                    , { "Armadillo", "Armadillo_a.jpg" }  , { "Whale", "Whale.jpg" }  , { "Cow", "Cow.jpg" }  , { "Horse", "Horse.jpg" }  , { "Goat", "Goat.jpg" }  
                     , { "Rooster", "Rooster.jpg" }  , { "Chicken", "Chicken.jpg" }  , { "Turkey", "Turkey.jpg" }    , { "Peacock", "Peacock.jpg" }  , { "Duck", "Duck.jpg" } 
                     , { "Swan", "Swan.jpg" }    , { "Goose", "Goose.jpg" }  , { "Bear", "Bear.jpg" }    , { "Polar bear", "Polar_bear.jpg" }    , { "Moose", "Moose.jpg" }  
                     , { "Raccoon dog", "Raccoon_dog.jpg" }  , { "Stork", "Stork.jpg" }  , { "Marten", "Marten.jpg" }    , { "Otter", "Otter.jpg" }  , { "Salmon", "Salmon.jpg" } 
@@ -28,12 +28,12 @@ namespace IsThis.Decks
                     , { "Sheep", "Sheep.jpg" }  , { "Tiger", "Tiger.jpg" }  , { "Lion", "Lion.jpg" }    , { "Cheetah", "Cheetah.jpg" }  , { "Leopard", "Leopard.jpg" }
                     , { "Penguin", "Penguin.jpg" }  , { "Wild yak", "Wild_yak.jpg" }    , { "Octopus", "Octopus.jpg" }  , { "Lemurs", "Lemurs.jpg" }   
                     , { "Saiga", "Saiga.jpg" }  , { "Giraffe", "Giraffe.jpg" }  , { "Eagle", "Eagle.jpg" }  , { "Hawk", "Hawk.jpg" }    , { "Ostrich", "Ostrich.jpg" } 
-                    , { "Platypus", "Platypus.jpg" }    , { "Kiwi", "Kiwi.jpg" }    , { "Grass-snake", "Grass-snake.jpg" }  , { "Bia", "Bia.jpg" }  , { "Cobra", "Cobra.jpg" }
+                    , { "Platypus", "Platypus.jpg" }    , { "Kiwi", "Kiwi.jpg" }    , { "Grass snake", "Grass_snake.jpg" }  , { "Boa", "Boa.jpg" }  , { "Cobra", "Cobra.jpg" }
                     , { "Cat", "Cat.jpg" }  , { "Dog", "Dog.jpg" }  , { "Guinea pig", "Guinea_pig.jpg" }    , { "Spider", "Spider.jpg" }    , { "Fly", "Fly.jpg" }  
                     , { "Bee", "Bee.jpg" }  , { "Worm", "Worm.jpg" }    , { "Eel", "Eel.jpg" }  , { "Northern pike", "Northern_pike.jpg" }  , { "Raccoon", "Raccoon.jpg" } 
                     , { "Wolverene", "Wolverene.jpg" }  , { "Pig", "Pig.jpg" }  , { "Squirrel", "Squirrel.jpg" }    , { "Woodpecker", "Woodpecker.jpg" }   
                     , { "Narwhal", "Narwhal.jpg" }  , { "Hippopotamus", "Hippopotamus.jpg" }    , { "Gazelle", "Gazelle.jpg" }  , { "Lama", "Lama.jpg" }  
-                    , { "Crow", "Crow.jpg" }    , { "Ant-eater", "Ant-eater.jpg" }  , { "Mouse", "Mouse.jpg" }  , { "Rat", "Rat.jpg" }  , { "Fossa ", "Fossa_.jpg" }
+                    , { "Crow", "Crow.jpg" }    , { "Ant eater", "Ant_eater.jpg" }  , { "Mouse", "Mouse.jpg" }  , { "Rat", "Rat.jpg" }  , { "Fossa ", "Fossa_.jpg" }
 
 
                 };
@@ -59,7 +59,7 @@ namespace IsThis.Decks
                 string[,] allQuestions_in_orderLT = {
 
                     { "Lapė", "Fox.jpg" }  , { "Ruonis", "Seal.jpg" }  , { "Vėplys", "Welter.jpg" }    , { "Medūza", "Jellyfish.jpg" } , { "Zebras", "Zebra.jpg" } 
-                    , { "Gorila", "Gorilla.jpg" }   , { "Šimpanzė", "Chimpanzee.jpg" }  , { "Šarvuotis", "Armadillo.jpg" }  , { "Banginis", "Whale.jpg" }  
+                    , { "Gorila", "Gorilla.jpg" }   , { "Šimpanzė", "Chimpanzee.jpg" }  , { "Šarvuotis", "Armadillo_a.jpg" }  , { "Banginis", "Whale.jpg" }  
                     , { "Karvė", "Cow.jpg" }    , { "Arklys", "Horse.jpg" } , { "Ožka", "Goat.jpg" }    , { "Gaidys", "Rooster.jpg" }   , { "Višta", "Chicken.jpg" }  
                     , { "Kalakutas", "Turkey.jpg" } , { "Povas", "Peacock.jpg" }    , { "Antis", "Duck.jpg" }   , { "Gulbė", "Swan.jpg" }   , { "Žąsis", "Goose.jpg" } 
                     , { "Meška", "Bear.jpg" }   , { "Baltasis lokys", "Polar_bear.jpg" }    , { "Briedis", "Moose.jpg" }    , { "Usūrinis šuo", "Raccoon_dog.jpg" } 
@@ -74,12 +74,12 @@ namespace IsThis.Decks
                     , { "Avis", "Sheep.jpg" }   , { "Tigras", "Tiger.jpg" } , { "Liūtas", "Lion.jpg" }  , { "Gepardas", "Cheetah.jpg" } , { "Leopardas", "Leopard.jpg" }  
                     , { "Pingvinas", "Penguin.jpg" }    , { "Jakas", "Wild_yak.jpg" }   , { "Aštuonkojis", "Octopus.jpg" }  , { "Lemūras", "Lemurs.jpg" }  
                     , { "Saiga", "Saiga.jpg" }  , { "Žirafa", "Giraffe.jpg" }   , { "Erelis", "Eagle.jpg" } , { "Vanagas", "Hawk.jpg" } , { "Strutis", "Ostrich.jpg" } 
-                    , { "Ančiasnapis", "Platypus.jpg" } , { "Kivis", "Kiwi.jpg" }   , { "Žaltys", "Grass-snake.jpg" }   , { "Smauglys", "Bia.jpg" }
+                    , { "Ančiasnapis", "Platypus.jpg" } , { "Kivis", "Kiwi.jpg" }   , { "Žaltys", "Grass_snake.jpg" }   , { "Smauglys", "Boa.jpg" }
                     , { "Kobra", "Cobra.jpg" }  , { "Katinas", "Cat.jpg" }  , { "Šuo", "Dog.jpg" }  , { "Jūrų kiaulytė", "Guinea_pig.jpg" } 
                     , { "Voras", "Spider.jpg" } , { "Musė", "Fly.jpg" } , { "Bitė", "Bee.jpg" } , { "Sliekas", "Worm.jpg" } , { "Ungurys", "Eel.jpg" } 
                     , { "Lydeka", "Northern_pike.jpg" } , { "Meškėnas", "Raccoon.jpg" } , { "Ernis", "Wolverene.jpg" }  , { "Kiaulė", "Pig.jpg" }  
                     , { "Voverė", "Squirrel.jpg" }  , { "Genys", "Woodpecker.jpg" } , { "Narvalas", "Narwhal.jpg" } , { "Begemotas", "Hippopotamus.jpg" } 
-                    , { "Gazelė", "Gazelle.jpg" }   , { "Lama", "Lama.jpg" }    , { "Varna", "Crow.jpg" }   , { "Skruzdėda", "Ant-eater.jpg" }  , { "Pelė", "Mouse.jpg" } 
+                    , { "Gazelė", "Gazelle.jpg" }   , { "Lama", "Lama.jpg" }    , { "Varna", "Crow.jpg" }   , { "Skruzdėda", "Ant_eater.jpg" }  , { "Pelė", "Mouse.jpg" } 
                     , { "Žiurkė", "Rat.jpg" }   , { "Fosa", "Fossa_.jpg" }
 
 
