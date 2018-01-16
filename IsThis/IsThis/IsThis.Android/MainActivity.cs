@@ -24,7 +24,7 @@ namespace IsThis.Droid
 
         {
            
-
+            
             //allowing the device to change the screen orientation based on the rotation
             MessagingCenter.Subscribe<GameplayPage>(this, "forceLandScapePortrait", sender =>
             { RequestedOrientation = ScreenOrientation.SensorLandscape;});

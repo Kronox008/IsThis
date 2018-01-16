@@ -37,8 +37,12 @@ namespace IsThis
             deckinfoLabel.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
             
         }
+        protected override bool OnBackButtonPressed()
+        {
+            Navigation.PopToRootAsync();
+            return true;
+        }
 
-        
         protected override void OnAppearing()
         {
             Global.CheckLanguage();
@@ -634,8 +638,10 @@ namespace IsThis
         private async void PlayselecteddeckButton_Clicked(object sender, EventArgs e)
         {
             playselecteddeckButton.IsEnabled = false;
-            await Navigation.PushAsync(new GameplayPage());
             
+            await Navigation.PushAsync(new GameplayPage());
+            Navigation.RemovePage(this);
+
         }
 
         //private async void SettingsButton_Clicked(object sender, EventArgs e)

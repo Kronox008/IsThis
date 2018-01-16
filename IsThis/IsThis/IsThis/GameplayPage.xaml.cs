@@ -22,6 +22,7 @@ namespace IsThis
             InitializeComponent();
             
            NavigationPage.SetHasNavigationBar(this, false);
+           
 
             Animation();
         }
@@ -151,7 +152,9 @@ namespace IsThis
             CorrectButton.IsVisible = false;
             SkipButton.IsVisible = false;
             VolumeButtonsDisabled();
+           
             await Navigation.PushAsync(new AfterGamePage());
+            Navigation.RemovePage(this);
         }
         private void Correct_Button_Clicked(object sender, EventArgs e)
         {

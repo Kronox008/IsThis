@@ -11,8 +11,8 @@
               >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="50" />
-                <RowDefinition Height="20" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="0" />
             </Grid.RowDefinitions>
 
 
@@ -32,10 +32,10 @@
             <BoxView x:Name="QuestionLabelBox" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" ></BoxView>
             <Label x:Name="QuestionLabel" Grid.RowSpan="3" Grid.ColumnSpan="2"  FontSize="32"
                    VerticalOptions="Center" HorizontalOptions="Center" Margin="0, 0, 0, 5" ></Label>
-            
-            
-            <Button x:Name="CorrectButton" Grid.Row="1" Grid.Column="0" Clicked="Correct_Button_Clicked" Margin="5"></Button>
-            <Button x:Name="SkipButton" Grid.Row="1" Grid.Column="1" Clicked="Skip_Button_Clicked" Margin="5"></Button>
+
+
+            <Button x:Name="CorrectButton" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Clicked="Correct_Button_Clicked" Margin="0" Opacity="0.7"></Button>
+            <Button x:Name="SkipButton" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Clicked="Skip_Button_Clicked" Margin="0" Opacity="0.7"></Button>
             
             
          
