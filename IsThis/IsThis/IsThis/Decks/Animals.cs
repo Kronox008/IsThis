@@ -33,7 +33,7 @@ namespace IsThis.Decks
                     , { "Bee", "Bee.jpg" }  , { "Worm", "Worm.jpg" }    , { "Eel", "Eel.jpg" }  , { "Northern pike", "Northern_pike.jpg" }  , { "Raccoon", "Raccoon.jpg" } 
                     , { "Wolverene", "Wolverene.jpg" }  , { "Pig", "Pig.jpg" }  , { "Squirrel", "Squirrel.jpg" }    , { "Woodpecker", "Woodpecker.jpg" }   
                     , { "Narwhal", "Narwhal.jpg" }  , { "Hippopotamus", "Hippopotamus.jpg" }    , { "Gazelle", "Gazelle.jpg" }  , { "Lama", "Lama.jpg" }  
-                    , { "Crow", "Crow.jpg" }    , { "Ant eater", "Ant_eater.jpg" }  , { "Mouse", "Mouse.jpg" }  , { "Rat", "Rat.jpg" }  , { "Fossa ", "Fossa_.jpg" }
+                    , { "Crow", "Crow.jpg" }    , { "Ant eater", "Ant_eater.jpg" }  , { "Mouse", "Mouse.jpg" }  , { "Rat", "Rat.jpg" }  , { "Fossa ", "Fossa.jpg" }
 
 
                 };
@@ -80,7 +80,7 @@ namespace IsThis.Decks
                     , { "Lydeka", "Northern_pike.jpg" } , { "Meškėnas", "Raccoon.jpg" } , { "Ernis", "Wolverene.jpg" }  , { "Kiaulė", "Pig.jpg" }  
                     , { "Voverė", "Squirrel.jpg" }  , { "Genys", "Woodpecker.jpg" } , { "Narvalas", "Narwhal.jpg" } , { "Begemotas", "Hippopotamus.jpg" } 
                     , { "Gazelė", "Gazelle.jpg" }   , { "Lama", "Lama.jpg" }    , { "Varna", "Crow.jpg" }   , { "Skruzdėda", "Ant_eater.jpg" }  , { "Pelė", "Mouse.jpg" } 
-                    , { "Žiurkė", "Rat.jpg" }   , { "Fosa", "Fossa_.jpg" }
+                    , { "Žiurkė", "Rat.jpg" }   , { "Fosa", "Fossa.jpg" }
 
 
                 };

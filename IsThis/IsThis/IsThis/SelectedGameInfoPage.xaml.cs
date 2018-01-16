@@ -563,6 +563,10 @@ namespace IsThis
                     }
                     break;
                 case 5:
+                    if (Animal_Theme_00.IsPlaying)
+                    {
+                        Animal_Theme_00.Stop();
+                    }
                     break;
                 case 6:
                     if (Myth_Theme_00.IsPlaying)
