@@ -34,8 +34,9 @@ namespace IsThis
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            MessagingCenter.Send(this, "forceLandScapePortrait");
-      
+            MessagingCenter.Send(this, "forceLandScapePortrait"); //set sensor-landscape orientation
+           // MessagingCenter.Send(this, "changeVolumeButtonEvent");
+
         }
         protected override void OnDisappearing()
         {
@@ -206,6 +207,7 @@ namespace IsThis
                     //
                    
                     await QuestionImage.FadeTo(0, 500);
+                    
 
                     QuestionImage.Source = Global.ShuffledQuestion[i, 1];
                     
