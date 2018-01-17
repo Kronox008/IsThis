@@ -13,7 +13,7 @@ using System.Threading;
 namespace IsThis.Droid
 {
 
-    [Activity(Label = "IsThis", Icon = "@drawable/TentIcon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "IsThis", Icon = "@drawable/TentIcon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity 
     {
 
@@ -31,7 +31,8 @@ namespace IsThis.Droid
 
             //during page close setting back to portrait
             MessagingCenter.Subscribe<GameplayPage>(this, "freeorientation", sender =>
-            {RequestedOrientation = ScreenOrientation.Unspecified;});
+            {RequestedOrientation = ScreenOrientation.Unspecified;
+                });
 
 
 
@@ -42,8 +43,8 @@ namespace IsThis.Droid
             { Volumeoff = false; });
 
             this.Window.AddFlags(WindowManagerFlags.Fullscreen);
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+            //TabLayoutResource = Resource.Layout.Tabbar;
+            //ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
 
