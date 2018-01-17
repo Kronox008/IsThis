@@ -2417,26 +2417,26 @@ namespace IsThis.Droid
 			// aapt resource value: 0x7f020070
 			public const int avd_hide_password = 2130837616;
 			
-			// aapt resource value: 0x7f0202a0
-			public const int avd_hide_password_1 = 2130838176;
-			
 			// aapt resource value: 0x7f0202a1
-			public const int avd_hide_password_2 = 2130838177;
+			public const int avd_hide_password_1 = 2130838177;
 			
 			// aapt resource value: 0x7f0202a2
-			public const int avd_hide_password_3 = 2130838178;
+			public const int avd_hide_password_2 = 2130838178;
+			
+			// aapt resource value: 0x7f0202a3
+			public const int avd_hide_password_3 = 2130838179;
 			
 			// aapt resource value: 0x7f020071
 			public const int avd_show_password = 2130837617;
 			
-			// aapt resource value: 0x7f0202a3
-			public const int avd_show_password_1 = 2130838179;
-			
 			// aapt resource value: 0x7f0202a4
-			public const int avd_show_password_2 = 2130838180;
+			public const int avd_show_password_1 = 2130838180;
 			
 			// aapt resource value: 0x7f0202a5
-			public const int avd_show_password_3 = 2130838181;
+			public const int avd_show_password_2 = 2130838181;
+			
+			// aapt resource value: 0x7f0202a6
+			public const int avd_show_password_3 = 2130838182;
 			
 			// aapt resource value: 0x7f020072
 			public const int Balrog = 2130837618;
@@ -3734,11 +3734,11 @@ namespace IsThis.Droid
 			// aapt resource value: 0x7f020221
 			public const int notification_icon_background = 2130838049;
 			
-			// aapt resource value: 0x7f02029e
-			public const int notification_template_icon_bg = 2130838174;
-			
 			// aapt resource value: 0x7f02029f
-			public const int notification_template_icon_low_bg = 2130838175;
+			public const int notification_template_icon_bg = 2130838175;
+			
+			// aapt resource value: 0x7f0202a0
+			public const int notification_template_icon_low_bg = 2130838176;
 			
 			// aapt resource value: 0x7f020222
 			public const int notification_tile_bg = 2130838050;
@@ -3975,142 +3975,145 @@ namespace IsThis.Droid
 			public const int splash = 2130838127;
 			
 			// aapt resource value: 0x7f020270
-			public const int Squirrel = 2130838128;
+			public const int splash_screen = 2130838128;
 			
 			// aapt resource value: 0x7f020271
-			public const int Steve = 2130838129;
+			public const int Squirrel = 2130838129;
 			
 			// aapt resource value: 0x7f020272
-			public const int Stork = 2130838130;
+			public const int Steve = 2130838130;
 			
 			// aapt resource value: 0x7f020273
-			public const int Stymphalian_Birds = 2130838131;
+			public const int Stork = 2130838131;
 			
 			// aapt resource value: 0x7f020274
-			public const int Susan_Bunch = 2130838132;
+			public const int Stymphalian_Birds = 2130838132;
 			
 			// aapt resource value: 0x7f020275
-			public const int Swan = 2130838133;
+			public const int Susan_Bunch = 2130838133;
 			
 			// aapt resource value: 0x7f020276
-			public const int Tag_Jones = 2130838134;
+			public const int Swan = 2130838134;
 			
 			// aapt resource value: 0x7f020277
-			public const int Talos = 2130838135;
+			public const int Tag_Jones = 2130838135;
 			
 			// aapt resource value: 0x7f020278
-			public const int TentIcon = 2130838136;
+			public const int Talos = 2130838136;
 			
 			// aapt resource value: 0x7f020279
-			public const int Teumessian_fox = 2130838137;
+			public const int TentIcon = 2130838137;
 			
 			// aapt resource value: 0x7f02027a
-			public const int The_High_Sparrow = 2130838138;
+			public const int Teumessian_fox = 2130838138;
 			
 			// aapt resource value: 0x7f02027b
-			public const int The_Nazgul = 2130838139;
+			public const int The_High_Sparrow = 2130838139;
 			
 			// aapt resource value: 0x7f02027c
-			public const int The_Underworld = 2130838140;
+			public const int The_Nazgul = 2130838140;
 			
 			// aapt resource value: 0x7f02027d
-			public const int Theoden = 2130838141;
+			public const int The_Underworld = 2130838141;
 			
 			// aapt resource value: 0x7f02027e
-			public const int Theon_Greyjoy = 2130838142;
+			public const int Theoden = 2130838142;
 			
 			// aapt resource value: 0x7f02027f
-			public const int Theseus = 2130838143;
+			public const int Theon_Greyjoy = 2130838143;
 			
 			// aapt resource value: 0x7f020280
-			public const int Tiger = 2130838144;
+			public const int Theseus = 2130838144;
 			
 			// aapt resource value: 0x7f020281
-			public const int Tommen_Baratheon = 2130838145;
+			public const int Tiger = 2130838145;
 			
 			// aapt resource value: 0x7f020282
-			public const int tooltip_frame_dark = 2130838146;
+			public const int Tommen_Baratheon = 2130838146;
 			
 			// aapt resource value: 0x7f020283
-			public const int tooltip_frame_light = 2130838147;
+			public const int tooltip_frame_dark = 2130838147;
 			
 			// aapt resource value: 0x7f020284
-			public const int Tormund = 2130838148;
+			public const int tooltip_frame_light = 2130838148;
 			
 			// aapt resource value: 0x7f020285
-			public const int Treebeard = 2130838149;
+			public const int Tormund = 2130838149;
 			
 			// aapt resource value: 0x7f020286
-			public const int Troy = 2130838150;
+			public const int Treebeard = 2130838150;
 			
 			// aapt resource value: 0x7f020287
-			public const int Turkey = 2130838151;
+			public const int Troy = 2130838151;
 			
 			// aapt resource value: 0x7f020288
-			public const int Turtle = 2130838152;
+			public const int Turkey = 2130838152;
 			
 			// aapt resource value: 0x7f020289
-			public const int Typhon = 2130838153;
+			public const int Turtle = 2130838153;
 			
 			// aapt resource value: 0x7f02028a
-			public const int Tyrion_Lannister = 2130838154;
+			public const int Typhon = 2130838154;
 			
 			// aapt resource value: 0x7f02028b
-			public const int Unagi = 2130838155;
+			public const int Tyrion_Lannister = 2130838155;
 			
 			// aapt resource value: 0x7f02028c
-			public const int Unsullied = 2130838156;
+			public const int Unagi = 2130838156;
 			
 			// aapt resource value: 0x7f02028d
-			public const int Ursula_Buffay = 2130838157;
+			public const int Unsullied = 2130838157;
 			
 			// aapt resource value: 0x7f02028e
-			public const int Valyria = 2130838158;
+			public const int Ursula_Buffay = 2130838158;
 			
 			// aapt resource value: 0x7f02028f
-			public const int Varys = 2130838159;
+			public const int Valyria = 2130838159;
 			
 			// aapt resource value: 0x7f020290
-			public const int Voldemort = 2130838160;
+			public const int Varys = 2130838160;
 			
 			// aapt resource value: 0x7f020291
-			public const int Wah_Pah = 2130838161;
+			public const int Voldemort = 2130838161;
 			
 			// aapt resource value: 0x7f020292
-			public const int Walrus = 2130838162;
+			public const int Wah_Pah = 2130838162;
 			
 			// aapt resource value: 0x7f020293
-			public const int Whale = 2130838163;
+			public const int Walrus = 2130838163;
 			
 			// aapt resource value: 0x7f020294
-			public const int White_walkers = 2130838164;
+			public const int Whale = 2130838164;
 			
 			// aapt resource value: 0x7f020295
-			public const int Wild_yak = 2130838165;
+			public const int White_walkers = 2130838165;
 			
 			// aapt resource value: 0x7f020296
-			public const int Wolf = 2130838166;
+			public const int Wild_yak = 2130838166;
 			
 			// aapt resource value: 0x7f020297
-			public const int Wolverene = 2130838167;
+			public const int Wolf = 2130838167;
 			
 			// aapt resource value: 0x7f020298
-			public const int Woodpecker = 2130838168;
+			public const int Wolverene = 2130838168;
 			
 			// aapt resource value: 0x7f020299
-			public const int Worm = 2130838169;
+			public const int Woodpecker = 2130838169;
 			
 			// aapt resource value: 0x7f02029a
-			public const int Yara_Greyjoy = 2130838170;
+			public const int Worm = 2130838170;
 			
 			// aapt resource value: 0x7f02029b
-			public const int Yemen = 2130838171;
+			public const int Yara_Greyjoy = 2130838171;
 			
 			// aapt resource value: 0x7f02029c
-			public const int Zebra = 2130838172;
+			public const int Yemen = 2130838172;
 			
 			// aapt resource value: 0x7f02029d
-			public const int Zeus = 2130838173;
+			public const int Zebra = 2130838173;
+			
+			// aapt resource value: 0x7f02029e
+			public const int Zeus = 2130838174;
 			
 			static Drawable()
 			{
@@ -5762,6 +5765,9 @@ namespace IsThis.Droid
 			// aapt resource value: 0x7f0b019a
 			public const int MainTheme_Base = 2131427738;
 			
+			// aapt resource value: 0x7f0b019c
+			public const int MyTheme_Splash = 2131427740;
+			
 			// aapt resource value: 0x7f0b002d
 			public const int Platform_AppCompat = 2131427373;
 			
@@ -6181,9 +6187,6 @@ namespace IsThis.Droid
 			
 			// aapt resource value: 0x7f0b0006
 			public const int Theme_MediaRouter_LightControlPanel = 2131427334;
-			
-			// aapt resource value: 0x7f0b019c
-			public const int Theme_Splash = 2131427740;
 			
 			// aapt resource value: 0x7f0b0120
 			public const int ThemeOverlay_AppCompat = 2131427616;
