@@ -6,6 +6,7 @@ using IsThis.Decks;
 using Plugin.SimpleAudioPlayer.Abstractions;
 using System.Reflection;
 using System.IO;
+using FFImageLoading.Forms;
 
 namespace IsThis
 {
@@ -53,6 +54,8 @@ namespace IsThis
             //SettingsButton.Text = Global.SettingsButtonText;
             ThemeSoundPlay(); //crashing emulator, works in real divice
             
+
+
             base.OnAppearing();
         }
         protected override void OnDisappearing()

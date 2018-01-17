@@ -9,6 +9,8 @@ using Android.OS;
 using System.IO;
 using Xamarin.Forms;
 using System.Threading;
+using FFImageLoading;
+
 
 namespace IsThis.Droid
 {
@@ -23,8 +25,7 @@ namespace IsThis.Droid
         protected override void OnCreate(Bundle bundle)
 
         {
-           
-            
+            FFImageLoading.Forms.Droid.CachedImageRenderer.Init(enableFastRenderer: true);
             //allowing the device to change the screen orientation based on the rotation
             MessagingCenter.Subscribe<GameplayPage>(this, "forceLandScapePortrait", sender =>
             { RequestedOrientation = ScreenOrientation.SensorLandscape;});

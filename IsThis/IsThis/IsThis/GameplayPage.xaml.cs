@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFImageLoading.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Reflection;
 
 namespace IsThis
 {
@@ -17,14 +19,14 @@ namespace IsThis
         Sound Make_some_Tick_sounds = new Sound();
 
         int i = 0;
-        int j = 1;
+        
         public GameplayPage()
         {
             InitializeComponent();
             
            NavigationPage.SetHasNavigationBar(this, false);
 
-            StaticBG.Source = Global.DeckPoster;
+           
             Animation();
         }
         protected override bool OnBackButtonPressed()
@@ -104,29 +106,18 @@ namespace IsThis
             QuestionLabelBox.IsVisible = true;
             QuestionLabel.IsVisible = true;
             CountingLabel.IsVisible = false;
-            QuestionImage.Opacity = 0;
+          //  QuestionImage.Opacity = 0;
 
             QuestionLabelBox.Opacity = 0;
             QuestionLabelBox.FadeTo(Global.LabelBox, 1000);
             var animateExpand = new Animation(d => QuestionLabelBox.HeightRequest = d, 0, 50, Easing.CubicIn);
             animateExpand.Commit(QuestionLabelBox, "box", 16, 800);
 
-            QuestionImage.FadeTo(Global.Questionopacity, 700);
+            //QuestionImage.FadeTo(Global.Questionopacity, 700);
           
-            QuestionImage.Source = new UriImageSource
-            {
-                Uri = new Uri(Global.ShuffledQuestion[i, 1]),
-                CachingEnabled = true,
-                CacheValidity = new TimeSpan(10, 0, 0, 0)
-            };                                             //Global.ShuffledQuestion[i, 1];
+            QuestionImage.Source = Global.ShuffledQuestion[i, 1];
             
-            QuestionImagePreLOAD.Source = new UriImageSource
-            {
-                Uri = new Uri(Global.ShuffledQuestion[j, 1]),
-                CachingEnabled = true,
-                CacheValidity = new TimeSpan(10, 0, 0, 0)
-            };
-
+           
 
             QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
 
@@ -165,16 +156,7 @@ namespace IsThis
                 Global.IsGuessed[i] = 1;
                 Global.IsCorrectCount += 1;
                 i++;
-                j++;
-                if (j < Global.QuestionQuantity)
-                {
-                    QuestionImagePreLOAD.Source = new UriImageSource
-                    {
-                        Uri = new Uri(Global.ShuffledQuestion[j, 1]),
-                        CachingEnabled = true,
-                        CacheValidity = new TimeSpan(10, 0, 0, 0)
-                    };
-                }
+              
                 if (i < Global.QuestionQuantity)
                 {
                     CorrectButton.IsEnabled = false;
@@ -212,39 +194,22 @@ namespace IsThis
                        easing: Easing.CubicOut);
                     //
                    
-                    await QuestionImage.FadeTo(0, 500);
+                   // await QuestionImage.FadeTo(0, 500);
 
 
-                    QuestionImage.Source = new UriImageSource
-                    {
-                        Uri = new Uri(Global.ShuffledQuestion[i, 1]),
-                        CachingEnabled = true,
-                        CacheValidity = new TimeSpan(10, 0, 0, 0)
-                    };          //Global.ShuffledQuestion[i, 1];
-                   
+                    QuestionImage.Source = Global.ShuffledQuestion[i, 1];
 
 
-                    QuestionImage.FadeTo(Global.Questionopacity, 700);
+
+
+                  //  QuestionImage.FadeTo(Global.Questionopacity, 700);
                     CorrectButton.IsEnabled = true;
                     SkipButton.IsEnabled = true;
                     VolumeButtonsActive();
 
                 }
                 
-                //if (i < 10)
-                //{
-                //    QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
-                //    CorrectButton.IsEnabled = false;
-                //    SkipButton.IsEnabled = false;
-                //    VolumeButtonsDisabled();
-                //    await QuestionImage.FadeTo(0, 1000);
-                //    QuestionImage.Source = Global.ShuffledQuestion[i, 1];
-                //    QuestionImage.FadeTo(0.2, 1000);
-                //    CorrectButton.IsEnabled = true;
-                //    SkipButton.IsEnabled = true;
-                //    VolumeButtonsActive();
 
-                //}
                 else
                 {
                     GameOver();
@@ -256,16 +221,7 @@ namespace IsThis
                 Global.IsCorrect[i] = 0;
                 Global.IsGuessed[i] = 1;
                 i++;
-                j++;
-                if (j < Global.QuestionQuantity)
-                {
-                    QuestionImagePreLOAD.Source = new UriImageSource
-                    {
-                        Uri = new Uri(Global.ShuffledQuestion[j, 1]),
-                        CachingEnabled = true,
-                        CacheValidity = new TimeSpan(10, 0, 0, 0)
-                    };
-                }
+               
                 if (i < Global.QuestionQuantity)
                 {
                     CorrectButton.IsEnabled = false;
@@ -304,14 +260,10 @@ namespace IsThis
                     //
 
 
-                    await QuestionImage.FadeTo(0, 500);
-                    QuestionImage.Source = new UriImageSource
-                    {
-                        Uri = new Uri(Global.ShuffledQuestion[i, 1]),
-                        CachingEnabled = true,
-                        CacheValidity = new TimeSpan(10, 0, 0, 0)
-                    };                                                                    //Global.ShuffledQuestion[i, 1];
-                    QuestionImage.FadeTo(Global.Questionopacity, 700);
+                    //await QuestionImage.FadeTo(0, 500);
+                    QuestionImage.Source = Global.ShuffledQuestion[i, 1];
+                        //Global.ShuffledQuestion[i, 1];
+                   // QuestionImage.FadeTo(Global.Questionopacity, 700);
                     CorrectButton.IsEnabled = true;
                     SkipButton.IsEnabled = true;
                     VolumeButtonsActive();

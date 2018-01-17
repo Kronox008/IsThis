@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+	         xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="IsThis.TestPage">
+    <ContentPage.Content>
+        <Grid x:Name="stackas">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+              
+            </Grid.RowDefinitions>
+            <Button Clicked="Button_Clicked" Text="next"></Button>
+
+
+            <ffimageloading:CachedImage Grid.RowSpan="2" Grid.ColumnSpan="1" Aspect="AspectFill" x:Name="ff_image"
+			DownsampleToViewSize="False" FadeAnimationEnabled="True" FadeAnimationDuration="2000" FadeAnimationForCachedImages="True" CacheDuration="30"
+			Source = "https://drive.google.com/uc?id=1nMXDDadfmE7W0IKfdNlt6ZDZKp0NOyCA">
+            </ffimageloading:CachedImage>
+            <Button Grid.Row="2" Clicked="Button_Clicked" Text="next"></Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

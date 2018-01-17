@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection;
 
 using Xamarin.Forms;
+using FFImageLoading.Forms;
 
 namespace IsThis
 {
@@ -15,8 +17,9 @@ namespace IsThis
             InitializeComponent();
             //Settings CheckSQL = new Settings();
             //CheckSQL.SQLConnection();
-            
 
+
+           
             MainPage = new NavigationPage(new GameSelectionPage())
             {
                 //BarBackgroundColor = Color.FromHex(Global.ButtonBackColor),

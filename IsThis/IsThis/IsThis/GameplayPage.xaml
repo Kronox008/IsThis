@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="IsThis.GameplayPage"
              BackgroundColor="Black">
     <ContentPage.Content>
@@ -21,14 +22,19 @@
             
             
 
-            <Image x:Name="StaticBG" Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill" Opacity="0.3"></Image>
+            <!--<Image x:Name="StaticBG" Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill" Opacity="0.3"></Image>-->
             <!--<BoxView BackgroundColor="Black" WidthRequest="500" HeightRequest="500" Grid.RowSpan="3" Grid.ColumnSpan="2"  IsVisible="{Binding Source={x:Reference QuestionImage}, Path=!IsLoading}"></BoxView>-->
            
-            <Image x:Name="QuestionImage" Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>
-           
-            <Image x:Name="QuestionImagePreLOAD" Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill" IsVisible="False" ></Image>
+            <!--<Image x:Name="QuestionImage" Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill"></Image>-->
 
-           
+
+            
+            
+            <ffimageloading:CachedImage Grid.RowSpan="3" Grid.ColumnSpan="2" Aspect="AspectFill" x:Name="QuestionImage"
+			DownsampleToViewSize="False" FadeAnimationEnabled="True" FadeAnimationDuration="1000" FadeAnimationForCachedImages="True" CacheDuration="30"
+			>
+            </ffimageloading:CachedImage>
+
 
             <BoxView x:Name="QuestionLabelBox" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" ></BoxView>
             <Label x:Name="QuestionLabel" Grid.RowSpan="3" Grid.ColumnSpan="2"  FontSize="32"
