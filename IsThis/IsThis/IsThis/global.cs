@@ -23,7 +23,9 @@ namespace IsThis
 
         //----Question quantity--------------------------------------------------------------------------------------------------
         public static int QuestionQuantity { get; set; }
-        public static double Questionopacity = 0.5;
+        public static double Questionopacity = 1;
+        public static double LabelBox = 0.65;
+        public static bool DownloadImages { get; set; }
 
         //Array to hold questions
         public static List<string> ShuffledQuestionList = new List<string>();

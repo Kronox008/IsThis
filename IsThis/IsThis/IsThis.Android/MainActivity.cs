@@ -13,7 +13,7 @@ using System.Threading;
 namespace IsThis.Droid
 {
 
-    [Activity(Label = "IsThis", Icon = "@drawable/TentIcon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "IsThis", Icon = "@drawable/Caty", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity 
     {
 

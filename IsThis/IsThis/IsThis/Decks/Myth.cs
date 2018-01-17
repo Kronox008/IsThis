@@ -57,24 +57,9 @@ namespace IsThis.Decks
             {
                 string[,] allQuestions_in_orderLT = {
 
-                  { "Achilas", "Achilles.jpg" }  , { "Aktaeonas", "Actaeon.jpg" }    , { "Aegis", "Aegis.jpg" }  , { "Etonas", "Aetos_Dios.jpg" }    , { "Aloadai", "Aloadae.jpg" }  
-                    , { "Amazonės", "Amazons.jpg" } , { "Ambrosija", "Ambrosia.jpg" }   , { "Amfionas", "Amphion.jpg" } , { "Amfisbaena ", "Amphisbaena.jpg" }  , { "Afroditė", "Aphrodite.jpg" } 
-                    , { "Apolonas", "Apollo.jpg" }  , { "Arėjas", "Ares.jpg" }  , { "Argas", "Argus_Panoptes.jpg" } , { "Arionas", "Arion.jpg" }    , { "Artemidė", "Artemis.jpg" }    
-                    , { "Atėnė", "Athena.jpg" } , { "Atlanta", "Atlanta.jpg" }  , { "Kalidono šernas", "Calydonian_Boar.jpg" }  , { "Kampė", "Campe.jpg" }  , { "Kentauras", "Centaur.jpg" } 
-                    , { "Cerberis", "Cerberus.jpg" }    , { "Kerinėjos stirna", "Ceryneian_Hind.jpg" }  , { "Charibdė", "Charybdis.jpg" }   , { "Chimera", "Chimaera.jpg" } 
-                    , { "Chironas", "Chiron.jpg" }  , { "Chrisaoras", "Chrysaor.jpg" }  , { "Ciklopas", "Cyclopes.jpg" }    , { "Kretos bulius", "Cretan_Bull.jpg" }    , 
-                  { "Pitonas", "Delphyne.jpg" } , { "Echidna", "Echidna.jpg" }  , { "Empusa", "Empusa.jpg" }    , { "Erimanto šernas", "Erymanthian_Boar.jpg" } , { "Gerionas", "Geryon.jpg" }
-                    , { "Milžinai", "Giants.jpg" }  , { "Auksinė vilna", "Golden_Fleece.jpg" }  , { "Gorgonės", "Gorgons.jpg" } , { "Grifai", "Griffin.jpg" }   , { "Hadas", "Hades.jpg" } 
-                    , { "Harpijos", "Harpies.jpg" } , { "Hekatonkheirai", "Hecatoncheires.jpg" }    , { "Hefaistas", "Hephaestus.jpg" } , { "Hera", "Hera.jpg" }    , { "Heraklis", "Heracles.jpg" } 
-                    , { "Hermis", "Hermes.jpg" }    , { "Hestija", "Hestia.jpg" }   , { "Limfa", "Ichor.jpg" }  , { "Jasonas", "Jason.jpg" }    , { "Ladonas", "Ladon.jpg" }   
-                    , { "Lelapas", "Laelaps.jpg" }  , { "Lamija", "Lamia.jpg" } , { "Lernos hidra", "Lernaean_Hydra.jpg" }  , { "Diomedo žirgai", "Mares_of_Diomedes.jpg" } , 
-                  { "Marsijas", "Marsyas.jpg" } , { "Meduza", "Medusa.jpg" }    , { "Minas", "Minos.jpg" }  , { "Minotauras", "Minotaur.jpg" }  , { "Olimpo kalnas", "Mount_Olympus.jpg" }
-                    , { "Harmonijos karoliai", "Necklace_of_Harmonia.jpg" } , { "Nektaras", "Nectar.jpg" }  , { "Nemėjos liūtas", "Nemean_Lion.jpg" }   , { "Nesas", "Nessus.jpg" } , 
-                  { "Odisėjas", "Odysseus.jpg" }    , { "Ortras", "Orthrus.jpg" }   , { "Uroboras", "Ouroboros.jpg" }   , { "Pegasas", "Pegasus.jpg" }  , { "Pelėlas", "Peleus.jpg" } 
-                    , { "Persėjas", "Perseus.jpg" } , { "Feniksas", "Phoenix.jpg" } , { "Polifemas", "Polyphemus.jpg" } , { "Poseidonas", "Poseidon.jpg" }  , { "Scilė", "Scylla.jpg" } 
-                    , { "Achilo skydas", "Shield_of_Achilles.jpg" } , { "Neso marškiniai", "Shirt_of_Nessus.jpg" }  , { "Silenai", "Silenus.jpg" }  , { "Sirenos", "Sirens.jpg" }   ,
-                  { "Sfinksas", "Sphinx.jpg" }  , { "Stimfalo paukščiai", "Stymphalian_Birds.jpg" } , { "Talas", "Talos.jpg" }  , { "Teumesijos lapė", "Teumessian_fox.jpg" }   ,
-                  { "Požemių pasaulis", "The_Underworld.jpg" }  , { "Tesėjas", "Theseus.jpg" }  , { "Tifonas", "Typhon.jpg" }   , { "Troja", "Troy.jpg" }   , { "Dzeusas", "Zeus.jpg" }
+                 { "Achilas", "https://drive.google.com/uc?id=1Ad9SoF06KWHxUwxdAbfgRf5ziNvUQmrp" }  
+                    , { "Aegis", "https://drive.google.com/uc?id=12xM7kyfI0o-CgWyyle8Oz0lnDdNdvJko" }   , { "Chrisaoras", "https://drive.google.com/uc?id=1OlbejHFAKPZ-nok5abhpMcgtl0Bmi4M_" }  , { "Erimanto šernas", "https://drive.google.com/uc?id=1QhECQUj8CC1gN-cElsi1Wrgvwj2NSryn" } , { "Gorgonės", "https://drive.google.com/uc?id=1Hvf8LunOJYEpTPbiKZ55-P4w1XGb_1gW" }    , { "Limfa", "https://drive.google.com/uc?id=19aEksh0iXKScsOczzQ9R9V_-WiU345-c" }   , { "Lelapas", "https://drive.google.com/uc?id=1X6dLrZ1JnAm6N2_6mznQ-2ugMW4IFYO7" } , { "Lernos hidra", "https://drive.google.com/uc?id=1d0PqAGOz6bLX1EcT_oE-518vdAsNm-cZ" }    , { "Diomedo žirgai", "https://drive.google.com/uc?id=1zh2X23aPoZ7vNrpzs8I-jj3RA0TlixSE" }  , { "Marsijas", "https://drive.google.com/uc?id=1IeKAGfh56W2hZoXEywfGqtKwYQ9QoI3M" }
+
 
 
                 };

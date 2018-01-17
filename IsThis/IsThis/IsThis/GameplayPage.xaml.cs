@@ -17,13 +17,14 @@ namespace IsThis
         Sound Make_some_Tick_sounds = new Sound();
 
         int i = 0;
+        int j = 1;
         public GameplayPage()
         {
             InitializeComponent();
             
            NavigationPage.SetHasNavigationBar(this, false);
-           
 
+            StaticBG.Source = Global.DeckPoster;
             Animation();
         }
         protected override bool OnBackButtonPressed()
@@ -91,33 +92,10 @@ namespace IsThis
             await CountingLabel.RotateTo(1083, duration, Easing.SinInOut);
 
             Make_some_Tick_sounds.TickSoundPlay();     /////////////////////// Sound
-
-
-
-
-
-
-
-            //CountingLabel.Text = "3";
-            //await Task.WhenAll(
-            //CountingLabel.RotateTo(361, duration));
-
-            //CountingLabel.Text = "2";
-            //await Task.WhenAll(
-            //CountingLabel.RotateTo(722, duration));
-
-
-            //CountingLabel.Text = "1";
-            //await Task.WhenAll(
-            //CountingLabel.RotateTo(1083, duration));
-
-
-
-
-
+            
             PlayTimeNow();
         }
-        private void PlayTimeNow()
+        private  void PlayTimeNow()
         {
             Make_some_Correct_sounds.CorrectSoundStream();
             Make_some_Skip_sounds.SkipSoundStream();
@@ -129,13 +107,27 @@ namespace IsThis
             QuestionImage.Opacity = 0;
 
             QuestionLabelBox.Opacity = 0;
-            QuestionLabelBox.FadeTo(0.3, 1000);
+            QuestionLabelBox.FadeTo(Global.LabelBox, 1000);
             var animateExpand = new Animation(d => QuestionLabelBox.HeightRequest = d, 0, 50, Easing.CubicIn);
             animateExpand.Commit(QuestionLabelBox, "box", 16, 800);
 
             QuestionImage.FadeTo(Global.Questionopacity, 700);
           
-            QuestionImage.Source = Global.ShuffledQuestion[i, 1];
+            QuestionImage.Source = new UriImageSource
+            {
+                Uri = new Uri(Global.ShuffledQuestion[i, 1]),
+                CachingEnabled = true,
+                CacheValidity = new TimeSpan(10, 0, 0, 0)
+            };                                             //Global.ShuffledQuestion[i, 1];
+            
+            QuestionImagePreLOAD.Source = new UriImageSource
+            {
+                Uri = new Uri(Global.ShuffledQuestion[j, 1]),
+                CachingEnabled = true,
+                CacheValidity = new TimeSpan(10, 0, 0, 0)
+            };
+
+
             QuestionLabel.Text = Global.ShuffledQuestion[i, 0];
 
             
@@ -173,6 +165,16 @@ namespace IsThis
                 Global.IsGuessed[i] = 1;
                 Global.IsCorrectCount += 1;
                 i++;
+                j++;
+                if (j < Global.QuestionQuantity)
+                {
+                    QuestionImagePreLOAD.Source = new UriImageSource
+                    {
+                        Uri = new Uri(Global.ShuffledQuestion[j, 1]),
+                        CachingEnabled = true,
+                        CacheValidity = new TimeSpan(10, 0, 0, 0)
+                    };
+                }
                 if (i < Global.QuestionQuantity)
                 {
                     CorrectButton.IsEnabled = false;
@@ -211,10 +213,17 @@ namespace IsThis
                     //
                    
                     await QuestionImage.FadeTo(0, 500);
-                    
 
-                    QuestionImage.Source = Global.ShuffledQuestion[i, 1];
-                    
+
+                    QuestionImage.Source = new UriImageSource
+                    {
+                        Uri = new Uri(Global.ShuffledQuestion[i, 1]),
+                        CachingEnabled = true,
+                        CacheValidity = new TimeSpan(10, 0, 0, 0)
+                    };          //Global.ShuffledQuestion[i, 1];
+                   
+
+
                     QuestionImage.FadeTo(Global.Questionopacity, 700);
                     CorrectButton.IsEnabled = true;
                     SkipButton.IsEnabled = true;
@@ -247,6 +256,16 @@ namespace IsThis
                 Global.IsCorrect[i] = 0;
                 Global.IsGuessed[i] = 1;
                 i++;
+                j++;
+                if (j < Global.QuestionQuantity)
+                {
+                    QuestionImagePreLOAD.Source = new UriImageSource
+                    {
+                        Uri = new Uri(Global.ShuffledQuestion[j, 1]),
+                        CachingEnabled = true,
+                        CacheValidity = new TimeSpan(10, 0, 0, 0)
+                    };
+                }
                 if (i < Global.QuestionQuantity)
                 {
                     CorrectButton.IsEnabled = false;
@@ -286,7 +305,12 @@ namespace IsThis
 
 
                     await QuestionImage.FadeTo(0, 500);
-                    QuestionImage.Source = Global.ShuffledQuestion[i, 1];
+                    QuestionImage.Source = new UriImageSource
+                    {
+                        Uri = new Uri(Global.ShuffledQuestion[i, 1]),
+                        CachingEnabled = true,
+                        CacheValidity = new TimeSpan(10, 0, 0, 0)
+                    };                                                                    //Global.ShuffledQuestion[i, 1];
                     QuestionImage.FadeTo(Global.Questionopacity, 700);
                     CorrectButton.IsEnabled = true;
                     SkipButton.IsEnabled = true;
@@ -348,7 +372,6 @@ namespace IsThis
             }
 
         }
-
 
 
     }

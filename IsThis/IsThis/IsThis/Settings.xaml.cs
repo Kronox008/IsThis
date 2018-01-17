@@ -90,7 +90,8 @@ namespace IsThis
                 Saved_Quantity = Global.QuestionQuantity,
                 Saved_Time = Global.CountDownTime,
                 LanguageId = Global.LanguageSelectedID,
-                
+                DownloadImages = Global.DownloadImages,
+
 
             };
 
@@ -111,6 +112,7 @@ namespace IsThis
                 Saved_Quantity = Global.QuestionQuantity,
                 Saved_Time = Global.CountDownTime,
                 LanguageId = Global.LanguageSelectedID,
+                DownloadImages = Global.DownloadImages,
 
             };
             _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
@@ -142,6 +144,7 @@ namespace IsThis
                 Saved_Quantity = Global.QuestionQuantity,
                 Saved_Time = Global.CountDownTime,
                 LanguageId = Global.LanguageSelectedID,
+                DownloadImages = Global.DownloadImages,
 
             };
             _connection = DependencyService.Get<ISQLiteDb>().GetConnection();

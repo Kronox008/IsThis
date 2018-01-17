@@ -52,7 +52,7 @@ namespace IsThis
             playselecteddeckButton.Text = Global.PlayButtonText;
             //SettingsButton.Text = Global.SettingsButtonText;
             ThemeSoundPlay(); //crashing emulator, works in real divice
-
+            
             base.OnAppearing();
         }
         protected override void OnDisappearing()
@@ -643,7 +643,7 @@ namespace IsThis
             Navigation.RemovePage(this);
 
         }
-
+        
         //private async void SettingsButton_Clicked(object sender, EventArgs e)
         //{
         //    await Navigation.PushAsync(new Settings());

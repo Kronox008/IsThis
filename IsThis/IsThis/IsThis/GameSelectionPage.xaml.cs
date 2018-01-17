@@ -22,6 +22,7 @@ namespace IsThis
             public int Saved_Quantity { get; set; }
             public int Saved_Time { get; set; }
             public int LanguageId { get; set; }
+            public bool DownloadImages { get; set; }
 
         }
         
@@ -71,8 +72,9 @@ namespace IsThis
                 {
                     StaticId = 1,
                     Saved_Quantity = 10,
-                    Saved_Time = 90, 
+                    Saved_Time = 90,
                     LanguageId = 1,
+                    DownloadImages = true,
                 };
                 await _connection.InsertOrReplaceAsync(DefaultNumbers);
                
@@ -82,6 +84,7 @@ namespace IsThis
             Global.QuestionQuantity = LoadNumbers.Saved_Quantity;
             Global.CountDownTime = LoadNumbers.Saved_Time;
             Global.LanguageSelectedID = LoadNumbers.LanguageId;
+            Global.DownloadImages = LoadNumbers.DownloadImages;
             enableButtons();
             setLanguage();
 

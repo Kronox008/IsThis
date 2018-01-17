@@ -35,7 +35,15 @@ namespace IsThis.Decks
             for (int i = 0; i < Global.QuestionQuantity; i++)
             {
                 Global.ShuffledQuestion[i, 0] = allQuestions_in_order[Global.Numbers[i], 0];
+
+                if (Global.DownloadImages)
+                { 
                 Global.ShuffledQuestion[i, 1] = allQuestions_in_order[Global.Numbers[i], 1];
+                }
+                else
+                {
+                    Global.ShuffledQuestion[i, 1] = Global.DeckPoster;
+                }
             }
 
         }
