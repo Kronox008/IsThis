@@ -97,6 +97,7 @@ namespace IsThis
             myGOT.IsEnabled = false;
             Global.DeckNumber = 1;
             Global.DeckPoster = "GOT.jpg";
+            Global.DeckWallpaper = Global.DeckPoster;
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
@@ -105,6 +106,7 @@ namespace IsThis
             myLOTR.IsEnabled = false;
             Global.DeckNumber = 2;
             Global.DeckPoster = "lord.jpg";
+            Global.DeckWallpaper = Global.DeckPoster;
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
@@ -113,6 +115,7 @@ namespace IsThis
             myHP.IsEnabled = false;
             Global.DeckNumber = 3;
             Global.DeckPoster = "Harry.jpg";
+            Global.DeckWallpaper = "Harry_W.jpg";
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
@@ -121,6 +124,7 @@ namespace IsThis
             myFriend.IsEnabled = false;
             Global.DeckNumber = 4;
             Global.DeckPoster = "friends.jpg";
+            Global.DeckWallpaper = Global.DeckPoster;
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
@@ -129,6 +133,7 @@ namespace IsThis
             myAnimal.IsEnabled = false;
             Global.DeckNumber = 5;
             Global.DeckPoster = "animals.jpg";
+            Global.DeckWallpaper = Global.DeckPoster;
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
@@ -137,6 +142,7 @@ namespace IsThis
             myAOM.IsEnabled = false;
             Global.DeckNumber = 6;
             Global.DeckPoster = "AOM.jpg";
+            Global.DeckWallpaper = Global.DeckPoster;
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 

@@ -41,6 +41,15 @@ namespace IsThis
 
             base.OnAppearing();
         }
+        protected override void OnDisappearing()
+        {
+            Sound make_closing_sound = new Sound();
+            make_closing_sound.SettingsClosingSoundStream();
+            make_closing_sound.SettingsCloseSoundPlay();
+
+
+            base.OnDisappearing();
+        }
 
 
 

@@ -33,7 +33,7 @@ namespace IsThis
 
             NavigationPage.SetHasNavigationBar(this, false);
             
-            playselecteddeckButton.BackgroundColor = Color.FromHex(Global.ButtonBackColor);
+            playselecteddeckButton.BackgroundColor = Color.FromHex(Global.PlaybuttonColor);
             playselecteddeckButton.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
             deckinfoLabel.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
             

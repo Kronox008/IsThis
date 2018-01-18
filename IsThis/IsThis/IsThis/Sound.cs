@@ -17,6 +17,7 @@ namespace IsThis
         ISimpleAudioPlayer TickSoundPlayer;
         ISimpleAudioPlayer ScoreSoundPlayer;
         ISimpleAudioPlayer SettingsSoundPlayer;
+        ISimpleAudioPlayer SettingsClosingSoundPlayer;
         ISimpleAudioPlayer GOT_Theme0;
         ISimpleAudioPlayer GOT_Theme1;
         private static double MasterVolume = Global.SoundVolume;
@@ -140,6 +141,32 @@ namespace IsThis
 
 
         Stream GetStreamFromSettingsFile(string filename)
+        {
+            var assembly = typeof(App).GetTypeInfo().Assembly;
+
+            var stream = assembly.GetManifestResourceStream("IsThis.Sounds." + filename);
+
+            return stream;
+        }
+        //-------------------------------------------------------------------------------------------------------------------------
+        public void SettingsClosingSoundStream()
+        {
+            var stream = GetStreamFromSettingsCloseFile("draenei_chest_anims_close.mp3");
+            SettingsClosingSoundPlayer = Plugin.SimpleAudioPlayer.CrossSimpleAudioPlayer.CreateSimpleAudioPlayer();
+            SettingsClosingSoundPlayer.Load(stream);
+
+
+        }
+        public void SettingsCloseSoundPlay()
+        {
+            SettingsClosingSoundPlayer.Volume = MasterVolume;
+            SettingsClosingSoundPlayer.Play();
+
+        }
+
+
+
+        Stream GetStreamFromSettingsCloseFile(string filename)
         {
             var assembly = typeof(App).GetTypeInfo().Assembly;
 

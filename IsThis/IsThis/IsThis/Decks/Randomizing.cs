@@ -42,7 +42,7 @@ namespace IsThis.Decks
                 }
                 else
                 {
-                    Global.ShuffledQuestion[i, 1] = Global.DeckPoster;
+                    Global.ShuffledQuestion[i, 1] = Global.DeckWallpaper;
                 }
             }
 

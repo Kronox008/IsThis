@@ -25,7 +25,7 @@ namespace IsThis
             InitializeComponent();
             
            NavigationPage.SetHasNavigationBar(this, false);
-
+            QuestionImage.Source = Global.DeckWallpaper;
            
             Animation();
         }

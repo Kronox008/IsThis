@@ -14,6 +14,7 @@ namespace IsThis
         public static string DeckInfo { get; set; }      //   information what is in this deck
         public static int Deckcounter { get; set; }     //    how many records in deck
         public static string DeckPoster { get; set; }   //     deck poster string
+        public static string DeckWallpaper { get; set; }
 
 
 
@@ -24,7 +25,7 @@ namespace IsThis
         //----Question quantity--------------------------------------------------------------------------------------------------
         public static int QuestionQuantity { get; set; }
         public static double Questionopacity = 0.7;
-        public static double LabelBox = 0.6;
+        public static double LabelBox = 0.8;
         public static bool DownloadImages { get; set; }
 
         //Array to hold questions
@@ -51,9 +52,10 @@ namespace IsThis
         public static string SkipColorHex = "#ff0033";
         public static string CorrectColorHex = "#50c878";
         public static string ButtonTextWhiteColor = "#ececec";
-        public static string ButtonBackColor = "#E64f1406";    // "#77d35400"; timer, question label, buttons, deck info....
+        public static string ButtonBackColor = "#FC4f1406";    // "#77d35400"; timer, question label, buttons, deck info....
         public static string TimersColors = "#d6d632";
         public static string QuestionBoxColor = "#2F4F4F";
+        public static string PlaybuttonColor = "#50c878";
 
 
         //------------------SoundVOlume-------------------------------------------------------------------------
