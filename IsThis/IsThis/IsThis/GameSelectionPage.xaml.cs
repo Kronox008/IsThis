@@ -97,7 +97,7 @@ namespace IsThis
             myGOT.IsEnabled = false;
             Global.DeckNumber = 1;
             Global.DeckPoster = "GOT.jpg";
-            Global.DeckWallpaper = Global.DeckPoster;
+            Global.DeckWallpaper = "GOT_W.jpg";
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
@@ -124,7 +124,7 @@ namespace IsThis
             myFriend.IsEnabled = false;
             Global.DeckNumber = 4;
             Global.DeckPoster = "friends.jpg";
-            Global.DeckWallpaper = Global.DeckPoster;
+            Global.DeckWallpaper = "friends_W.jpg";
             await Navigation.PushAsync(new SelectedGameInfoPage());
         }
 
