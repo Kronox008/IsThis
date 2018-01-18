@@ -645,6 +645,10 @@ namespace IsThis
             await Navigation.PushAsync(new GameplayPage());
             Navigation.RemovePage(this);
 
+            Sound make_play_now_sound = new Sound();
+            make_play_now_sound.PlayTheGameSoundStream();
+            make_play_now_sound.PlayTheGameSoundPlay();
+
         }
         
         //private async void SettingsButton_Clicked(object sender, EventArgs e)

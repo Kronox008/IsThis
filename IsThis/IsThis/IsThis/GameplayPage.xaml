@@ -37,13 +37,17 @@
             </ffimageloading:CachedImage>
 
 
-            <!--<BoxView x:Name="QuestionLabelBox" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" ></BoxView>
+            <BoxView x:Name="QuestionLabelBox" Grid.RowSpan="3" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" ></BoxView>
             <Label x:Name="QuestionLabel" Grid.RowSpan="3" Grid.ColumnSpan="2"  FontSize="32"
-                   VerticalOptions="Center" HorizontalOptions="Center" Margin="0, 0, 0, 5" ></Label>-->
-
-            <BoxView x:Name="QuestionLabelBox" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" ></BoxView>
-            <Label x:Name="QuestionLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="32"
                    VerticalOptions="Center" HorizontalOptions="Center" Margin="0, 0, 0, 5" ></Label>
+
+            
+            
+            
+            <!--top-->
+            <!--<BoxView x:Name="QuestionLabelBox" Grid.Row="0" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand" VerticalOptions="Center" ></BoxView>
+            <Label x:Name="QuestionLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="32"
+                   VerticalOptions="Center" HorizontalOptions="Center" Margin="0, 0, 0, 5" ></Label>-->
 
             <Label x:Name="TimerLabel" Grid.Row="0" Grid.ColumnSpan="2"  FontSize="Medium"
                    VerticalOptions="Start" HorizontalOptions="EndAndExpand" Margin="0, 10, 10, 0"  IsVisible="False"></Label>
