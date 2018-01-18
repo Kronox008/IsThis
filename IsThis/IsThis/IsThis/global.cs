@@ -23,8 +23,8 @@ namespace IsThis
 
         //----Question quantity--------------------------------------------------------------------------------------------------
         public static int QuestionQuantity { get; set; }
-        public static double Questionopacity = 1;
-        public static double LabelBox = 0.65;
+        public static double Questionopacity = 0.7;
+        public static double LabelBox = 0.6;
         public static bool DownloadImages { get; set; }
 
         //Array to hold questions
@@ -82,6 +82,7 @@ namespace IsThis
         public static string CorrectButtonText { get; set; }
         public static string SkipButtonText { get; set; }
         public static string AgainButtonText { get; set; }
+        public static string DownloadLabel { get; set; }
 
 
 
@@ -105,6 +106,7 @@ namespace IsThis
                 CorrectButtonText = "Correct";
                 SkipButtonText = "Skip";
                 AgainButtonText = "Play again";
+                DownloadLabel = "Image downloading";
 
             }
             else
@@ -129,6 +131,7 @@ namespace IsThis
                 CorrectButtonText = "Teisingai";
                 SkipButtonText = "Praleisti";
                 AgainButtonText = "Dar kartą";
+                DownloadLabel = "Paveikslėlių naudojimas";
             }
 
         }

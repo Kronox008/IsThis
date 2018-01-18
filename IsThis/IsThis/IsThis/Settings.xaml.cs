@@ -51,6 +51,7 @@ namespace IsThis
             LanguagePickerLabel.TextColor = Color.FromHex((Global.ButtonTextWhiteColor));
             LanguagePicker.TextColor = Color.FromHex((Global.ButtonTextWhiteColor));
             QuestionStepperLabel.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
+            DownloadLabel.TextColor = Color.FromHex(Global.ButtonTextWhiteColor);
 
             LanguagePickerLabel.Text = Global.LanguagePickerLabel;
             LanguagePicker.Title = Global.LanguagePickerTitle;
@@ -58,6 +59,7 @@ namespace IsThis
             TimeStepper.Value = Global.CountDownTime;
             Questiontepper.Value = Global.QuestionQuantity;
             QuestionStepperLabel.Text = String.Format("{0} {1}", Global.QuestionQuantity, Global.QuestionslabelText);
+            DownloadLabel.Text = Global.DownloadLabel;
 
             if (Global.CountDownTime <= 180)
             {
@@ -67,6 +69,8 @@ namespace IsThis
             {
                 TimeStepperLabel.Text = "∞ sec";
             }
+            DownloadSwitch.IsToggled = Global.DownloadImages;
+           
 
         }
 
@@ -157,7 +161,23 @@ namespace IsThis
             LanguagePicker.Focus();
         }
 
-       
+        private async void DownloadSwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+            Global.DownloadImages = DownloadSwitch.IsToggled;
+            
+            ///////////////////////////////////////////////////////////////////////////////////////////////Saving to DB
+            var Save_TO_DB = new GameSelectionPage.Saved_Settings()
+            {
+                StaticId = 1,
+                Saved_Quantity = Global.QuestionQuantity,
+                Saved_Time = Global.CountDownTime,
+                LanguageId = Global.LanguageSelectedID,
+                DownloadImages = Global.DownloadImages,
+
+            };
+            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            await _connection.InsertOrReplaceAsync(Save_TO_DB);
+        }
     }
        
 }
