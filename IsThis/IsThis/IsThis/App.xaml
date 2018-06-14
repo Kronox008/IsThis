@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="IsThis.App">
 	<Application.Resources>
-
+        <!--renew-->
         <ResourceDictionary>
             <Color x:Key="buttonsBackground">#77d35400</Color>
             <Color x:Key="buttonsText">#ececec</Color>
